@@ -180,7 +180,7 @@ def header(lang, page, r):
             mini += f'<a href="{C[k]}" target="_blank" rel="noopener" aria-label="{k}">{brand(k)}</a>'
     brand_html = (f'<a class="brand" href="{href(lang, "index", r)}" aria-label="Velaa Getaways">{EMBLEM}'
                   f'<span class="brand__txt"><small class="brand__top">{"Thoddoo · Maldives" if lang == "en" else "Тодду · Мальдивы"}</small>'
-                  f'<span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span></span></a>')
+                  f'<span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span><span class="brand__tag">{U["tagline"]}</span></span></a>')
     dl = "".join(f'<a href="{href(lang, p, r)}"><small>0{i + 1}</small>{U["nav"][p]}</a>'
                  for i, p in enumerate(["index", "about", "packages", "thoddoo", "experiences", "guesthouses", "faq", "contact"]))
     return f'''<a class="sr-only skip" href="#main">{U["skip"]}</a>

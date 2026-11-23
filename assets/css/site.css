@@ -932,3 +932,11 @@ body.lock{overflow:hidden}
 .phero h1{text-shadow:0 2px 24px rgba(6,22,28,.45)}
 .phero .wrap > div:last-child{background:rgba(6,22,28,.34);backdrop-filter:blur(10px) saturate(140%);-webkit-backdrop-filter:blur(10px) saturate(140%);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:20px 22px;align-self:end}
 .phero .wrap > div:last-child .lead{font-size:1rem;margin-top:10px!important}
+/* tagline under the wordmark */
+.brand__tag{font-family:var(--serif);font-style:italic;font-size:.86rem;letter-spacing:.06em;color:var(--ink-2);margin-top:5px;line-height:1;white-space:nowrap}
+.brand__tag::before,.brand__tag::after{content:"~";margin:0 6px;color:var(--gold);font-style:normal;font-size:.8em}
+.drawer .brand__tag{color:rgba(255,255,255,.75)}
+.nav-row .wrap{height:96px}
+.hdr.solid .nav-row .wrap{height:84px}
+.brand__top{margin-bottom:5px}
+@media (max-width:760px){.nav-row .wrap{height:82px}.brand__tag{font-size:.74rem;margin-top:4px}}
