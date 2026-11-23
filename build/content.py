@@ -3,7 +3,7 @@
 Source: client concept documents (homepage concept + packages brochure)."""
 
 CONFIG = {
-    "site_url": "https://vistadesign-wq.github.io/velaa-getaways",   # GitHub Pages; change to https://www.velaagetaways.com when the domain is connected
+    "site_url": "https://vistadesign-wq.github.io/Velaa-Getaways",   # GitHub Pages; change to https://www.velaagetaways.com when the domain is connected
     "email": "sales@velaagetaways.com",
     "phone_display": "+960 997 2480",
     "phone_tel": "+9609972480",

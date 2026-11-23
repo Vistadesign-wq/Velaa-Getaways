@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vistadesign-wq.github.io/velaa-getaways/sitemap.xml
+Sitemap: https://vistadesign-wq.github.io/Velaa-Getaways/sitemap.xml
