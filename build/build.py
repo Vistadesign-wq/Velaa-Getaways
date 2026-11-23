@@ -598,7 +598,7 @@ def p_thoddoo(lang, r):
     sea = "sea ~28°C" if lang == "en" else "вода ~28°C"
     return f'''{page_hero(lang, r, "thoddoo-aerial", TH["eyebrow"], TH["title"], TH["lead"], "thoddoo")}
 <section class="sec"><div class="wrap split">
-  <div class="split__media rv"><div class="m1 img-rv">{img("papaya-farm", "Papaya farm on Thoddoo", "50vw")}</div><div class="m2">{img("turtle-reef", "", "25vw")}</div>
+  <div class="split__media rv"><div class="m1 img-rv">{img("papaya-lush", "Papaya growing on Thoddoo", "50vw")}</div><div class="m2">{img("turtle-reef", "", "25vw")}</div>
 </div>
   <div class="split__body rv d1">{label(TH["eyebrow"])}<h2>{TH["title"]}</h2>{"".join(f"<p>{p}</p>" for p in TH["p"])}<p class="note">{U["wildlife"]}</p></div>
 </div></section>

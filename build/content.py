@@ -474,7 +474,7 @@ THODDOO = {
 }
 
 RIGHT_FOR_YOU = [
-    {"icon": "leaf", "img": "papaya-farm",
+    {"icon": "leaf", "img": "papaya-lush",
      "en": ("You’re curious about island farming", "Explore the green side of the Maldives and try fruit grown on Thoddoo."),
      "ru": ("Вам интересно островное фермерство", "Откройте зелёную сторону Мальдив и попробуйте фрукты, выращенные на Тодду.")},
     {"icon": "beach", "img": "bikini-beach",
