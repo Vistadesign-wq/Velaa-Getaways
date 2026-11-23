@@ -840,7 +840,7 @@ def p_guesthouses(lang, r):
 def p_faq(lang, r):
     F = FAQ_HEAD[lang]; U = UI[lang]
     qa = "".join(f'<details class="qa"{" open" if i == 0 else ""}><summary><span class="why__i">{icon(q["icon"])}</span>{q[lang][0]}<span class="why__t"></span></summary><div class="qa__a">{q[lang][1]}</div></details>' for i, q in enumerate(FAQ))
-    return f'''{page_hero(lang, r, "faq-hero", F["eyebrow"], F["title"], F["lead"], "faq", full=True)}
+    return f'''{page_hero(lang, r, "vaau-magu", F["eyebrow"], F["title"], F["lead"], "faq", full=True)}
 <section class="sec"><div class="wrap faq">
   <aside class="faq__side rv"><div class="helpcard on-dark">{label(U["nav"]["contact"])}<h3>{F["aside_t"]}</h3><p>{F["aside_p"]}</p>
     <a class="btn btn--wa" href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener">{brand("whatsapp")} WhatsApp</a>
