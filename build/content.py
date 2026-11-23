@@ -149,7 +149,7 @@ INTRO = {
 
 # --------------------------------------------------------------- Packages
 PACKAGES = [
-    {"key": "essential", "num": "01", "img": "hammock-sunset", "low": "$600", "high": "$690",
+    {"key": "essential", "num": "01", "img": "thoddoo-beach", "low": "$600", "high": "$690",
      "icons": ["house", "boat", "turtle", "compass", "drone"],
      "en": {"name": "Essential Escape", "kicker": "The slow-island getaway",
             "lead": "The simple pleasure of waking up by the sea. Discover Thoddoo at your own pace, with one memorable ocean experience and plenty of time to make the island yours.",
@@ -185,7 +185,7 @@ PACKAGES = [
                      ("День 8", "Выезд и обратный трансфер")],
             "best": "Семьи, самостоятельные путешественники и те, кто впервые едет на Мальдивы и хочет спокойный, доступный отдых.",
             "note": "Сделайте поездку своей — добавьте любое впечатление из нашего списка."}},
-    {"key": "ocean", "num": "02", "img": "manta-snorkel", "low": "$875", "high": "$990", "featured": True,
+    {"key": "ocean", "num": "02", "img": "jetski", "low": "$875", "high": "$990", "featured": True,
      "icons": ["house", "boat", "turtle", "manta", "fishing", "dolphin", "wave"],
      "en": {"name": "Ocean Explorer", "kicker": "Adventures on the water",
             "lead": "For travellers who want more than a beach holiday. Dive into Thoddoo’s marine world with underwater adventures, guided excursions and afternoons to unwind.",
@@ -225,7 +225,7 @@ PACKAGES = [
                      ("День 7", "Свободный день и особый прощальный ужин"), ("День 8", "Отъезд")],
             "best": "Любители океана, пары и активные небольшие компании, которым нужен идеальный баланс впечатлений и отдыха.",
             "note": "Точные остановки морского сафари и встречи с обитателями зависят от состояния моря."}},
-    {"key": "signature", "num": "03", "img": "beach-dinner", "low": "$1,390", "high": "$1,550",
+    {"key": "signature", "num": "03", "img": "resort", "low": "$1,390", "high": "$1,550",
      "icons": ["coffee", "boat", "turtle", "manta", "dolphin", "wave", "resort", "dinner"],
      "en": {"name": "Signature Maldives", "kicker": "A more complete island experience",
             "lead": "A carefully arranged week of unforgettable moments: more time on the water, meals taken care of, a resort escape and special memories to take home.",

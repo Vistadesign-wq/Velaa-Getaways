@@ -145,8 +145,8 @@ T3 = {
 }
 XP_CAT = {"turtle": "U", "reef": "U", "halfday": "U", "fullday": "U", "whaleshark": "U", "fishing": "W", "dolphin": "W",
           "hopping": "W", "octopus": "I", "resort": "I", "more": "I", "photoshoot": "M", "drone": "M", "dinner": "M", "watersports": "M"}
-PKG_GALLERY = {"essential": ["hammock-sunset", "turtle", "palm-road-aerial"], "ocean": ["manta-snorkel", "dolphin", "jetski"],
-               "signature": ["beach-dinner", "resort", "sunset-fishing"]}
+PKG_GALLERY = {"essential": ["thoddoo-beach", "turtle", "palm-road-aerial"], "ocean": ["jetski", "manta-snorkel", "dolphin"],
+               "signature": ["resort", "beach-dinner", "sunset-fishing"]}
 PKG_GAL_CAP = {"en": {"turtle": "Turtle snorkelling", "palm-road": "Palm Road drone video", "dolphin": "Dolphin cruise", "jetski": "Jetski + drone video",
                       "resort": "Resort day visit", "sunset-fishing": "Sunset fishing"},
                "ru": {"turtle": "Снорклинг с черепахами", "palm-road": "Видео с дрона", "dolphin": "Дельфины", "jetski": "Гидроцикл + дрон",
@@ -396,13 +396,13 @@ def p_index(lang, r):
     pk = ""
     for i, p in enumerate(PACKAGES):
         P = p[lang]
-        hl = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["incl"][2:6])
+        hl = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["incl"][-4:])
         pk += f'''<article class="pk rv d{i + 1}{" pk--feat" if p.get("featured") else ""}">{img(p["img"], P["name"], "(max-width:1000px) 100vw, 33vw")}
   <div class="pk__top"><span class="pk__num">{p["num"]}</span><span class="pk__tag">{P["tag"]}</span></div>
   <div class="pk__body"><span class="pk__kick">{P["kicker"]}</span><h3>{P["name"]}</h3>
     <div class="pk__more"><div><ul>{hl}</ul></div></div>
     <div class="pk__price"><small>{U["from"]}</small><strong data-low="{p["low"]}" data-high="{p["high"]}">{p["low"]}</strong><span>{U["per_guest"]}</span></div>
-    <div class="pk__btns"><a class="btn btn--glass" href="{href(lang, "packages", r)}#{p["key"]}">{T["view"]}</a><a class="btn btn--gold" href="{href(lang, "contact", r)}?package={p["key"]}#enquiry">{T["book_now"]}</a></div>
+    <div class="pk__btns"><a class="btn btn--line" href="{href(lang, "packages", r)}#{p["key"]}">{T["view"]}</a><a class="btn btn--gold" href="{href(lang, "contact", r)}?package={p["key"]}#enquiry">{T["book_now"]}</a></div>
   </div></article>'''
     bento = "".join(xp_card(lang, r, e, "rv") for k in ["turtle", "whaleshark", "dolphin", "halfday", "fishing"] for e in EXPERIENCES if e["key"] == k)
     nums = "".join(f'<div class="rv d{i + 1}"><strong><span data-count="{a}">{a}</span><sup>{s}</sup></strong><span>{b}</span></div>' for i, (a, s, b) in enumerate(T["nums"]))
