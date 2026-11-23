@@ -1100,3 +1100,13 @@ div.pc{cursor:default}
 .tt__h .label,.tt__h h3,.tt__h p{grid-column:1}
 .tt__h .btn{grid-column:2;grid-row:1 / span 3;align-self:center}
 @media (max-width:700px){.tt__h{grid-template-columns:1fr}.tt__h .btn{grid-column:1;grid-row:auto}}
+
+/* ===== Header menu: every item on one straight line ===== */
+.menu{flex-wrap:nowrap;align-items:center}
+.menu li{flex:none}
+.menu a{white-space:nowrap;display:inline-block}
+.hdr__right{flex:none}
+.hdr__right .btn{white-space:nowrap}
+.brand{flex:none}
+@media (max-width:1440px){.menu{gap:clamp(14px,1.6vw,26px)}.menu a{letter-spacing:.13em}}
+@media (max-width:1320px){.menu{gap:14px}.menu a{font-size:.7rem;letter-spacing:.1em}.nav-row .wrap{gap:16px}.hdr__right{gap:10px}.hdr__right .btn{padding-left:16px;padding-right:16px;letter-spacing:.12em}}
