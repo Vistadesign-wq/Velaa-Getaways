@@ -340,6 +340,23 @@ def why_list(lang):
     return f'<div class="why__list rv d1">{out}</div>'
 
 
+
+WHY_IMG = ["couple-beach", "guesthouse-3", "turtle", "beach-dinner", "guesthouse-1"]
+
+
+def why_cards(lang):
+    out = ""
+    for i, w in enumerate(WHY):
+        t, small, text = w[lang]
+        im = WHY_IMG[i]
+        out += (f'<button class="wc rv d{i % 4 + 1}" data-modal data-img="{{R}}assets/img/{im}.webp" data-title="{E(t)}" data-kicker="{E(small)}" aria-haspopup="dialog">'
+                f'<span class="wc__ring"><span class="wc__img">{img(im, t, "200px")}</span><span class="xp__ico">{icon(w["icon"])}</span></span>'
+                f'<span class="wc__n">0{i + 1}</span><small>{small}</small><h3>{t}</h3>'
+                f'<span class="wc__more">{UI[lang]["discover"]} {icon("plus")}</span>'
+                f'<span class="xp__detail"><p>{text}</p></span></button>')
+    return f'<div class="wcs">{out}</div>'
+
+
 def strip(lang):
     T = T3[lang]
     figs = "".join(f'<figure>{img(n, c, "320px")}</figure>' for n, c in STRIP[lang])
@@ -458,11 +475,8 @@ def p_index(lang, r):
 
 <section class="sec">
   <div class="wrap">
-    {head(T["why_label"], T["why_title"], num="03")}
-    <div class="why">
-      <div class="why__media img-rv">{img("hammock-sunset", "", "45vw")}</div>
-      {why_list(lang)}
-    </div>
+    {head(T["why_label"], T["why_title"], WHY_HEAD[lang][2], center=True, num="03")}
+    {why_cards(lang)}
   </div>
 </section>
 
@@ -499,8 +513,8 @@ def p_about(lang, r):
 </section>
 <section class="sec sec--white">
   <div class="wrap">
-    {head(T["why_label"], T["why_title"])}
-    <div class="why"><div class="why__media img-rv">{img("palm-beach", "", "45vw")}</div>{why_list(lang)}</div>
+    {head(T["why_label"], T["why_title"], WHY_HEAD[lang][2], center=True)}
+    {why_cards(lang)}
   </div>
 </section>
 {testimonials(lang, r)}
