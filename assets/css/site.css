@@ -1109,3 +1109,12 @@ div.pc{cursor:default}
 .brand{flex:none}
 @media (max-width:1440px){.menu{gap:clamp(14px,1.6vw,26px)}.menu a{letter-spacing:.13em}}
 @media (max-width:1320px){.menu{gap:14px}.menu a{font-size:.7rem;letter-spacing:.1em}.nav-row .wrap{gap:16px}.hdr__right{gap:10px}.hdr__right .btn{padding-left:16px;padding-right:16px;letter-spacing:.12em}}
+
+/* ===== Reviews: warm sunset-sea background ===== */
+.tst-sec{position:relative;isolation:isolate;background:linear-gradient(180deg,rgba(14,72,84,.72) 0%,rgba(22,96,106,.55) 45%,rgba(120,84,60,.55) 100%),url(../img/sunset-sea-sm.webp) center/cover no-repeat;background-color:#2a6a72}
+@media (min-width:901px){.tst-sec{background:linear-gradient(180deg,rgba(14,72,84,.72) 0%,rgba(22,96,106,.55) 45%,rgba(120,84,60,.55) 100%),url(../img/sunset-sea.webp) center/cover no-repeat fixed;background-color:#2a6a72}}
+.tst-sec .rvw{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.28);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+.tst-sec .rvw blockquote{color:#fff}
+.tst-sec .rvw small{color:rgba(255,255,255,.8)}
+.tst-sec .tst__badge{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);backdrop-filter:blur(8px)}
+.tst-sec h2{text-shadow:0 2px 20px rgba(0,0,0,.25)}
