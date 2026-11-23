@@ -1090,9 +1090,8 @@ div.pc{cursor:default}
 
 /* ---------- Full-photo heroes on every page ---------- */
 @media (min-width:861px){
-.phero--full{min-height:0;aspect-ratio:16/9;max-height:none;background:var(--ink);width:min(100%,calc((100svh - var(--hh,138px)) * 16 / 9));margin:0 auto;border-radius:0 0 var(--r-lg) var(--r-lg)}
+.phero--full{min-height:0;aspect-ratio:16/9;max-height:none;background:var(--ink);width:100%;margin:0;border-radius:0}
 .phero--full .hero__shade{background:linear-gradient(180deg,rgba(11,47,57,.35) 0%,rgba(11,47,57,0) 20%,rgba(11,47,57,0) 55%,rgba(11,47,57,.72) 100%)}
-.phero--full .wrap{padding-left:clamp(28px,4vw,56px);padding-right:clamp(28px,4vw,56px)}
 }
 
 .tt{grid-template-columns:1fr}
