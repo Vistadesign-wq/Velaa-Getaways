@@ -8,7 +8,7 @@ CONFIG = {
     "phone_display": "+960 997 2480",
     "phone_tel": "+9609972480",
     "whatsapp": "9609972480",
-    "instagram": "",          # e.g. "https://www.instagram.com/velaagetaways" — leave empty to hide
+    "instagram": "https://www.instagram.com/velaagetaways/",          # e.g. "https://www.instagram.com/velaagetaways" — leave empty to hide
     "facebook": "",
     "telegram": "",           # e.g. "https://t.me/velaagetaways"
     "tiktok": "",

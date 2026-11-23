@@ -55,7 +55,7 @@ EMBLEM = '<span class="emblem"><img src="{R}assets/brand/emblem-256.png" alt="" 
 # ------------------------------------------------------------------ extra copy for v3 layouts
 T3 = {
     "en": {
-        "loc": "Thoddoo · Alif Alif Atoll · Maldives", "enquire": "Enquire",
+        "loc": "Thoddoo · Alif Alif Atoll · Maldives", "enquire": "Plan your trip",
         "explore": "Explore packages", "watch": "Plan my trip",
         "slides": ["Sandbank · North Ari Atoll", "Sandbar · Alif Alif", "Arrival by speedboat"],
         "book": {"arr": "Arrival", "dep": "Departure", "guests": "Guests", "pkg": "Package", "any": "Any package", "go": "Check availability"},
@@ -99,7 +99,7 @@ T3 = {
         "done_b": "Back to home", "season_low": "April–October", "season_high": "November–March",
     },
     "ru": {
-        "loc": "Тодду · атолл Алиф Алиф · Мальдивы", "enquire": "Заявка",
+        "loc": "Тодду · атолл Алиф Алиф · Мальдивы", "enquire": "Спланировать поездку",
         "explore": "Смотреть туры", "watch": "Спланировать поездку",
         "slides": ["Песчаная отмель · Северный Ари", "Песчаная коса · Алиф Алиф", "Прибытие на скоростном катере"],
         "book": {"arr": "Прилёт", "dep": "Вылет", "guests": "Гостей", "pkg": "Тур", "any": "Любой тур", "go": "Проверить даты"},
@@ -179,8 +179,7 @@ def header(lang, page, r):
         if C.get(k):
             mini += f'<a href="{C[k]}" target="_blank" rel="noopener" aria-label="{k}">{brand(k)}</a>'
     brand_html = (f'<a class="brand" href="{href(lang, "index", r)}" aria-label="Velaa Getaways">{EMBLEM}'
-                  f'<span class="brand__txt"><small class="brand__top">{"Thoddoo · Maldives" if lang == "en" else "Тодду · Мальдивы"}</small>'
-                  f'<span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span><span class="brand__tag">{U["tagline"]}</span></span></a>')
+                  f'<span class="brand__txt"><span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span><span class="brand__tag">{U["tagline"]}</span></span></a>')
     dl = "".join(f'<a href="{href(lang, p, r)}"><small>0{i + 1}</small>{U["nav"][p]}</a>'
                  for i, p in enumerate(["index", "about", "packages", "thoddoo", "experiences", "guesthouses", "faq", "contact"]))
     return f'''<a class="sr-only skip" href="#main">{U["skip"]}</a>
@@ -235,7 +234,7 @@ def footer(lang, page, r):
     <div class="ftr__grid">
       <div class="ftr__brand">
         <a class="ftr__mark" href="{href(lang, "index", r)}" aria-label="Velaa Getaways">{EMBLEM}
-          <span class="brand__txt"><small class="brand__top">{"Thoddoo · Maldives" if lang == "en" else "Тодду · Мальдивы"}</small><span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span></span></a>
+          <span class="brand__txt"><span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span></span></a>
         <p class="ftr__tag">“{tag}”</p>
         <p>{U["footer_about"]}</p>
         {socials(light=True)}
@@ -307,27 +306,19 @@ def xp_card(lang, r, item, extra_cls=""):
 
 
 def testimonials(lang, r):
-    T = T3[lang]; U = UI[lang]
-    quotes = faces = ""
-    for i, rv in enumerate(REVIEWS):
+    T = T3[lang]
+    cards = ""
+    for rv in REVIEWS:
         name, place, text = rv[lang]
-        on = " on" if i == 0 else ""
-        quotes += (f'<figure class="tq{on}" data-i="{i}"><blockquote>{text}</blockquote>'
-                   f'<figcaption class="tq__who"><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="{E(name)}" width="48" height="48" loading="lazy">'
-                   f'<div><strong>{name}</strong><span><i class="flag flag--{rv["flag"]}"></i>{place} · {rv["pkg"]}</span></div></figcaption></figure>')
-        faces += f'<button class="face{on}" data-i="{i}" aria-label="{E(name)}"><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="" width="40" height="40" loading="lazy"></button>'
+        cards += (f'<figure class="rvw">{stars()}<blockquote>{text}</blockquote>'
+                  f'<figcaption><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="{E(name)}" width="56" height="56" loading="lazy">'
+                  f'<span><strong>{name}</strong><small><i class="flag flag--{rv["flag"]}"></i>{place} · {rv["pkg"]}</small></span></figcaption></figure>')
     return f'''<!-- DRAFT REVIEWS: replace with genuine guest reviews before launch -->
 <section class="sec--s sec--ink on-dark tst-sec" aria-labelledby="t-title">
-  <div class="wrap tst" data-tst>
+  <div class="wrap">
     <div class="tst__head rv">{label(T["t_label"])}<h2 id="t-title">{T["t_title"]}</h2>
       <span class="tst__badge"><b>5.0</b>{stars()}<small>{T["t_sub"]}</small></span></div>
-    <div class="tst__body rv d1">
-      <div class="tst__stage">{quotes}</div>
-      <div class="rail"><button class="navb" data-prev aria-label="{U["prev"]}">{icon("arrowl")}</button>
-        <div class="faces">{faces}</div>
-        <button class="navb" data-next aria-label="{U["next"]}">{icon("arrow")}</button></div>
-      <div class="tbar"><span></span></div>
-    </div>
+    {carousel(lang, cards, 2, "car--reviews", auto=True)}
   </div>
 </section>'''
 
@@ -382,6 +373,194 @@ def strip(lang):
             f'<div class="strip"><div class="strip__track">{figs}{figs.replace("<figure>", "<figure aria-hidden=\"true\">")}</div></div></section>')
 
 
+# ------------------------------------------------------------------ carousel (client request: carousel style everywhere)
+CAR_UI = {"en": ("Previous", "Next"), "ru": ("Назад", "Вперёд")}
+
+
+def carousel(lang, items, per=3, cls="", auto=False):
+    p, n = CAR_UI[lang]
+    return (f'<div class="car {cls}" data-car{" data-auto" if auto else ""} style="--per:{per}">'
+            f'<div class="car__track" tabindex="0">{items}</div>'
+            f'<div class="car__nav"><button class="navb" data-cprev aria-label="{p}">{icon("arrowl")}</button>'
+            f'<div class="car__dots"></div><button class="navb" data-cnext aria-label="{n}">{icon("arrow")}</button></div></div>')
+
+
+def pcard(lang, image, ic, title, short, detail="", kicker="", extra=""):
+    """Photo card: picture + round icon badge + title + short text; opens a detail modal when it has detail."""
+    more = f'<span class="lm__more">{UI[lang]["discover"]} {icon("arrow")}</span>' if detail else ""
+    body = (f'<figure>{img(image, title, "(max-width:640px) 86vw, (max-width:1000px) 45vw, 30vw")}</figure>'
+            f'<span class="pc__ic">{icon(ic)}</span>'
+            f'<span class="pc__b">{f"<small>{kicker}</small>" if kicker else ""}<h3>{title}</h3><p>{short}</p>{extra}{more}</span>')
+    if detail:
+        return (f'<button class="pc" data-modal data-img="{{R}}assets/img/{image}.webp" data-title="{E(title)}" data-kicker="{E(kicker)}" aria-haspopup="dialog">'
+                f'{body}<span class="xp__detail"><p>{detail}</p></span></button>')
+    return f'<div class="pc">{body}</div>'
+
+
+INTRO_CARDS = [
+    ("beach-walk", "heart",
+     {"en": ("Hosted by locals", "Dhaain was born on Thoddoo — see the island through the people who call it home.",
+             "Velaa is run by Dhaain, who grew up on Thoddoo, and Julia, who fell in love with it. We meet you, look after you and share the places only locals know — the quiet beach at sunrise, the best seafood dinner, the family farm with the sweetest papaya."),
+      "ru": ("Местные хозяева", "Дхаин родился на Тодду — вы увидите остров глазами тех, для кого он дом.",
+             "Velaa ведут Дхаин, выросший на Тодду, и Юлия, которая влюбилась в этот остров. Мы встречаем вас, заботимся о вас и показываем места, которые знают только местные: тихий пляж на рассвете, лучший ужин из морепродуктов, семейную ферму с самой сладкой папайей.")}),
+    ("turtle-reef", "turtle",
+     {"en": ("The reef at your doorstep", "Step off the beach into clear water where turtles and reef fish live.",
+             "Thoddoo’s house reef lies just off the beach. Green and hawksbill turtles feed here most mornings, along with parrotfish, reef sharks and rays. Bring a mask — or join our guided turtle snorkel."),
+      "ru": ("Риф у порога", "С пляжа — сразу в прозрачную воду, где живут черепахи и рифовые рыбы.",
+             "Домашний риф Тодду начинается прямо у пляжа. По утрам здесь кормятся зелёные черепахи и черепахи-бисса, рыбы-попугаи, рифовые акулы и скаты. Возьмите маску — или присоединяйтесь к нашему снорклингу с черепахами.")}),
+    ("papaya-lush", "leaf",
+     {"en": ("The garden island", "Papaya, watermelon and bananas grow beneath the palms.",
+             "Thoddoo is famous across the Maldives for its farms. Fresh papaya, watermelon, bananas and passion fruit are grown here and shipped to Malé and the resorts — and you taste them straight from the field at breakfast."),
+      "ru": ("Остров-сад", "Под пальмами растут папайя, арбузы и бананы.",
+             "Тодду знаменит на всех Мальдивах своими фермами. Здесь выращивают папайю, арбузы, бананы и маракуйю, которые отправляют в Мале и на курорты, — а вы пробуете их прямо с грядки за завтраком.")}),
+    ("thoddoo-beach", "beach",
+     {"en": ("White-sand beaches", "Two bikini beaches with soft sand and turquoise water.",
+             "Thoddoo has two designated bikini beaches where you can swim and sunbathe freely, with palms for shade, a coral reef close to shore and some of the most beautiful sunsets in Ari Atoll."),
+      "ru": ("Белоснежные пляжи", "Два бикини-пляжа с мягким песком и бирюзовой водой.",
+             "На Тодду два бикини-пляжа, где можно свободно купаться и загорать: пальмы для тени, коралловый риф у самого берега и одни из самых красивых закатов атолла Ари.")}),
+    ("seaplane", "plane",
+     {"en": ("Easy to reach", "A shared speedboat from the airport — or the new seaplane in about 20 minutes.",
+             "Thoddoo lies in North Ari Atoll, about 60–90 minutes from Velana International Airport by shared speedboat. Since February 2026 a scheduled seaplane also flies in about 20 minutes. We book your transfer and meet you on arrival."),
+      "ru": ("Легко добраться", "Групповой катер из аэропорта — или новый гидросамолёт примерно за 20 минут.",
+             "Тодду находится в атолле Северный Ари — 60–90 минут от аэропорта Велана на групповом скоростном катере. С февраля 2026 года сюда также летает гидросамолёт — около 20 минут. Мы бронируем трансфер и встречаем вас.")}),
+    ("hammock-sunset", "tag",
+     {"en": ("Honest, clear prices", "All taxes included — every inclusion listed before you book.",
+             "Our packages show the full price per person with all Maldivian taxes included. You know exactly what is in your week before you pay — no hidden fees, no surprises on arrival."),
+      "ru": ("Честные цены", "Все налоги включены — состав тура известен до бронирования.",
+             "В наших турах указана полная цена за человека со всеми мальдивскими налогами. Вы точно знаете, что входит в вашу неделю, ещё до оплаты — без скрытых сборов и сюрпризов.")}),
+]
+INTRO_FACTS = {"en": [("pin", "North Ari Atoll"), ("boat", "60–90 min by speedboat"), ("plane", "20 min by seaplane"), ("sun", "28°C sea all year")],
+               "ru": [("pin", "Атолл Северный Ари"), ("boat", "60–90 мин на катере"), ("plane", "20 мин на гидросамолёте"), ("sun", "Вода 28°C круглый год")]}
+INTRO_LEAD = {"en": "Thoddoo is a small, green, real Maldivian island — farms and palm roads in the middle, white sand and coral reef all around. Here is what makes a week here special.",
+              "ru": "Тодду — небольшой зелёный настоящий мальдивский остров: фермы и пальмовые аллеи в центре, белый песок и коралловый риф вокруг. Вот что делает неделю здесь особенной."}
+
+
+def intro_cards(lang):
+    return "".join(pcard(lang, im, ic, d[lang][0], d[lang][1], d[lang][2], T3[lang]["intro_label"]) for im, ic, d in INTRO_CARDS)
+
+
+RESTAURANTS = [
+    {"img": "food-seafood-platter", "icon": "fish", "ig": "https://www.instagram.com/breezethoddoo/",
+     "en": ("Breeze", "Seafood · sunset views", "Fresh seafood, beautiful moments and island atmosphere.",
+            "A favourite for seafood platters, the grilled catch of the day and relaxed dinners by the sea as the sun goes down. Groups of five or more can pre-order a seafood feast — tell us and we arrange it."),
+     "ru": ("Breeze", "Морепродукты · закаты", "Свежие морепродукты, красивые моменты и островная атмосфера.",
+            "Любимое место для сетов из морепродуктов, улова дня на гриле и спокойных ужинов у моря на закате. Для групп от пяти человек можно заранее заказать морской пир — скажите нам, и мы всё организуем.")},
+    {"img": "food-seafood-plate", "icon": "dinner",
+     "en": ("Fishka", "Café · seafood", "Cosy, clean and loved for its grilled shrimps.",
+            "A cosy, spotless café with a short, well-made menu: grilled shrimps, seafood fried rice, Maldivian rice and a fresh tuna tartare. Good coffee and friendly service."),
+     "ru": ("Fishka", "Кафе · морепродукты", "Уютно, чисто и очень вкусные креветки на гриле.",
+            "Уютное и чистое кафе с небольшим продуманным меню: креветки на гриле, жареный рис с морепродуктами, мальдивский рис и свежий тартар из тунца. Хороший кофе и приветливый сервис.")},
+    {"img": "food-tuna-steak", "icon": "anchor",
+     "en": ("Black Anchor", "Seafood · Mediterranean", "Tuna steaks, grilled reef fish and generous portions.",
+            "Known for perfectly seared tuna steak, grilled reef fish and big Mediterranean-style plates. There is a kids’ menu, and the fresh mango drinks are a must."),
+     "ru": ("Black Anchor", "Морепродукты · средиземноморская", "Стейки из тунца, рифовая рыба на гриле и большие порции.",
+            "Славится идеально обжаренным стейком из тунца, рифовой рыбой на гриле и щедрыми средиземноморскими блюдами. Есть детское меню, а свежие манговые напитки — обязательно попробуйте.")},
+    {"img": "food-curry-spread", "icon": "dinner",
+     "en": ("Sun Sky", "Maldivian · Indian", "Fresh BBQ dinners and family-friendly prices.",
+            "Home-style Maldivian and Indian cooking: fish curries, rice and roshi, plus a fresh barbecue in the evening. Relaxed, good value and popular with families."),
+     "ru": ("Sun Sky", "Мальдивская · индийская", "Свежее барбекю на ужин и доступные цены.",
+            "Домашняя мальдивская и индийская кухня: рыбные карри, рис и роши, а вечером — свежее барбекю. Спокойно, недорого и любимо семьями.")},
+    {"img": "food-smoothies", "icon": "coffee",
+     "en": ("Food Land", "Bakery · café", "Own bakery, coffee, cakes, juices and smoothies.",
+            "Their own bakery means fresh bread and cakes every day, with good coffee, big portions and fresh fruit juices and smoothies made from Thoddoo’s farms."),
+     "ru": ("Food Land", "Пекарня · кафе", "Своя пекарня, кофе, торты, соки и смузи.",
+            "Собственная пекарня — свежий хлеб и выпечка каждый день, хороший кофе, большие порции, свежевыжатые соки и смузи из фруктов с ферм Тодду.")},
+    {"img": "food-curry-roti", "icon": "leaf",
+     "en": ("Taste real Maldivian food", "Local cuisine", "Garudhiya, mas huni with roshi and hedhikaa.",
+            "Start the day like a local with mas huni — tuna, coconut and onion with warm roshi flatbread. Try garudhiya, the clear fish broth eaten with rice, lime and chilli, and hedhikaa, the island’s tea-time snacks. Sun Sky serves Maldivian curries, and many guesthouse hosts will cook a home-style Maldivian dinner on request — just ask us."),
+     "ru": ("Настоящая мальдивская кухня", "Местная кухня", "Гарудия, мас хуни с роши и хедика.",
+            "Начните день по-местному с мас хуни — тунец, кокос и лук с тёплой лепёшкой роши. Попробуйте гарудию — прозрачный рыбный бульон с рисом, лаймом и чили, и хедику — островные закуски к чаю. В Sun Sky готовят мальдивские карри, а многие хозяева гестхаусов по просьбе приготовят домашний мальдивский ужин — просто скажите нам.")},
+]
+REST_HEAD = {"en": ("Where to eat", "Thoddoo’s <em>favourite tables</em>", "Fresh seafood, island fruit and real Maldivian cooking — our guests’ favourite places to eat.",
+                    "Photos show typical dishes, not the restaurants’ own. Opening times vary — ask us for today’s recommendations."),
+             "ru": ("Где поесть", "Любимые <em>рестораны Тодду</em>", "Свежие морепродукты, островные фрукты и настоящая мальдивская кухня — любимые места наших гостей.",
+                    "На фото — типичные блюда, а не фотографии ресторанов. Часы работы меняются — спросите нас о рекомендациях на сегодня.")}
+
+
+def restaurants(lang):
+    h = REST_HEAD[lang]
+    cards = ""
+    for x in RESTAURANTS:
+        name, kick, short, det = x[lang]
+        if x.get("ig"):
+            det += f' <a href="{x["ig"]}" target="_blank" rel="noopener">Instagram @breezethoddoo</a>'
+        cards += pcard(lang, x["img"], x["icon"], name, short, det, kick)
+    return (f'<section class="sec" id="restaurants"><div class="wrap">{head(h[0], h[1], h[2])}'
+            f'{carousel(lang, cards, 3, "car--cards")}<p class="note car__note">{h[3]}</p></div></section>')
+
+
+TRAVEL = {
+    "en": {"label": "Getting to Thoddoo", "title": "Three ways to <em>reach the island</em>",
+           "lead": "Thoddoo lies in North Ari Atoll, west of Malé. Choose the journey that suits your time and budget — we book it and meet you on arrival.",
+           "modes": [("seaplane", "plane", "Seaplane", "New · fastest", "~20 minutes",
+                      [("Operator", "Maldivian (national airline)"), ("Departs", "Seaplane terminal, Velana Airport"), ("Arrives", "Thoddoo seaplane platform — a short ride to your guesthouse")]),
+                     ("harbour-arrival", "boat", "Shared speedboat", "Most popular", "60–90 minutes",
+                      [("Departs", "Airport jetty, opposite arrivals"), ("When", "Daily, usually in the afternoon"), ("Arrives", "Thoddoo harbour")]),
+                     ("lagoon-boat", "anchor", "Public ferry", "Budget", "4–5 hours",
+                      [("Departs", "Malé ferry terminal"), ("When", "Set days of the week"), ("Good for", "Slow travel and tight budgets")])],
+           "notes": ["", "Speedboat times change with the season — we confirm your boat when you book.", "Depends on sea conditions; we help with connections from the airport."],
+           "tt_label": "Seaplane", "tt_title": "Timetable &amp; fares",
+           "tt": [("clock", "Schedule", ["Thursdays &amp; Saturdays", "Malé → Thoddoo · 15:45–16:15", "Thoddoo → Malé · 16:30–17:00"]),
+                  ("money", "One-way fare", ["Foreign guests · US$131", "Work-permit holders · MVR 866", "Maldivian locals · MVR 799"]),
+                  ("passport", "Baggage", ["Tourists · 20 kg", "Residents · 15 kg", "Excess from US$3.5 per kg, subject to availability"])],
+           "tt_note": "Fares include taxes and are non-refundable. Schedules can change — we confirm the latest timetable when we book your seats.",
+           "cta": "Arrange my transfer"},
+    "ru": {"label": "Как добраться до Тодду", "title": "Три способа <em>добраться до острова</em>",
+           "lead": "Тодду находится в атолле Северный Ари, к западу от Мале. Выберите путь по времени и бюджету — мы всё забронируем и встретим вас.",
+           "modes": [("seaplane", "plane", "Гидросамолёт", "Новинка · быстрее всего", "~20 минут",
+                      [("Перевозчик", "Maldivian (национальная авиакомпания)"), ("Отправление", "Терминал гидросамолётов, аэропорт Велана"), ("Прибытие", "Платформа гидросамолётов Тодду — рядом с гестхаусом")]),
+                     ("harbour-arrival", "boat", "Групповой скоростной катер", "Самый популярный", "60–90 минут",
+                      [("Отправление", "Причал аэропорта напротив зоны прилёта"), ("Когда", "Ежедневно, обычно после обеда"), ("Прибытие", "Гавань Тодду")]),
+                     ("lagoon-boat", "anchor", "Общественный паром", "Бюджетно", "4–5 часов",
+                      [("Отправление", "Паромный терминал Мале"), ("Когда", "По определённым дням недели"), ("Подходит", "Для неспешных путешествий и экономии")])],
+           "notes": ["", "Расписание катеров меняется по сезону — мы подтверждаем рейс при бронировании.", "Зависит от погоды на море; мы поможем со стыковкой из аэропорта."],
+           "tt_label": "Гидросамолёт", "tt_title": "Расписание и тарифы",
+           "tt": [("clock", "Расписание", ["По четвергам и субботам", "Мале → Тодду · 15:45–16:15", "Тодду → Мале · 16:30–17:00"]),
+                  ("money", "Билет в одну сторону", ["Иностранные гости · 131 $", "С рабочей визой · 866 MVR", "Граждане Мальдив · 799 MVR"]),
+                  ("passport", "Багаж", ["Туристы · 20 кг", "Резиденты · 15 кг", "Сверх нормы — от 3,5 $ за кг, при наличии места"])],
+           "tt_note": "Тарифы включают налоги и не возвращаются. Расписание может меняться — мы уточняем актуальное время при бронировании мест.",
+           "cta": "Заказать трансфер"},
+}
+
+
+def getting_there(lang, r):
+    T = TRAVEL[lang]
+    cards = ""
+    for i, (im, ic, name, tag, dur, rows) in enumerate(T["modes"]):
+        dl = "".join(f'<div><dt>{a}</dt><dd>{b}</dd></div>' for a, b in rows)
+        note = f'<p class="tv__note">{T["notes"][i]}</p>' if T["notes"][i] else ""
+        cards += (f'<article class="tv{" tv--new" if i == 0 else ""}"><figure>{img(im, name, "(max-width:640px) 86vw, 30vw")}<span class="tv__tag">{tag}</span></figure>'
+                  f'<div class="tv__b"><span class="pc__ic">{icon(ic)}</span><h3>{name}</h3><p class="tv__dur">{icon("clock")}{dur}</p><dl>{dl}</dl>{note}</div></article>')
+    tt = "".join(f'<div class="tt__c"><span class="why__i">{icon(ic)}</span><h4>{h}</h4><ul>{"".join(f"<li>{x}</li>" for x in xs)}</ul></div>' for ic, h, xs in T["tt"])
+    return f"""<section class="sec sec--white" id="getting-here"><div class="wrap">
+  {head(T["label"], T["title"], T["lead"])}
+  {carousel(lang, cards, 3, "car--cards car--travel")}
+  <div class="tt rv"><div class="tt__h">{label(T["tt_label"])}<h3>{T["tt_title"]}</h3><p>{T["tt_note"]}</p>
+    <a class="btn btn--gold" href="{href(lang, "contact", r)}#enquiry">{T["cta"]} {icon("arrow")}</a></div><div class="tt__g">{tt}</div></div>
+</div></section>"""
+
+
+STAY_GAL = ["stay-room-white", "guesthouse-6", "stay-room-wood", "guesthouse-5", "stay-garden", "guesthouse-1",
+            "stay-breakfast", "guesthouse-7", "stay-room-classic", "guesthouse-4", "stay-garden-seat"]
+STAY_CARDS = [
+    ("stay-room-classic", "bed", {"en": ("Comfort", "Calm rooms, good beds and air-conditioning.", "Every room we book has air-conditioning, a private bathroom with hot water, good beds and Wi-Fi — so you rest well between island days."),
+                                   "ru": ("Комфорт", "Спокойные номера, удобные кровати и кондиционер.", "В каждом номере, который мы бронируем, — кондиционер, собственная ванная с горячей водой, удобные кровати и Wi-Fi, чтобы вы хорошо отдыхали между островными днями.")}),
+    ("stay-room-wood", "sparkle", {"en": ("Cleanliness", "We visit and check every guesthouse we work with.", "We personally visit every guesthouse we partner with and keep checking — fresh linen, spotless bathrooms and daily housekeeping are a must for us."),
+                                   "ru": ("Чистота", "Мы лично проверяем каждый гестхаус.", "Мы лично посещаем каждый гестхаус-партнёр и регулярно проверяем его: свежее бельё, чистые ванные и ежедневная уборка — обязательны.")}),
+    ("stay-breakfast", "coffee", {"en": ("Breakfast included", "Island fruit, eggs, fresh bread and good coffee.", "Breakfast is included in all our packages — tropical fruit from Thoddoo’s farms, eggs your way, fresh bread, Maldivian mas huni on request and good coffee."),
+                                  "ru": ("Завтрак включён", "Островные фрукты, яйца, свежий хлеб и кофе.", "Завтрак входит во все наши туры: тропические фрукты с ферм Тодду, яйца на ваш вкус, свежий хлеб, мальдивский мас хуни по желанию и хороший кофе.")}),
+    ("stay-garden", "palm", {"en": ("Gardens &amp; terraces", "Shady tropical gardens to relax in after the beach.", "Our partner guesthouses have shaded gardens, terraces and sandy courtyards — perfect for a slow afternoon with a fresh coconut."),
+                             "ru": ("Сады и террасы", "Тенистые тропические сады для отдыха после пляжа.", "У наших гестхаусов-партнёров тенистые сады, террасы и песчаные дворики — идеально для неспешного дня со свежим кокосом.")}),
+    ("guesthouse-6", "heart", {"en": ("Island hospitality", "Family-run hosts who treat you like a guest of the house.", "Thoddoo’s guesthouses are run by local families. Expect warm welcomes, local tips and help with anything you need during your stay."),
+                               "ru": ("Гостеприимство", "Семейные хозяева, которые принимают вас как дорогих гостей.", "Гестхаусы Тодду ведут местные семьи. Вас ждут тёплый приём, советы от местных и помощь во всём, что нужно во время отдыха.")}),
+    ("bikini-beach", "beach", {"en": ("Close to the beach", "A short walk to the bikini beach and the reef.", "Everything on Thoddoo is close: from your guesthouse it is a short walk or bicycle ride to the bikini beach, the house reef and the island’s cafés."),
+                               "ru": ("Рядом с пляжем", "Несколько минут пешком до бикини-пляжа и рифа.", "На Тодду всё рядом: от гестхауса — короткая прогулка или поездка на велосипеде до бикини-пляжа, домашнего рифа и кафе острова.")}),
+]
+STAY_TXT = {"en": ("Why our stays", "Comfort, care &amp; <em>island warmth</em>", "Rooms &amp; spaces", "Rooms, terraces &amp; <em>island breakfasts</em>",
+                   "Photos show the style of rooms and spaces we book; your exact guesthouse and room are confirmed with your package."),
+            "ru": ("Почему у нас уютно", "Комфорт, забота и <em>островное тепло</em>", "Номера и пространства", "Номера, террасы и <em>островные завтраки</em>",
+                   "На фото — стиль номеров и пространств, которые мы бронируем; конкретный гестхаус и номер подтверждаются вместе с туром.")}
+
 
 LANDMARKS = [
     {"key": "vaau", "icon": "palm", "img": "vaau-magu",
@@ -390,12 +569,24 @@ LANDMARKS = [
     {"key": "mosque", "icon": "compass", "img": ("aisha-mosque" if os.path.exists(os.path.join(IMG, "aisha-mosque.webp")) else "mosque"),
      "en": ("Aisha Mosque", "Masjidhul Aisha stands in the heart of Thoddoo on Valhu Magu. Opened in 2016, it is one of the largest mosques in Ari Atoll and a striking piece of island architecture. Visitors are welcome to admire it from outside — please dress modestly (shoulders and knees covered) and be mindful of prayer times."),
      "ru": ("Мечеть Аиша", "Мечеть Масджидул Аиша стоит в самом центре Тодду, на улице Валху Магу. Открытая в 2016 году, она — одна из крупнейших мечетей атолла Ари и яркий образец островной архитектуры. Гости могут полюбоваться ею снаружи — пожалуйста, одевайтесь скромно (плечи и колени закрыты) и уважайте время молитвы.")},
-    {"key": "farms", "icon": "leaf", "img": "thoddoo-aerial",
-     "en": ("Fruit farms", "Thoddoo is one of the Maldives’ agricultural islands. From above you see its patchwork of fields, with papaya, watermelon and other local produce growing beneath the palms."),
-     "ru": ("Фруктовые фермы", "Тодду — один из сельскохозяйственных островов Мальдив. Сверху видно лоскутное одеяло полей: под пальмами растут папайя, арбузы и другие местные продукты.")},
+    {"key": "farms", "icon": "leaf", "img": "papaya-farm",
+     "en": ("Fruit farms", "Thoddoo is one of the Maldives’ farming islands: papaya, watermelon, bananas and passion fruit grow in neat fields beneath the palms. Among the fields lie the remains of an ancient Buddhist temple — a reminder of the island’s long history."),
+     "ru": ("Фруктовые фермы", "Тодду — один из сельскохозяйственных островов Мальдив: на аккуратных полях под пальмами растут папайя, арбузы, бананы и маракуйя. Среди полей сохранились руины древнего буддийского храма — напоминание о долгой истории острова.")},
     {"key": "beach", "icon": "beach", "img": "bikini-beach",
      "en": ("Bikini beaches", "Two designated bikini beaches with soft white sand, palms and clear turquoise water — and a coral reef close to shore for snorkelling."),
      "ru": ("Бикини-пляжи", "Два бикини-пляжа с мягким белым песком, пальмами и прозрачной бирюзовой водой — а коралловый риф совсем рядом с берегом.")},
+    {"key": "reef", "icon": "turtle", "img": "turtle-reef",
+     "en": ("House reef &amp; turtles", "Thoddoo’s reef starts a few metres from the beach. Turtles feed here most mornings — swim out with a mask, or join our guided snorkel for the best spots."),
+     "ru": ("Домашний риф и черепахи", "Риф Тодду начинается в нескольких метрах от пляжа. По утрам здесь кормятся черепахи — возьмите маску или присоединяйтесь к снорклингу с гидом.")},
+    {"key": "swing", "icon": "sun", "img": "beach-swing",
+     "en": ("Beach swings", "Palm-tree swings over the sand are Thoddoo’s favourite photo spot — come at golden hour for the softest light."),
+     "ru": ("Качели на пляже", "Качели на пальмах над песком — любимое фото-место Тодду. Приходите в золотой час, когда свет самый мягкий.")},
+    {"key": "cycle", "icon": "bicycle", "img": "cycling",
+     "en": ("Cycling the farm roads", "There are almost no cars on Thoddoo. Rent a bicycle and ride the quiet sandy roads between farms, palms and beaches — the whole island in an afternoon."),
+     "ru": ("На велосипеде по фермам", "Машин на Тодду почти нет. Возьмите велосипед и катайтесь по тихим песчаным дорогам между фермами, пальмами и пляжами — весь остров за полдня.")},
+    {"key": "sandbank", "icon": "island", "img": "hero-sandbank",
+     "en": ("Sandbank day trips", "A short boat ride takes you to a sandbank in the middle of the lagoon — pure white sand, turquoise water and nobody else around."),
+     "ru": ("Поездка на песчаную отмель", "Короткая прогулка на лодке — и вы на песчаной отмели посреди лагуны: белый песок, бирюзовая вода и никого вокруг.")},
     {"key": "harbour", "icon": "boat", "img": "harbour-arrival",
      "en": ("Arrival by speedboat", "Your holiday begins on the water: the shared speedboat from Malé glides across the atoll to Thoddoo, where your island stay begins."),
      "ru": ("Прибытие на катере", "Отпуск начинается на воде: групповой скоростной катер из Мале скользит по атоллу к Тодду, где начинается ваш островной отдых.")},
@@ -407,16 +598,15 @@ LM_HEAD = {"en": ("Island highlights", "The places that make <em>Thoddoo</em>", 
            "ru": ("Достопримечательности", "Места, которые делают <em>Тодду</em> особенным", "Нажмите, чтобы узнать больше.")}
 
 
-def landmarks(lang):
-    out = ""
-    for i, l in enumerate(LANDMARKS):
-        t, d = l[lang]
-        out += (f'<button class="lm rv d{i % 3 + 1}" data-modal data-img="{{R}}assets/img/{l["img"]}.webp" data-title="{E(t)}" data-kicker="{E(LM_HEAD[lang][0])}" aria-haspopup="dialog">'
-                f'<figure>{img(l["img"], t, "(max-width:760px) 100vw, 33vw")}</figure><span class="xp__ico">{icon(l["icon"])}</span>'
-                f'<span class="lm__b"><h3>{t}</h3><span class="lm__more">{UI[lang]["discover"]} {icon("arrow")}</span></span>'
-                f'<span class="xp__detail"><p>{d}</p></span></button>')
+def landmarks(lang, white=True):
     h = LM_HEAD[lang]
-    return f'<section class="sec sec--white"><div class="wrap">{head(h[0], h[1], h[2])}<div class="lm-grid">{out}</div></div></section>'
+    cards = ""
+    for l in LANDMARKS:
+        t, d = l[lang]
+        short = d.split(". ")[0].split(" — ")[0].rstrip(".") + "."
+        cards += pcard(lang, l["img"], l["icon"], t, short, d, h[0])
+    return (f'<section class="sec{" sec--white" if white else ""}" id="highlights"><div class="wrap">{head(h[0], h[1], h[2])}'
+            f'{carousel(lang, cards, 3, "car--cards")}</div></section>')
 
 # ================================================================== pages
 def p_index(lang, r):
@@ -429,7 +619,7 @@ def p_index(lang, r):
     gopts = "".join(f"<option{' selected' if n == 2 else ''}>{n}</option>" for n in range(1, 11))
     stmt = T["statement"].replace("{I1}", img("turtle", "", "120px")).replace("{I2}", img("papaya", "", "120px"))
     pillars = "".join(f'<div class="pillar rv d{i + 1}"><span class="pillar__i">{icon(ic)}</span><h3>{t}</h3><p>{d}</p></div>' for i, (ic, t, d) in enumerate(T["pillars"]))
-    trip = "".join(f'<figure class="img-rv">{img(n, c, "33vw")}</figure>' for n, c in zip(["turtle-reef", "bikini-beach", "guesthouse-4"], T["trip"]))
+    ifacts = "".join(f'<span>{icon(ic)}{t}</span>' for ic, t in INTRO_FACTS[lang])
     pk = ""
     for i, p in enumerate(PACKAGES):
         P = p[lang]
@@ -468,8 +658,9 @@ def p_index(lang, r):
   <div class="wrap">
     <div style="text-align:center;margin-bottom:34px">{label(T["intro_label"])}</div>
     <p class="statement rv">{stmt}</p>
-    <div class="pillars">{pillars}</div>
-    <div class="triptych">{trip}</div>
+    <p class="intro__lead rv">{INTRO_LEAD[lang]}</p>
+    <div class="ifacts rv">{ifacts}</div>
+    {carousel(lang, intro_cards(lang), 3, "car--cards car--intro")}
   </div>
 </section>
 
@@ -595,7 +786,7 @@ def p_experiences(lang, r):
     items = "".join(xp_card(lang, r, e, "rv") for e in EXPERIENCES + MOMENTS)
     ficons = {"U": "fish", "W": "boat", "I": "palm", "M": "sparkle"}
     filters = f'<button class="on" data-f="*">{icon("grid")}{T["cat_all"]}</button>' + "".join(f'<button data-f="{k}">{icon(ficons[k])}{v}</button>' for k, v in T["cats"].items())
-    return f'''{page_hero(lang, r, "dolphin", X["eyebrow"], X["title"], X["lead"], "experiences")}
+    return f'''{page_hero(lang, r, "dolphin-hero", X["eyebrow"], X["title"], X["lead"], "experiences", full=True)}
 <section class="sec"><div class="wrap">
   <div class="filters rv" role="group">{filters}</div>
   <div class="xgrid">{items}</div>
@@ -614,13 +805,15 @@ def p_thoddoo(lang, r):
     gal_items = [("g1", "thoddoo-beach"), ("g2", "palm-road-aerial"), ("g3", "papaya"), ("g4", "vaau-magu"), ("g5", "turtle"), ("g6", "thoddoo-sunset")]
     gal = "".join(f'<button class="{c}" data-lb="{{R}}assets/img/{n}.webp" aria-label="{n.replace("-", " ")}">{img(n, n.replace("-", " "), "50vw")}<span class="zoom">{icon("zoom")}</span></button>' for c, n in gal_items)
     sea = "sea ~28°C" if lang == "en" else "вода ~28°C"
-    return f'''{page_hero(lang, r, "thoddoo-aerial", TH["eyebrow"], TH["title"], TH["lead"], "thoddoo")}
+    return f'''{page_hero(lang, r, "thoddoo-hero", TH["eyebrow"], TH["title"], TH["lead"], "thoddoo", full=True)}
 <section class="sec"><div class="wrap split">
   <div class="split__media rv"><div class="m1 img-rv">{img("papaya-lush", "Papaya growing on Thoddoo", "50vw")}</div><div class="m2">{img("turtle-reef", "", "25vw")}</div>
 </div>
   <div class="split__body rv d1">{label(TH["eyebrow"])}<h2>{TH["title"]}</h2>{"".join(f"<p>{p}</p>" for p in TH["p"])}<p class="note">{U["wildlife"]}</p></div>
 </div></section>
 {landmarks(lang)}
+{restaurants(lang)}
+{getting_there(lang, r)}
 <section class="sec"><div class="wrap">{head(TH["right_eyebrow"], TH["right_title"])}<div class="rfy">{rfy}</div></div></section>
 <section class="sec sec--white"><div class="wrap">{head(TH["gtk_eyebrow"], TH["gtk_title"], TH["gtk_lead"])}<div class="tiles8 rv">{gtk}</div></div></section>
 <section class="sec--s"><div class="wrap">{head(T["gal"], TH["gallery_title"])}<div class="gal rv">{gal}</div></div></section>
@@ -629,18 +822,17 @@ def p_thoddoo(lang, r):
 
 
 def p_guesthouses(lang, r):
-    G = GUEST[lang]; T = T3[lang]
-    prom = "".join(f'<div class="rv d{i + 1}"><span class="why__i">{icon(ic)}</span><h3>{t}</h3><p>{d}</p></div>' for i, (ic, t, d) in enumerate(G["promise"]))
-    items = [("g1", 3), ("g2", 4), ("g3", 2), ("g4", 5), ("g5", 6), ("g6", 7)]
-    gal = "".join(f'<button class="{c}" data-lb="{{R}}assets/img/guesthouse-{n}.webp" aria-label="Guesthouse {n}">{img(f"guesthouse-{n}", f"Thoddoo guesthouse {n}", "50vw")}<span class="zoom">{icon("zoom")}</span></button>' for c, n in items)
-    return f'''{page_hero(lang, r, "guesthouse-5", G["eyebrow"], G["title"], G["lead"], "guesthouses")}
+    G = GUEST[lang]; S = STAY_TXT[lang]
+    prom = "".join(pcard(lang, im, ic, d[lang][0], d[lang][1], d[lang][2], S[0]) for im, ic, d in STAY_CARDS)
+    gal = "".join(f'<button class="gcard" data-lb="{{R}}assets/img/{n}.webp" aria-label="{S[2]}">{img(n, S[2], "(max-width:640px) 86vw, 33vw")}<span class="zoom">{icon("zoom")}</span></button>' for n in STAY_GAL)
+    return f'''{page_hero(lang, r, "guesthouse-hero", G["eyebrow"], G["title"], G["lead"], "guesthouses", full=True)}
 <section class="sec"><div class="wrap split">
-  <div class="split__media rv"><div class="m1 img-rv">{img("guesthouse-1", "Double room in a Thoddoo guesthouse", "50vw")}</div><div class="m2">{img("guesthouse-2", "", "25vw")}</div></div>
+  <div class="split__media rv"><div class="m1 img-rv">{img("guesthouse-6", S[2], "50vw")}</div><div class="m2">{img("stay-breakfast", "", "25vw")}</div></div>
   <div class="split__body rv d1">{label(G["eyebrow"])}<h2>{G["title"]}</h2>{"".join(f"<p>{p}</p>" for p in G["p"])}<p>{G["help"]}</p>
     <a class="btn btn--wa" href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener">{brand("whatsapp")} WhatsApp</a></div>
 </div></section>
-<section class="sec--s sec--white"><div class="wrap promise">{prom}</div></section>
-<section class="sec"><div class="wrap">{head(T["gal"], G["gallery"])}<div class="gal rv">{gal}</div></div></section>
+<section class="sec sec--white"><div class="wrap">{head(S[0], S[1])}{carousel(lang, prom, 3, "car--cards")}</div></section>
+<section class="sec"><div class="wrap">{head(S[2], S[3])}{carousel(lang, gal, 3, "car--gal")}<p class="note car__note">{S[4]}</p></div></section>
 {testimonials(lang, r)}
 '''
 
@@ -648,7 +840,7 @@ def p_guesthouses(lang, r):
 def p_faq(lang, r):
     F = FAQ_HEAD[lang]; U = UI[lang]
     qa = "".join(f'<details class="qa"{" open" if i == 0 else ""}><summary><span class="why__i">{icon(q["icon"])}</span>{q[lang][0]}<span class="why__t"></span></summary><div class="qa__a">{q[lang][1]}</div></details>' for i, q in enumerate(FAQ))
-    return f'''{page_hero(lang, r, "lagoon-boat", F["eyebrow"], F["title"], F["lead"], "faq")}
+    return f'''{page_hero(lang, r, "faq-hero", F["eyebrow"], F["title"], F["lead"], "faq", full=True)}
 <section class="sec"><div class="wrap faq">
   <aside class="faq__side rv"><div class="helpcard on-dark">{label(U["nav"]["contact"])}<h3>{F["aside_t"]}</h3><p>{F["aside_p"]}</p>
     <a class="btn btn--wa" href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener">{brand("whatsapp")} WhatsApp</a>
@@ -684,7 +876,7 @@ def p_contact(lang, r):
     lbl = 'style="font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)"'
     stepper = lambda name, v, t: (f'<div class="fld"><span {lbl}>{t}</span><div class="stepper" data-stepper="{name}"><button type="button" data-d="-1" aria-label="−">−</button>'
                                   f'<output>{v}</output><button type="button" data-d="1" aria-label="+">+</button></div><input type="hidden" name="{name}" value="{v}"></div>')
-    return f'''{page_hero(lang, r, "hero-sandbar", K["eyebrow"], K["title"], K["lead"], "contact")}
+    return f'''{page_hero(lang, r, "contact-hero", K["eyebrow"], K["title"], K["lead"], "contact", full=True)}
 <section class="sec" id="enquiry"><div class="wrap conc">
   <form class="conc__main rv" id="enquiry-form" action="https://formsubmit.co/ajax/{C["email"]}" method="POST" data-wa="{C["whatsapp"]}" {data} novalidate>
     <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
