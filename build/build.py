@@ -217,25 +217,43 @@ def footer(lang, page, r):
     ex = "".join(f'<li><a href="{href(lang, p, r)}">{U["nav"][p]}</a></li>' for p in ["about", "packages", "thoddoo", "experiences", "guesthouses"])
     hp = "".join(f'<li><a href="{href(lang, p, r)}">{U["nav"][p]}</a></li>' for p in ["faq", "contact"])
     other = "ru" if lang == "en" else "en"
+    langs = "Languages" if lang == "en" else "Языки"
+    reply = "Reply time" if lang == "en" else "Время ответа"
+    reply_v = "Usually within a few hours" if lang == "en" else "Обычно в течение нескольких часов"
+    tag = U["tagline"]
+    cta_p = U["cta_lead"]
+    lang_sw = (f'<div class="lang lang--dark"><a href="{href("en", page, r)}" hreflang="en" lang="en"{" class=\"on\"" if lang == "en" else ""}>EN</a>'
+               f'<a href="{href("ru", page, r)}" hreflang="ru" lang="ru"{" class=\"on\"" if lang == "ru" else ""}>RU</a></div>')
     return f'''<footer class="ftr">
   <div class="wrap">
-    <div class="ftr__top">
+    <div class="ftr__cta">
+      {img("thoddoo-sunset", "", "100vw")}
+      <div class="ftr__cta-in"><span class="label"><i></i>{T["cta_label"]}</span><h3>{T["f_news"]}</h3><p>{cta_p}</p></div>
+      <div class="ftr__cta-btns"><a class="btn btn--gold" href="{href(lang, "contact", r)}">{U["plan"]} {icon("arrow")}</a>
+        <a class="btn btn--glass" href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener">{brand("whatsapp")} WhatsApp</a></div>
+    </div>
+    <div class="ftr__grid">
       <div class="ftr__brand">
-        <a class="ftr__logo" href="{href(lang, "index", r)}"><img src="{{R}}assets/brand/logo-full-web.png" alt="Velaa Getaways — Your Maldivian friend" width="520" height="426" loading="lazy"></a>
+        <a class="ftr__mark" href="{href(lang, "index", r)}" aria-label="Velaa Getaways">{EMBLEM}
+          <span class="brand__txt"><small class="brand__top">{"Thoddoo · Maldives" if lang == "en" else "Тодду · Мальдивы"}</small><span class="brand__name">VELAA</span><span class="brand__sub">Getaways</span></span></a>
+        <p class="ftr__tag">“{tag}”</p>
         <p>{U["footer_about"]}</p>
         {socials(light=True)}
       </div>
-      <div class="ftr__cols">
-        <div><h4>{T["f_cols"][0]}</h4><ul>{ex}</ul></div>
-        <div><h4>{T["f_cols"][1]}</h4><ul>{hp}</ul></div>
-        <div><h4>{T["f_cols"][2]}</h4><ul class="ftr__contact">
-          <li>{brand("whatsapp")}<a href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener">{C["phone_display"]}</a></li>
-          <li>{icon("mail")}<a href="mailto:{C["email"]}">{C["email"]}</a></li>
-          <li>{icon("pin")}<span>{U["footer_addr"]}</span></li></ul></div>
+      <nav class="ftr__col" aria-label="{T["f_cols"][0]}"><h4>{T["f_cols"][0]}</h4><ul>{ex}</ul></nav>
+      <nav class="ftr__col" aria-label="{T["f_cols"][1]}"><h4>{T["f_cols"][1]}</h4><ul>{hp}</ul></nav>
+      <div class="ftr__col ftr__contact"><h4>{T["f_cols"][2]}</h4>
+        <a href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener"><span class="fi fi--wa">{brand("whatsapp")}</span><span><small>WhatsApp</small>{C["phone_display"]}</span></a>
+        <a href="mailto:{C["email"]}"><span class="fi">{icon("mail")}</span><span><small>E-mail</small>{C["email"]}</span></a>
+        <div><span class="fi">{icon("pin")}</span><span><small>{"Location" if lang == "en" else "Где мы"}</small>{U["footer_addr"]}</span></div>
+        <div><span class="fi">{icon("clock")}</span><span><small>{reply}</small>{reply_v}</span></div>
       </div>
     </div>
-    <div class="ftr__news"><h3>{T["f_news"]}</h3><a class="btn btn--gold" href="{href(lang, "contact", r)}">{U["plan"]} {icon("arrow")}</a></div>
-    <div class="ftr__bot"><span>© <span data-year>2026</span> Velaa Getaways. {U["rights"]}</span><span>{U["privacy_note"]}</span></div>
+    <div class="ftr__bot">
+      <span>© <span data-year>2026</span> Velaa Getaways · {U["rights"]}</span>
+      <span class="ftr__note">{U["privacy_note"]}</span>
+      <span class="ftr__lang"><small>{langs}</small>{lang_sw}</span>
+    </div>
   </div>
 </footer>
 <div class="fab"><span>{U["wa"]}</span><a href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener" aria-label="{U["wa"]}">{brand("whatsapp")}</a></div>
@@ -496,7 +514,7 @@ def p_index(lang, r):
 </section>
 {testimonials(lang, r)}
 {strip(lang)}
-{cta(lang, r)}'''
+'''
 
 
 def p_about(lang, r):
@@ -518,7 +536,7 @@ def p_about(lang, r):
   </div>
 </section>
 {testimonials(lang, r)}
-{cta(lang, r, "hero-sandbar")}'''
+'''
 
 
 def p_packages(lang, r):
@@ -569,7 +587,7 @@ def p_packages(lang, r):
   <p class="note" style="text-align:center;margin-top:30px">{U["wildlife"]}</p>
 </div></section>
 {testimonials(lang, r)}
-{cta(lang, r)}'''
+'''
 
 
 def p_experiences(lang, r):
@@ -584,7 +602,7 @@ def p_experiences(lang, r):
   <p class="note" style="text-align:center;margin-top:36px">{U["wildlife"]} · {X["else"]}</p>
 </div></section>
 {testimonials(lang, r)}
-{cta(lang, r, "hero-island")}'''
+'''
 
 
 def p_thoddoo(lang, r):
@@ -607,7 +625,7 @@ def p_thoddoo(lang, r):
 <section class="sec sec--white"><div class="wrap">{head(TH["gtk_eyebrow"], TH["gtk_title"], TH["gtk_lead"])}<div class="tiles8 rv">{gtk}</div></div></section>
 <section class="sec--s"><div class="wrap">{head(T["gal"], TH["gallery_title"])}<div class="gal rv">{gal}</div></div></section>
 {testimonials(lang, r)}
-{cta(lang, r)}'''
+'''
 
 
 def p_guesthouses(lang, r):
@@ -624,7 +642,7 @@ def p_guesthouses(lang, r):
 <section class="sec--s sec--white"><div class="wrap promise">{prom}</div></section>
 <section class="sec"><div class="wrap">{head(T["gal"], G["gallery"])}<div class="gal rv">{gal}</div></div></section>
 {testimonials(lang, r)}
-{cta(lang, r)}'''
+'''
 
 
 def p_faq(lang, r):
@@ -637,7 +655,7 @@ def p_faq(lang, r):
     <a class="btn btn--glass" href="mailto:{C["email"]}">{icon("mail")} E-mail</a></div></aside>
   <div class="rv d1">{qa}</div>
 </div></section>
-{cta(lang, r)}'''
+'''
 
 
 def p_contact(lang, r):
