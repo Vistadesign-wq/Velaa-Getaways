@@ -294,18 +294,20 @@ def testimonials(lang, r):
     for i, rv in enumerate(REVIEWS):
         name, place, text = rv[lang]
         on = " on" if i == 0 else ""
-        quotes += (f'<figure class="tq{on}" data-i="{i}"><span class="tq__pkg">{rv["pkg"]}</span>{stars()}<blockquote>{text}</blockquote>'
-                   f'<figcaption class="tq__who"><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="{E(name)}" width="64" height="64" loading="lazy">'
-                   f'<div><strong>{name}</strong><span><i class="flag flag--{rv["flag"]}"></i>{place}</span></div></figcaption></figure>')
-        faces += f'<button class="face{on}" data-i="{i}" aria-label="{E(name)}"><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="" width="52" height="52" loading="lazy"></button>'
+        quotes += (f'<figure class="tq{on}" data-i="{i}"><blockquote>{text}</blockquote>'
+                   f'<figcaption class="tq__who"><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="{E(name)}" width="48" height="48" loading="lazy">'
+                   f'<div><strong>{name}</strong><span><i class="flag flag--{rv["flag"]}"></i>{place} · {rv["pkg"]}</span></div></figcaption></figure>')
+        faces += f'<button class="face{on}" data-i="{i}" aria-label="{E(name)}"><img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="" width="40" height="40" loading="lazy"></button>'
     return f'''<!-- DRAFT REVIEWS: replace with genuine guest reviews before launch -->
-<section class="sec sec--ink on-dark" aria-labelledby="t-title">
+<section class="sec--s sec--ink on-dark tst-sec" aria-labelledby="t-title">
   <div class="wrap tst" data-tst>
-    <div class="tst__score rv">{label(T["t_label"])}<h2 id="t-title">{T["t_title"]}</h2><div class="tst__big">5.0</div>{stars()}<p>{T["t_sub"]}</p></div>
-    <div class="rv d1">
+    <div class="tst__head rv">{label(T["t_label"])}<h2 id="t-title">{T["t_title"]}</h2>
+      <span class="tst__badge"><b>5.0</b>{stars()}<small>{T["t_sub"]}</small></span></div>
+    <div class="tst__body rv d1">
       <div class="tst__stage">{quotes}</div>
-      <div class="rail"><div style="display:flex;gap:10px;flex-wrap:wrap">{faces}</div><span class="sp"></span>
-        <button class="navb" data-prev aria-label="{U["prev"]}">{icon("arrowl")}</button><button class="navb" data-next aria-label="{U["next"]}">{icon("arrow")}</button></div>
+      <div class="rail"><button class="navb" data-prev aria-label="{U["prev"]}">{icon("arrowl")}</button>
+        <div class="faces">{faces}</div>
+        <button class="navb" data-next aria-label="{U["next"]}">{icon("arrow")}</button></div>
       <div class="tbar"><span></span></div>
     </div>
   </div>
