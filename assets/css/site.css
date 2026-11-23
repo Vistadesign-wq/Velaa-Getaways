@@ -1118,3 +1118,20 @@ div.pc{cursor:default}
 .tst-sec .rvw small{color:rgba(255,255,255,.8)}
 .tst-sec .tst__badge{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);backdrop-filter:blur(8px)}
 .tst-sec h2{text-shadow:0 2px 20px rgba(0,0,0,.25)}
+
+/* ===== Header: deep lagoon teal, white menu, champagne-gold accents ===== */
+.topbar{background:#0a2a33;color:rgba(255,255,255,.78)}
+.hdr,.hdr.solid{background:linear-gradient(180deg,#113f4b,#0e3641);color:#fff;box-shadow:0 1px 0 rgba(223,192,140,.28)}
+.hdr.solid{background:rgba(14,54,65,.97);box-shadow:0 1px 0 rgba(223,192,140,.28),0 14px 34px -18px rgba(0,0,0,.55)}
+.hdr .brand__name{color:#fff}
+.hdr .brand__sub{color:var(--gold-2)}
+.hdr .brand__tag{color:rgba(255,255,255,.78)}
+.hdr .brand__tag::before,.hdr .brand__tag::after{color:var(--gold-2)}
+.hdr .emblem,.hdr.solid .emblem{box-shadow:0 0 0 2px rgba(223,192,140,.55),0 8px 20px -10px rgba(0,0,0,.6)}
+.hdr .menu a{color:rgba(255,255,255,.86)}
+.hdr .menu a:hover,.hdr .menu a[aria-current]{color:var(--gold-2)}
+.hdr .menu a::after{background:var(--gold-2)}
+.hdr .lang,.hdr.solid .lang{border-color:rgba(255,255,255,.28)}
+.hdr .lang a{color:#fff}
+.hdr .lang a.on,.hdr.solid .lang a.on{background:#fff;color:var(--ink)}
+.hdr .burger,.hdr.solid .burger{border-color:rgba(255,255,255,.3);color:#fff}
