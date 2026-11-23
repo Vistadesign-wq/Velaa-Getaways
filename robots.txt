@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vistadesign-wq.github.io/velaa-getaways/sitemap.xml
