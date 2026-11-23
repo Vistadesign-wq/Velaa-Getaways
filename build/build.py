@@ -519,7 +519,7 @@ def p_index(lang, r):
 
 def p_about(lang, r):
     A = ABOUT[lang]; T = T3[lang]
-    return f'''{page_hero(lang, r, "hammock-sunset", A["eyebrow"], A["title"], A["lead"], "about")}
+    return f'''{page_hero(lang, r, "beach-relax", A["eyebrow"], A["title"], A["lead"], "about")}
 <section class="sec">
   <div class="wrap founders">
     <div class="f-media rv"><div class="a img-rv">{img("beach-walk", "", "40vw")}</div><div class="b">{img("turtle", "", "20vw")}</div></div>
@@ -574,7 +574,7 @@ def p_packages(lang, r):
     foot = "".join(f'<td{" class=\"col-feat\"" if i == 1 else ""}>{p["low"]} <small class="note">/ {p["high"]}</small></td>' for i, p in enumerate(PACKAGES))
     nots = "".join(f'<li class="x">{icon("x")}<span>{x}</span></li>' for x in P["not"])
     terms = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["terms"])
-    return f'''{page_hero(lang, r, "manta", P["eyebrow"], P["title"], P["lead"], "packages")}
+    return f'''{page_hero(lang, r, "aerial-lagoon", P["eyebrow"], P["title"], P["lead"], "packages")}
 <section class="sec"><div class="wrap">{blocks}<p class="note" style="text-align:center">{P["single"]}</p></div></section>
 <section class="sec sec--white"><div class="wrap">
   {head(P["compare_eyebrow"], P["compare_title"], center=True)}
