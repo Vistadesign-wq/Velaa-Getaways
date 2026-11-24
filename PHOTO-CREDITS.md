@@ -92,5 +92,5 @@ Checked 2026-11-24. Every image and video on the site is listed here with its so
 Logo files in `assets/brand/` are the client's own logo.
 
 ## 3. Removed for legal safety
-- **Review portraits** (`assets/img/guests/`, from randomuser.me): these are photos of real people intended for design mock-ups. Showing them next to sample reviews would suggest those people are real customers, so they were replaced with illustrated portraits (`assets/img/faces/`, DiceBear “Lorelei” by Lisa Wischofsky, CC0 1.0 — free for commercial use). To show a real guest's photo, save it as `assets/img/guests/<img>.webp` (only with that guest's consent) and rebuild; it replaces the illustration automatically.
+- **Review portraits** (`assets/img/guests/`, from randomuser.me): these are photos of real people intended for design mock-ups. Showing them next to sample reviews would suggest those people are real customers, so they were replaced with the guest's initials. To show a real guest's photo, save it as `assets/img/guests/<img>.webp` (only with that guest's consent) and rebuild; it replaces the initials automatically.
 

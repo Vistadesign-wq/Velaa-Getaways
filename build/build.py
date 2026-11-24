@@ -306,10 +306,10 @@ def xp_card(lang, r, item, extra_cls=""):
 
 def face(rv, name):
     """Real guest photo if assets/img/guests/<img>.webp exists (use only with the guest's consent);
-    otherwise an illustrated portrait (DiceBear "Lorelei", CC0) from assets/img/faces/."""
+    otherwise the guest's initials in a gold circle."""
     if os.path.exists(os.path.join(IMG, "guests", rv["img"] + ".webp")):
         return f'<img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="{E(name)}" width="56" height="56" loading="lazy">'
-    return f'<img src="{{R}}assets/img/faces/{rv["img"]}.svg" alt="" width="56" height="56" loading="lazy">'
+    return f'<span class="rvw__mono" aria-hidden="true">{"".join(w[0] for w in name.split()[:2])}</span>'
 
 
 def testimonials(lang, r):
