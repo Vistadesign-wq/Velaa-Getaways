@@ -571,6 +571,7 @@ STAY_TXT = {"en": ("Why our stays", "Comfort, care &amp; <em>island warmth</em>"
 
 
 TH_GAL = [("watermelon", "Island watermelon", "Островной арбуз"), ("coconut", "Fresh coconuts", "Свежие кокосы"),
+          ("breadfruit", "Breadfruit", "Хлебное дерево"),
           ("th-beach-long", "White-sand beach", "Белоснежный пляж"), ("th-palm-avenue", "Palm avenue", "Пальмовая аллея"),
           ("th-turtle", "Turtles on the reef", "Черепахи на рифе"), ("th-farm-road", "Farm roads", "Дороги между фермами"),
           ("th-sunset-palm", "Sunset palms", "Пальмы на закате"), ("coconut-palm", "Coconut palms", "Кокосовые пальмы"),
