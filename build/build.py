@@ -304,13 +304,21 @@ def xp_card(lang, r, item, extra_cls=""):
 </button>'''
 
 
+def face(rv, name):
+    """Real guest photo if assets/img/guests/<img>.webp exists (use only with the guest's consent);
+    otherwise an illustrated portrait (DiceBear "Lorelei", CC0) from assets/img/faces/."""
+    if os.path.exists(os.path.join(IMG, "guests", rv["img"] + ".webp")):
+        return f'<img src="{{R}}assets/img/guests/{rv["img"]}.webp" alt="{E(name)}" width="56" height="56" loading="lazy">'
+    return f'<img src="{{R}}assets/img/faces/{rv["img"]}.svg" alt="" width="56" height="56" loading="lazy">'
+
+
 def testimonials(lang, r):
     T = T3[lang]
     cards = ""
     for rv in REVIEWS:
         name, place, text = rv[lang]
         cards += (f'<figure class="rvw">{stars()}<blockquote>{text}</blockquote>'
-                  f'<figcaption><span class="rvw__mono" aria-hidden="true">{"".join(w[0] for w in name.split()[:2])}</span>'
+                  f'<figcaption>{face(rv, name)}'
                   f'<span><strong>{name}</strong><small><i class="flag flag--{rv["flag"]}"></i>{place} · {rv["pkg"]}</small></span></figcaption></figure>')
     return f'''<!-- DRAFT REVIEWS: replace with genuine guest reviews before launch -->
 <section class="sec--s sec--ink on-dark tst-sec" aria-labelledby="t-title">
