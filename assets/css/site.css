@@ -1135,3 +1135,31 @@ div.pc{cursor:default}
 .hdr .lang a{color:#fff}
 .hdr .lang a.on,.hdr.solid .lang a.on{background:#fff;color:var(--ink)}
 .hdr .burger,.hdr.solid .burger{border-color:rgba(255,255,255,.3);color:#fff}
+
+/* ===== changes.docx ===== */
+/* speedboat timetable chips */
+.tchip{display:inline-flex;align-items:center;padding:4px 12px;margin:4px 6px 0 0;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:.92rem;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.tv dd .tchip:first-child{background:var(--sea)}
+/* ribbon: small round photos with labels */
+.ribbon{background:#fff;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ribbon__t{padding:18px 0;animation-duration:90s}
+.ribbon:hover .ribbon__t{animation-play-state:paused}
+.ribbon__t span.rchip{gap:14px;padding:0 34px;font-size:.7rem;font-weight:700;letter-spacing:.26em;color:var(--ink-2)}
+.ribbon__t span.rchip::after{background:var(--gold);margin-left:52px}
+.rchip i{display:block;width:54px;height:54px;border-radius:50%;overflow:hidden;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--gold-2),0 8px 18px -8px rgba(16,58,70,.45)}
+.rchip i img{width:100%;height:100%;object-fit:cover}
+@media (max-width:640px){.rchip i{width:44px;height:44px}.ribbon__t span.rchip{padding:0 22px}.ribbon__t span.rchip::after{margin-left:36px}}
+/* gallery captions */
+.gcard .gcap{position:absolute;left:16px;bottom:14px;right:70px;color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.gcard::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(transparent,rgba(11,47,57,.55));pointer-events:none}
+.gcard .zoom{z-index:2}
+.car--gal .gcard{aspect-ratio:4/5}
+/* phone with country code */
+.tel{display:grid;grid-template-columns:minmax(96px,.42fr) 1fr;gap:8px}
+.tel select,.tel input{min-width:0}
+.fld select{width:100%}
+.status.err a{color:inherit;font-weight:700}
+.fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1.5l5 5 5-5%27 fill=%27none%27 stroke=%27%23103a46%27 stroke-width=%271.6%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.tel select{padding-left:12px;padding-right:28px;background-position:right 10px center}
+.gcard .gcap{z-index:2;color:#fff;opacity:1}
+.rvw__mono{width:56px;height:56px;flex:none;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.04em;color:var(--ink);background:linear-gradient(135deg,#f3e3c4,#dfc08c);box-shadow:0 0 0 2px rgba(255,255,255,.7)}

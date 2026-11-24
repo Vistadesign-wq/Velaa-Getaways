@@ -211,10 +211,21 @@
     if (q.get("adults")) { form.elements.adults.value = q.get("adults"); $('[data-stepper="adults"] output', form).textContent = q.get("adults"); }
     update();
 
+    var cSel = form.elements.country, kSel = form.elements.code;
+    if (cSel && kSel) cSel.addEventListener("change", function () {
+      var o = cSel.options[cSel.selectedIndex], iso = o && o.dataset.iso;
+      if (!iso) return;
+      for (var i = 0; i < kSel.options.length; i++) if (kSel.options[i].dataset.iso === iso) { kSel.selectedIndex = i; break; }
+    });
+    var phone = function () {
+      var f = form.elements, n = (f.phone.value || "").trim();
+      if (!n) return "";
+      return /^\+/.test(n) ? n : ((f.code && f.code.value ? f.code.value + " " : "") + n);
+    };
     var compose = function () {
       var f = form.elements, pk = $('input[name="package"]:checked', form);
       var xs = $$('input[name="extras"]:checked', form).map(function (c) { return c.dataset.label; });
-      return [D.hello, D.lName + ": " + (f.name.value || "—"), D.lDates + ": " + (f.arrival.value || "—") + " → " + (f.departure.value || "—"),
+      return [D.hello, D.lName + ": " + (f.name.value || "—"), (f.country && f.country.value ? "Country: " + f.country.value : ""), (phone() ? "Phone: " + phone() : ""), D.lDates + ": " + (f.arrival.value || "—") + " → " + (f.departure.value || "—"),
         D.lGuests + ": " + f.adults.value + (num(f.children.value) ? " + " + f.children.value : ""), D.lPackage + ": " + (pk ? pk.dataset.name : "—"),
         xs.length ? D.lExtras + ": " + xs.join(", ") : "", f.message.value ? D.lMsg + ": " + f.message.value : ""].filter(Boolean).join("\n");
     };
@@ -233,7 +244,7 @@
       var xs = $$('input[name="extras"]:checked', form).map(function (c) { return c.dataset.label; });
       var payload = {
         _subject: D.subject + " — " + f.name.value, _template: "table", _captcha: "false", _replyto: f.email.value,
-        Name: f.name.value, Email: f.email.value, "Phone / WhatsApp": f.phone.value || "—", "Reply by": (form.querySelector('input[name="reply"]:checked') || {}).value,
+        Name: f.name.value, Email: f.email.value, Country: (f.country && f.country.value) || "—", "Phone / WhatsApp": phone() || "—", "Reply by": (form.querySelector('input[name="reply"]:checked') || {}).value,
         Package: pk ? pk.dataset.name : "—", Arrival: f.arrival.value || "—", Departure: f.departure.value || "—",
         Adults: f.adults.value, Children: f.children.value, Experiences: xs.join(", ") || "—",
         "Estimated total": $('[data-sum="total"]').textContent, Message: f.message.value || "—", Language: LANG.toUpperCase(), Page: location.href
@@ -247,7 +258,13 @@
           status.className = "status"; steps.forEach(function (st) { st.classList.remove("on"); });
           $(".steps", form).style.display = "none"; $(".sent", form).classList.add("on");
         })
-        .catch(function () { status.className = "status err"; status.textContent = D.err; })
+        .catch(function () {
+          status.className = "status err"; status.textContent = D.err + " ";
+          var a = document.createElement("a");
+          a.href = "mailto:" + form.action.split("/").pop() + "?subject=" + encodeURIComponent(D.subject + " — " + f.name.value) + "&body=" + encodeURIComponent(compose() + "\nE-mail: " + f.email.value);
+          a.textContent = LANG === "ru" ? "Отправить из почтового приложения →" : "Send it from your e-mail app →";
+          a.style.textDecoration = "underline"; status.appendChild(a);
+        })
         .then(function () { btn.disabled = false; });
     });
     $("[data-send-wa]", form).addEventListener("click", function () {

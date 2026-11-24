@@ -35,7 +35,7 @@ UI = {
         "reviews_score": "average rating from our guests", "prev": "Previous", "next": "Next",
         "cta_eyebrow": "Your island is waiting", "cta_title": "Come curious. Leave with a little piece of <em>island life</em>.",
         "cta_lead": "Tell us your dates and the kind of escape you have in mind — we will reply with a clear, personal quote.",
-        "wa": "Chat on WhatsApp", "footer_about": "A Thoddoo-based travel company creating honest, personal Maldives holidays on a genuine local island.",
+        "wa": "Chat on WhatsApp", "footer_about": "A Maldives-based (Thoddoo) travel company creating honest, personal holidays on a genuine local island.",
         "footer_explore": "Explore", "footer_help": "Help", "footer_contact": "Contact", "rights": "All rights reserved.",
         "footer_addr": "Thoddoo, Alif Alif Atoll, Maldives", "privacy_note": "Prices per person, 2 adults sharing. All taxes included.",
         "lang_hint": "Prefer English?", "lang_hint_go": "Switch to English", "skip": "Skip to content",
@@ -56,7 +56,7 @@ UI = {
         "reviews_score": "средняя оценка наших гостей", "prev": "Назад", "next": "Вперёд",
         "cta_eyebrow": "Ваш остров ждёт", "cta_title": "Приезжайте с любопытством — уезжайте с частичкой <em>островной жизни</em>.",
         "cta_lead": "Напишите нам даты и какой отдых вы представляете — мы ответим честным персональным предложением.",
-        "wa": "Написать в WhatsApp", "footer_about": "Туристическая компания с острова Тодду: честный и личный отдых на Мальдивах на настоящем локальном острове.",
+        "wa": "Написать в WhatsApp", "footer_about": "Туристическая компания с Мальдив (остров Тодду): честный и личный отдых на настоящем локальном острове.",
         "footer_explore": "Разделы", "footer_help": "Помощь", "footer_contact": "Контакты", "rights": "Все права защищены.",
         "footer_addr": "Тодду, атолл Алиф Алиф, Мальдивы", "privacy_note": "Цены за человека при размещении 2 взрослых. Все налоги включены.",
         "lang_hint": "Предпочитаете русский?", "lang_hint_go": "Открыть русскую версию", "skip": "Перейти к содержанию",
@@ -69,44 +69,44 @@ UI = {
 SEO = {
     "index": {
         "en": ("Thoddoo Maldives Holiday Packages from $600 | Velaa Getaways",
-               "Discover the Maldives through local eyes. 7-night Thoddoo island packages with turtle snorkelling, sandbanks, dolphins and hand-picked guesthouses. All taxes included."),
+               "The Maldives through local eyes: 7-night Thoddoo packages with turtle snorkelling, sandbanks, dolphins and hand-picked guesthouses. All taxes included."),
         "ru": ("Отдых на Мальдивах на острове Тодду — туры от $600 | Velaa Getaways",
                "Мальдивы глазами местных жителей: 7 ночей на острове Тодду, снорклинг с черепахами, песчаные отмели, дельфины и уютные гестхаусы. Все налоги включены."),
     },
     "about": {
-        "en": ("About Velaa Getaways — Local Thoddoo Travel Experts | Dhaain & Julia",
+        "en": ("About Us — Local Thoddoo Travel Experts | Velaa Getaways",
                "Meet Dhaain and Julia: a Thoddoo local and a traveller who fell in love with the Maldives. Personal, honest island holidays with local hosts."),
         "ru": ("О нас — Velaa Getaways: местные эксперты по отдыху на Тодду",
                "Знакомьтесь: Дхаин, родившийся на Тодду, и Юлия, влюбившаяся в Мальдивы. Личный и честный отдых на локальном острове с местными хозяевами."),
     },
     "packages": {
-        "en": ("Maldives Holiday Packages — 7 Nights on Thoddoo from $600 | Velaa Getaways",
-               "Compare three 7-night Maldives packages on Thoddoo: Essential Escape, Ocean Explorer and Signature Maldives. Guesthouse, speedboat transfers and excursions included."),
-        "ru": ("Туры на Мальдивы на 7 ночей — остров Тодду от $600 | Velaa Getaways",
+        "en": ("Thoddoo Holiday Packages from $600 | Velaa Getaways",
+               "Compare three 7-night Maldives packages on Thoddoo: Essential Escape, Ocean Explorer and Signature Maldives. Guesthouse, transfers and excursions included."),
+        "ru": ("Туры на Мальдивы: 7 ночей на Тодду от $600 | Velaa Getaways",
                "Сравните три тура на Мальдивы на 7 ночей: Essential Escape, Ocean Explorer и Signature Maldives. Гестхаус, трансфер на скоростном катере и экскурсии включены."),
     },
     "thoddoo": {
-        "en": ("Thoddoo Island Guide — Bikini Beaches, Farms & Reef | Velaa Getaways",
-               "Everything to know about Thoddoo, the Maldives' green agricultural island: bikini beaches, a house reef with turtles, climate, visa, currency and travel tips."),
-        "ru": ("Остров Тодду, Мальдивы — пляжи, фермы и риф | Путеводитель Velaa Getaways",
-               "Всё об острове Тодду — «зелёном» сельскохозяйственном острове Мальдив: бикини-пляжи, домашний риф с черепахами, климат, виза, валюта и советы путешественникам."),
+        "en": ("Thoddoo Guide: Beaches, Food & Transfers | Velaa Getaways",
+               "Thoddoo island guide: bikini beaches, turtles on the house reef, watermelon farms, restaurants, plus seaplane and speedboat times from Malé airport."),
+        "ru": ("Остров Тодду: пляжи, кухня, как добраться | Velaa Getaways",
+               "Путеводитель по Тодду: бикини-пляжи, черепахи на рифе, арбузные фермы, рестораны, расписание гидросамолёта и скоростного катера из аэропорта Мале."),
     },
     "experiences": {
-        "en": ("Maldives Excursions from Thoddoo — Turtles, Mantas, Whale Sharks | Velaa Getaways",
-               "Turtle snorkelling, manta and nurse shark trips, dolphin cruises, whale shark snorkelling, sunset fishing, beach dinners and drone videos — book Maldives experiences from Thoddoo."),
-        "ru": ("Экскурсии на Мальдивах с острова Тодду — черепахи, манты, китовые акулы",
+        "en": ("Thoddoo Excursions: Turtles, Mantas, Dolphins | Velaa Getaways",
+               "Turtle snorkelling, manta and nurse shark trips, dolphin cruises, whale sharks, sunset fishing and beach dinners — book Maldives excursions from Thoddoo."),
+        "ru": ("Экскурсии с Тодду: черепахи, манты, дельфины | Velaa Getaways",
                "Снорклинг с черепахами, манты и акулы-няньки, дельфины, китовые акулы, закатная рыбалка, ужин на пляже и видео с дрона — экскурсии на Мальдивах с острова Тодду."),
     },
     "guesthouses": {
-        "en": ("Best Guesthouses on Thoddoo, Maldives — Hand-picked Local Stays | Velaa Getaways",
+        "en": ("Thoddoo Guesthouses — Hand-picked Local Stays | Velaa Getaways",
                "Hand-picked Thoddoo guesthouses chosen for comfort, cleanliness and warm island hospitality. Stay local and support the island community."),
-        "ru": ("Лучшие гестхаусы на Тодду, Мальдивы — проверенное жильё | Velaa Getaways",
+        "ru": ("Гестхаусы на Тодду — проверенное жильё | Velaa Getaways",
                "Тщательно отобранные гестхаусы на Тодду: комфорт, чистота и тёплое островное гостеприимство. Живите как местные и поддерживайте островное сообщество."),
     },
     "faq": {
-        "en": ("Maldives Travel FAQ — Visa, Payments, Transfers | Velaa Getaways",
+        "en": ("Thoddoo Travel FAQ: Visa, Payment, Transfers | Velaa Getaways",
                "Answers to common questions about holidays on Thoddoo: booking, payment, cancellation, speedboat transfers, visa on arrival, currency and weather."),
-        "ru": ("Частые вопросы о поездке на Мальдивы — виза, оплата, трансфер | Velaa Getaways",
+        "ru": ("Вопросы о поездке на Тодду: виза, оплата | Velaa Getaways",
                "Ответы на частые вопросы об отдыхе на Тодду: бронирование, оплата, отмена, трансфер на скоростном катере, виза по прибытии, валюта и погода."),
     },
     "contact": {
@@ -130,8 +130,8 @@ HERO = {
 }
 
 MARQUEE = {
-    "en": ["Turtle snorkelling", "Palm-road drone videos", "Sandbank afternoons", "Sunset fishing", "Dolphin cruises", "Papaya farms", "Beach dinners"],
-    "ru": ["Снорклинг с черепахами", "Видео с дрона на пальмовой аллее", "Песчаные отмели", "Закатная рыбалка", "Дельфины", "Папайевые фермы", "Ужин на пляже"],
+    "en": ["Turtle snorkelling", "Palm-road drone videos", "Sandbank afternoons", "Sunset fishing", "Dolphin cruises", "Watermelon farms", "Beach dinners"],
+    "ru": ["Снорклинг с черепахами", "Видео с дрона на пальмовой аллее", "Песчаные отмели", "Закатная рыбалка", "Дельфины", "Арбузные фермы", "Ужин на пляже"],
 }
 
 INTRO = {
