@@ -711,7 +711,7 @@ def p_index(lang, r):
 <div class="book"><div class="wrap"><form class="book__card" data-book action="{href(lang, "contact", r)}" method="get">
   <label class="book__f"><small>{icon("calendar")}{B["arr"]}</small><input type="date" name="arrival"></label>
   <label class="book__f"><small>{icon("calendar")}{B["dep"]}</small><input type="date" name="departure"></label>
-  <div class="book__f"><small>{icon("users")}<label for="bk-guests">{B["guests"]}</label></small><div class="gstep"><input id="bk-guests" type="number" name="adults" value="2" min="1" max="50" step="1" inputmode="numeric">
+  <div class="book__f book__f--g"><small id="bk-gl">{icon("users")}{B["guests"]}</small><div class="gstep"><input id="bk-guests" aria-labelledby="bk-gl" type="number" name="adults" value="2" min="1" max="50" step="1" inputmode="numeric">
     <span class="gstep__btns"><button type="button" data-g="1" aria-label="{"More guests" if lang == "en" else "Больше гостей"}">{icon("chevup")}</button><button type="button" data-g="-1" aria-label="{"Fewer guests" if lang == "en" else "Меньше гостей"}">{icon("chevdown")}</button></span></div></div>
   <label class="book__f"><small>{icon("island")}{B["pkg"]}</small><select name="package">{popts}</select></label>
   <button class="btn btn--gold" type="submit">{B["go"]} {icon("arrow")}</button>
@@ -1061,6 +1061,10 @@ def jsonld(lang, page):
     return "\n".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>' for o in out)
 
 
+import hashlib
+V = {f: hashlib.md5(open(os.path.join(ROOT, f), "rb").read()).hexdigest()[:8] for f in ("assets/css/fonts.css", "assets/css/site.css", "assets/js/app.js")}
+
+
 def render(lang, page):
     r = "" if lang == "en" else "../"
     title, desc = SEO[page][lang]
@@ -1097,8 +1101,8 @@ def render(lang, page):
 <link rel="manifest" href="{{R}}site.webmanifest">
 <link rel="preload" href="{{R}}assets/fonts/cormorant-garamond-{sub}-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{R}}assets/fonts/manrope-{sub}-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{R}}assets/css/fonts.css">
-<link rel="stylesheet" href="{{R}}assets/css/site.css">
+<link rel="stylesheet" href="{{R}}assets/css/fonts.css?v={V["assets/css/fonts.css"]}">
+<link rel="stylesheet" href="{{R}}assets/css/site.css?v={V["assets/css/site.css"]}">
 {jsonld(lang, page)}
 </head>
 <body>
@@ -1107,7 +1111,7 @@ def render(lang, page):
 {BUILDERS[page](lang, r)}
 </main>
 {footer(lang, page, r)}
-<script src="{{R}}assets/js/app.js" defer></script>
+<script src="{{R}}assets/js/app.js?v={V["assets/js/app.js"]}" defer></script>
 </body>
 </html>
 '''

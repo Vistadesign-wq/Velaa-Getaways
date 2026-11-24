@@ -1235,3 +1235,12 @@ div.pc{cursor:default}
 .gstep__btns button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
 .gstep__btns svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2}
 @media (max-width:760px){.gstep__btns{flex-direction:row;gap:6px}.gstep__btns button{width:40px;height:38px;border-radius:10px}.gstep__btns svg{width:16px;height:16px}}
+
+/* guests field: arrows inline, same height as the other fields */
+.book__f--g .gstep{gap:6px;min-height:30px}
+.book__f--g .gstep input{padding:2px 0}
+.book__f--g .gstep__btns{flex-direction:row;gap:5px}
+.book__f--g .gstep__btns button{width:28px;height:28px;border-radius:50%;background:#fff;border-color:var(--gold-2);color:var(--gold)}
+.book__f--g .gstep__btns button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.book__f--g .gstep__btns svg{width:13px;height:13px}
+@media (max-width:760px){.book__f--g .gstep__btns button{width:36px;height:36px}.book__f--g .gstep__btns svg{width:15px;height:15px}}
