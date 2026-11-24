@@ -18,6 +18,8 @@ E = html.escape
 _sz = {}
 
 _ic.ICONS["phone"] = '<path d="M5 3.5h3.2l1.6 4-2 1.3a11 11 0 0 0 5.4 5.4l1.3-2 4 1.6V17a2.5 2.5 0 0 1-2.7 2.5C9.6 19 5 14.4 4.5 6.2A2.5 2.5 0 0 1 5 3.5z"/>'
+_ic.ICONS["chevup"] = '<path d="M6 15l6-6 6 6"/>'
+_ic.ICONS["chevdown"] = '<path d="M6 9l6 6 6-6"/>'
 _ic.ICONS["plus"] = '<path d="M12 5v14M5 12h14"/>'
 _ic.ICONS["grid"] = '<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>'
 
@@ -709,7 +711,8 @@ def p_index(lang, r):
 <div class="book"><div class="wrap"><form class="book__card" data-book action="{href(lang, "contact", r)}" method="get">
   <label class="book__f"><small>{icon("calendar")}{B["arr"]}</small><input type="date" name="arrival"></label>
   <label class="book__f"><small>{icon("calendar")}{B["dep"]}</small><input type="date" name="departure"></label>
-  <label class="book__f"><small>{icon("users")}{B["guests"]}</small><select name="adults">{gopts}</select></label>
+  <div class="book__f"><small>{icon("users")}<label for="bk-guests">{B["guests"]}</label></small><div class="gstep"><input id="bk-guests" type="number" name="adults" value="2" min="1" max="50" step="1" inputmode="numeric">
+    <span class="gstep__btns"><button type="button" data-g="1" aria-label="{"More guests" if lang == "en" else "Больше гостей"}">{icon("chevup")}</button><button type="button" data-g="-1" aria-label="{"Fewer guests" if lang == "en" else "Меньше гостей"}">{icon("chevdown")}</button></span></div></div>
   <label class="book__f"><small>{icon("island")}{B["pkg"]}</small><select name="package">{popts}</select></label>
   <button class="btn btn--gold" type="submit">{B["go"]} {icon("arrow")}</button>
 </form></div></div>

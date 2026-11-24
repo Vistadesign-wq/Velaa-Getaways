@@ -150,6 +150,9 @@
   };
   $$("[data-book]").forEach(function (f) {
     pair(f.elements.arrival, f.elements.departure);
+    var g = f.elements.adults, clamp = function (v) { v = parseInt(v, 10); return isNaN(v) ? 2 : Math.max(1, Math.min(50, v)); };
+    $$("[data-g]", f).forEach(function (b) { b.addEventListener("click", function () { g.value = clamp(+g.value + +b.dataset.g); }); });
+    g.addEventListener("change", function () { g.value = clamp(g.value); });
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       var q = new URLSearchParams();
@@ -175,7 +178,7 @@
     $$("[data-stepper]", form).forEach(function (st) {
       var name = st.dataset.stepper, out = $("output", st), inp = form.elements[name], min = name === "adults" ? 1 : 0;
       $$("button", st).forEach(function (b) {
-        b.addEventListener("click", function () { var v = Math.max(min, Math.min(20, parseInt(inp.value, 10) + parseInt(b.dataset.d, 10))); inp.value = v; out.textContent = v; update(); });
+        b.addEventListener("click", function () { var v = Math.max(min, Math.min(name === "adults" ? 50 : 20, parseInt(inp.value, 10) + parseInt(b.dataset.d, 10))); inp.value = v; out.textContent = v; update(); });
       });
     });
     pair(form.elements.arrival, form.elements.departure);

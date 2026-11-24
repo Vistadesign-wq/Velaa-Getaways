@@ -1225,3 +1225,13 @@ div.pc{cursor:default}
   .xgrid .xp__plus{width:30px;height:30px;top:14px;right:12px}
 }
 @media (max-width:760px){.pk__btns .btn,.pk .btn{font-size:.74rem;min-height:44px}.t8 .more,.more{font-size:.74rem}.tt__c h4{font-size:.74rem}.lang{font-size:.74rem}.lang a{min-width:40px;text-align:center}}
+
+/* guests: number with up/down arrows (1-50) */
+.gstep{display:flex;align-items:center;gap:8px}
+.gstep input{flex:1;min-width:0;-moz-appearance:textfield}
+.gstep input::-webkit-outer-spin-button,.gstep input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.gstep__btns{display:flex;flex-direction:column;gap:3px;flex:none}
+.gstep__btns button{width:30px;height:20px;display:grid;place-items:center;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);transition:.25s}
+.gstep__btns button:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.gstep__btns svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2}
+@media (max-width:760px){.gstep__btns{flex-direction:row;gap:6px}.gstep__btns button{width:40px;height:38px;border-radius:10px}.gstep__btns svg{width:16px;height:16px}}
