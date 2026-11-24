@@ -57,7 +57,7 @@ EMBLEM = '<span class="emblem"><img src="{R}assets/brand/emblem-256.png" alt="" 
 T3 = {
     "en": {
         "loc": "Thoddoo · Alif Alif Atoll · Maldives", "enquire": "Plan your trip",
-        "explore": "Explore packages", "watch": "Plan my trip",
+        "explore": "Explore packages", "watch": "Plan your trip",
         "slides": ["Sandbank · North Ari Atoll", "Sandbar · Alif Alif", "Arrival by speedboat"],
         "book": {"arr": "Arrival", "dep": "Departure", "guests": "Guests", "pkg": "Package", "any": "Any package", "go": "Check availability"},
         "intro_label": "Welcome to Thoddoo",
@@ -829,7 +829,7 @@ def p_packages(lang, r):
 <section class="sec"><div class="wrap">{blocks}<p class="note" style="text-align:center">{P["single"]}</p></div></section>
 <section class="sec sec--white"><div class="wrap">
   {head(P["compare_eyebrow"], P["compare_title"], center=True)}
-  <div class="tbl-wrap rv"><table class="tbl"><thead><tr><th>{P["compare_cols"][0]}</th>{th}</tr></thead><tbody>{rows}</tbody>
+  <p class="swipe-hint">{"Swipe to compare" if lang == "en" else "Листайте, чтобы сравнить"} {icon("arrow")}</p><div class="tbl-wrap rv"><table class="tbl"><thead><tr><th>{P["compare_cols"][0]}</th>{th}</tr></thead><tbody>{rows}</tbody>
     <tfoot><tr><td><small class="note">{T["season_low"]} / {T["season_high"]}</small></td>{foot}</tr></tfoot></table></div>
   <div class="cards-2" style="margin-top:40px">
     <div class="icard rv"><h3><span>{icon("info")}</span>{P["not_title"]}</h3><ul>{nots}</ul></div>

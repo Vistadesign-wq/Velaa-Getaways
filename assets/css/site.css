@@ -1163,3 +1163,65 @@ div.pc{cursor:default}
 .tel select{padding-left:12px;padding-right:28px;background-position:right 10px center}
 .gcard .gcap{z-index:2;color:#fff;opacity:1}
 .rvw__mono{width:56px;height:56px;flex:none;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.04em;color:var(--ink);background:linear-gradient(135deg,#f3e3c4,#dfc08c);box-shadow:0 0 0 2px rgba(255,255,255,.7)}
+
+/* ===== v5 readability & mobile polish ===== */
+/* minimum text sizes for small labels (all screens) */
+.best small,.book__f small,.contact-list small,.duo small,.ftr__contact small,.ftr__lang small,.pc__b small,.prices small,.sum__total small,.tbl thead th small,.wc small,.why__item h3 small{font-size:.68rem}
+.pk__price small{font-size:.7rem}
+.xp__cat,.pk__tag,.tv__tag,.tv dt{font-size:.66rem}
+.pk__kick{font-size:.68rem}
+.wc__more,.lm__more,.pc .lm__more,.more,.gcap,.gcard .gcap{font-size:.7rem}
+.sub-h{font-size:.72rem}
+.btn{font-size:.72rem}
+.label{font-size:.72rem}
+.ftr h4{font-size:.68rem}
+.brand__sub{font-size:.6rem}
+/* day plan: wrapping grid instead of a hidden side-scroller */
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));overflow:visible;scroll-snap-type:none;padding-bottom:0}
+.day{flex:none}
+/* comparison table: pinned first column + swipe hint on small screens */
+.swipe-hint{display:none}
+@media (max-width:760px){
+  .label{font-size:.74rem;letter-spacing:.22em}
+  .best small,.book__f small,.contact-list small,.duo small,.ftr__contact small,.ftr__lang small,.pc__b small,.prices small,.sum__total small,.tbl thead th small,.wc small,.why__item h3 small{font-size:.72rem;letter-spacing:.16em}
+  .xp__cat,.pk__tag,.tv__tag,.tv dt,.pk__kick{font-size:.7rem;letter-spacing:.16em}
+  .wc__more,.lm__more,.pc .lm__more,.more,.gcap,.gcard .gcap,.arrow-link,.crumbs{font-size:.74rem}
+  .sub-h,.ftr h4{font-size:.74rem}
+  .btn{font-size:.78rem;letter-spacing:.14em;min-height:48px}
+  .btn--sm{min-height:42px}
+  .lang a{padding:9px 13px}
+  .crumbs a{display:inline-block;padding:6px 0}
+  .book__f input,.book__f select{min-height:42px;font-size:16px}
+  .fld input,.fld select,.fld textarea{font-size:16px}
+  .days{grid-template-columns:1fr;gap:0;margin-left:6px;padding-left:20px;border-left:2px solid var(--gold-3)}
+  .day{position:relative;background:none;border:0;border-radius:0;padding:10px 0;grid-template-columns:84px 1fr;align-items:baseline;gap:10px}
+  .day::before{content:"";position:absolute;left:-27px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--gold)}
+  .day b{font-size:1.15rem}
+  .day span{font-size:.92rem}
+  .swipe-hint{display:flex;align-items:center;justify-content:flex-end;gap:8px;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sea);margin:0 0 10px}
+  .swipe-hint svg{width:16px;height:16px}
+  .tbl{min-width:560px;font-size:.88rem}
+  .tbl th:first-child,.tbl td:first-child{position:sticky;left:0;z-index:1;background:#fff;box-shadow:6px 0 10px -8px rgba(16,58,70,.25);min-width:150px}
+  .tbl td,.tbl th{padding:12px 12px}
+}
+
+/* RFY cards: icon fully visible; phone = swipeable row */
+.rfy .xp__ico{bottom:14px;top:auto}
+.rfy div{padding:22px 22px 24px}
+@media (max-width:520px){
+  .rfy{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 18px;margin:0 -2px}
+  .rfy::-webkit-scrollbar{display:none}
+  .rfy article{scroll-snap-align:start}
+}
+/* Experiences: two per row on phones */
+@media (max-width:560px){
+  .xgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .xgrid .xp{aspect-ratio:4/5.6}
+  .xgrid .xp h3{font-size:1.12rem;line-height:1.15}
+  .xgrid .xp__short{font-size:.78rem;line-height:1.4}
+  .xgrid .xp__body{padding:14px}
+  .xgrid .xp__ico{width:38px;height:38px;top:12px;left:12px}
+  .xgrid .xp__ico svg{width:17px;height:17px}
+  .xgrid .xp__plus{width:30px;height:30px;top:14px;right:12px}
+}
+@media (max-width:760px){.pk__btns .btn,.pk .btn{font-size:.74rem;min-height:44px}.t8 .more,.more{font-size:.74rem}.tt__c h4{font-size:.74rem}.lang{font-size:.74rem}.lang a{min-width:40px;text-align:center}}

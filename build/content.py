@@ -23,9 +23,9 @@ PAGES = ["index", "about", "packages", "thoddoo", "experiences", "guesthouses", 
 UI = {
     "en": {
         "nav": {"about": "About us", "packages": "Packages", "thoddoo": "Thoddoo", "experiences": "Experiences",
-                "guesthouses": "Guesthouses", "faq": "FAQ", "contact": "Plan my trip", "index": "Home"},
+                "guesthouses": "Guesthouses", "faq": "FAQ", "contact": "Plan your trip", "index": "Home"},
         "tagline": "Your Maldivian friend",
-        "plan": "Plan my trip", "menu": "Menu", "close": "Close",
+        "plan": "Plan your trip", "menu": "Menu", "close": "Close",
         "check": "Check dates & availability", "share": "Share", "copied": "Link copied", "enquiry": "Send an enquiry",
         "discover": "Discover", "details": "View details", "book": "Book this package", "add": "Add to my trip",
         "all_exp": "See all experiences", "all_pkg": "Compare all packages", "per_guest": "per guest · 7 nights",
@@ -110,7 +110,7 @@ SEO = {
                "Ответы на частые вопросы об отдыхе на Тодду: бронирование, оплата, отмена, трансфер на скоростном катере, виза по прибытии, валюта и погода."),
     },
     "contact": {
-        "en": ("Plan My Maldives Trip — Enquire Now | Velaa Getaways",
+        "en": ("Plan Your Maldives Trip — Free Personal Quote | Velaa Getaways",
                "Send your dates and wishes and get a personal Maldives quote from Velaa Getaways. Reply by e-mail or WhatsApp. $200 deposit to confirm."),
         "ru": ("Спланировать отдых на Мальдивах — оставить заявку | Velaa Getaways",
                "Укажите даты и пожелания — получите персональное предложение по отдыху на Мальдивах. Ответим по e-mail или в WhatsApp. Депозит $200 для подтверждения."),
@@ -344,7 +344,7 @@ EXPERIENCES = [
     {"key": "hopping", "icon": "island", "img": "island-hopping",
      "en": ("Island Hopping", "Rasdhoo, Mathiveri or Ukulhas.",
             "A boat ride can bring you to a whole new island and a different rhythm of local life. Choose Rasdhoo for a relaxed day of exploring, or visit both Mathiveri and Ukulhas. Wander at your own pace and enjoy seeing more of the Maldives beyond Thoddoo."),
-     "ru": ("Island hopping", "Расдху, Матхивери или Укулхас.",
+     "ru": ("Прогулка по островам", "Расдху, Матхивери или Укулхас.",
             "Короткая поездка на лодке — и вы на совершенно новом острове с другим ритмом жизни. Выберите Расдху для спокойного дня или посетите сразу Матхивери и Укулхас. Гуляйте в своём темпе и откройте Мальдивы за пределами Тодду.")},
     {"key": "whaleshark", "icon": "whale", "img": "whale-shark",
      "en": ("Whale Shark Snorkelling", "Meet the ocean’s gentle giant.",
@@ -538,7 +538,7 @@ FAQ = [
      "en": ("What services do you offer?", "We arrange:<ul><li>Local island guesthouse stays</li><li>Customised holiday packages</li><li>Airport transfers</li><li>Excursions and marine adventures</li><li>Professional photoshoots</li><li>Romantic beach and floating dinners</li></ul>"),
      "ru": ("Какие услуги вы предлагаете?", "Мы организуем:<ul><li>Проживание в гестхаусах на локальном острове</li><li>Индивидуальные туры</li><li>Трансфер из аэропорта</li><li>Экскурсии и морские приключения</li><li>Профессиональные фотосессии</li><li>Романтические ужины на пляже и плавучие ужины</li></ul>")},
     {"icon": "calendar",
-     "en": ("How can I book a holiday?", "Send us an enquiry through the form on our Plan my trip page, or message us on WhatsApp. Share your travel dates, number of guests and preferred package, and we’ll prepare a personalised quotation."),
+     "en": ("How can I book a holiday?", "Send us an enquiry through the form on our Plan your trip page, or message us on WhatsApp. Share your travel dates, number of guests and preferred package, and we’ll prepare a personalised quotation."),
      "ru": ("Как забронировать отдых?", "Оставьте заявку через форму на странице «Спланировать поездку» или напишите нам в WhatsApp. Укажите даты, количество гостей и желаемый тур — мы подготовим персональное предложение.")},
     {"icon": "heart",
      "en": ("Can I customise my holiday package?", "Absolutely! We can tailor your holiday to your budget, preferred accommodation, activities and travel dates."),
@@ -583,7 +583,7 @@ FAQ_HEAD = {
 
 # --------------------------------------------------------------- Contact
 CONTACT = {
-    "en": {"eyebrow": "Plan my trip", "title": "Let’s plan your <em>island escape</em>",
+    "en": {"eyebrow": "Plan your trip", "title": "Let’s plan your <em>island escape</em>",
            "lead": "Share your dates, guests and wishes. We’ll reply with a clear, personal quotation — no obligation.",
            "f": {"name": "Your name", "email": "E-mail", "phone": "Phone / WhatsApp", "arrival": "Arrival", "departure": "Departure",
                  "guests": "Guests", "package": "Package", "pkg_opts": ["Not sure yet — advise me", "Essential Escape", "Ocean Explorer", "Signature Maldives", "Excursions only"],
