@@ -31,11 +31,26 @@ def size(name):
     return _sz[name]
 
 
+_lqip = {}
+
+
+def lqip(name):
+    """Tiny blurred preview (inline), shown instantly until the real photo has loaded."""
+    if name not in _lqip:
+        import base64, io
+        src = os.path.join(IMG, f"{name}-sm.webp") if os.path.exists(os.path.join(IMG, f"{name}-sm.webp")) else os.path.join(IMG, f"{name}.webp")
+        with Image.open(src) as im:
+            im = im.convert("RGB"); im.thumbnail((24, 24))
+            buf = io.BytesIO(); im.save(buf, "WEBP", quality=40)
+        _lqip[name] = "data:image/webp;base64," + base64.b64encode(buf.getvalue()).decode()
+    return _lqip[name]
+
+
 def img(name, alt="", sizes="100vw", eager=False, cls=""):
     big = f"{name}.webp"
     w, h = size(big)
     c = f' class="{cls}"' if cls else ""
-    ld = ' loading="eager" fetchpriority="high"' if eager else ' loading="lazy"'
+    ld = ' loading="eager" fetchpriority="high"' if eager else f' loading="lazy" style="background:#cfdfe0 url({lqip(name)}) center/cover no-repeat"'
     if os.path.exists(os.path.join(IMG, f"{name}-sm.webp")):
         return (f'<img{c} src="{{R}}assets/img/{name}-sm.webp" srcset="{{R}}assets/img/{name}-sm.webp 900w, {{R}}assets/img/{big} {w}w" '
                 f'sizes="{sizes}" alt="{E(alt)}" width="{w}" height="{h}" decoding="async"{ld}>')

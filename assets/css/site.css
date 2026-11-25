@@ -1514,3 +1514,6 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 
 /* ===== Desktop page-top banner fills exactly one screen below the header ===== */
 @media (min-width:861px){.phero--full{height:max(420px,min(calc(100svh - 136px),56.25vw))}.phero--about > img{object-position:50% 85%}}
+
+/* lazy photos: never print the alt text over the blurred preview */
+img[loading=lazy]{color:transparent}
