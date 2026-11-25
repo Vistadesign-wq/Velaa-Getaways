@@ -1444,3 +1444,5 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 /* ===== Home experiences: just the name on each card (details open on tap) ===== */
 .bento .xp__cat,.bento .xp__short{display:none}
 .bento .xp h3{margin-top:0}
+.xgrid .xp__cat,.xgrid .xp__short{display:none}
+.xgrid .xp h3{margin-top:0}
