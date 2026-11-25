@@ -554,16 +554,16 @@ def getting_there(lang, r):
 </div></section>"""
 
 
-STAY_GAL = ["stay-room-white", "guesthouse-6", "stay-room-wood", "guesthouse-5", "stay-garden", "guesthouse-1",
-            "stay-breakfast", "guesthouse-7", "stay-room-classic", "guesthouse-4", "stay-garden-seat"]
+STAY_GAL = ["gh-room-haisha", "guesthouse-6", "gh-clean", "guesthouse-5", "gh-garden", "guesthouse-1",
+            "gh-breakfast", "guesthouse-7", "gh-comfort", "guesthouse-4", "gh-balcony"]
 STAY_CARDS = [
-    ("stay-room-classic", "bed", {"en": ("Comfort", "Calm rooms, good beds and air-conditioning.", "Every room we book has air-conditioning, a private bathroom with hot water, good beds and Wi-Fi — so you rest well between island days."),
+    ("gh-comfort", "bed", {"en": ("Comfort", "Calm rooms, good beds and air-conditioning.", "Every room we book has air-conditioning, a private bathroom with hot water, good beds and Wi-Fi — so you rest well between island days."),
                                    "ru": ("Комфорт", "Спокойные номера, удобные кровати и кондиционер.", "В каждом номере, который мы бронируем, — кондиционер, собственная ванная с горячей водой, удобные кровати и Wi-Fi, чтобы вы хорошо отдыхали между островными днями.")}),
-    ("stay-room-wood", "sparkle", {"en": ("Cleanliness", "We visit and check every guesthouse we work with.", "We personally visit every guesthouse we partner with and keep checking — fresh linen, spotless bathrooms and daily housekeeping are a must for us."),
+    ("gh-clean", "sparkle", {"en": ("Cleanliness", "We visit and check every guesthouse we work with.", "We personally visit every guesthouse we partner with and keep checking — fresh linen, spotless bathrooms and daily housekeeping are a must for us."),
                                    "ru": ("Чистота", "Мы лично проверяем каждый гестхаус.", "Мы лично посещаем каждый гестхаус-партнёр и регулярно проверяем его: свежее бельё, чистые ванные и ежедневная уборка — обязательны.")}),
-    ("stay-breakfast", "coffee", {"en": ("Breakfast included", "Island fruit, eggs, fresh bread and good coffee.", "Breakfast is included in all our packages — tropical fruit from Thoddoo’s farms, eggs your way, fresh bread, Maldivian mas huni on request and good coffee."),
+    ("gh-breakfast", "coffee", {"en": ("Breakfast included", "Island fruit, eggs, fresh bread and good coffee.", "Breakfast is included in all our packages — tropical fruit from Thoddoo’s farms, eggs your way, fresh bread, Maldivian mas huni on request and good coffee."),
                                   "ru": ("Завтрак включён", "Островные фрукты, яйца, свежий хлеб и кофе.", "Завтрак входит во все наши туры: тропические фрукты с ферм Тодду, яйца на ваш вкус, свежий хлеб, мальдивский мас хуни по желанию и хороший кофе.")}),
-    ("stay-garden", "palm", {"en": ("Gardens &amp; terraces", "Shady tropical gardens to relax in after the beach.", "Our partner guesthouses have shaded gardens, terraces and sandy courtyards — perfect for a slow afternoon with a fresh coconut."),
+    ("gh-garden", "palm", {"en": ("Gardens &amp; terraces", "Shady tropical gardens to relax in after the beach.", "Our partner guesthouses have shaded gardens, terraces and sandy courtyards — perfect for a slow afternoon with a fresh coconut."),
                              "ru": ("Сады и террасы", "Тенистые тропические сады для отдыха после пляжа.", "У наших гестхаусов-партнёров тенистые сады, террасы и песчаные дворики — идеально для неспешного дня со свежим кокосом.")}),
     ("guesthouse-6", "heart", {"en": ("Island hospitality", "Family-run hosts who treat you like a guest of the house.", "Thoddoo’s guesthouses are run by local families. Expect warm welcomes, local tips and help with anything you need during your stay."),
                                "ru": ("Гостеприимство", "Семейные хозяева, которые принимают вас как дорогих гостей.", "Гестхаусы Тодду ведут местные семьи. Вас ждут тёплый приём, советы от местных и помощь во всём, что нужно во время отдыха.")}),
@@ -900,7 +900,7 @@ def p_guesthouses(lang, r):
     gal = "".join(f'<button class="gcard" data-lb="{{R}}assets/img/{n}.webp" aria-label="{S[2]}">{img(n, S[2], "(max-width:640px) 86vw, 33vw")}<span class="zoom">{icon("zoom")}</span></button>' for n in STAY_GAL)
     return f'''{page_hero(lang, r, "guesthouse-hero", G["eyebrow"], G["title"], G["lead"], "guesthouses", full=True)}
 <section class="sec"><div class="wrap split">
-  <div class="split__media rv"><div class="m1 img-rv">{img("guesthouse-6", S[2], "50vw")}</div><div class="m2">{img("stay-breakfast", "", "25vw")}</div></div>
+  <div class="split__media rv"><div class="m1 img-rv">{img("guesthouse-6", S[2], "50vw")}</div><div class="m2">{img("gh-breakfast", "", "25vw")}</div></div>
   <div class="split__body rv d1">{label(G["eyebrow"])}<h2>{G["title"]}</h2>{"".join(f"<p>{p}</p>" for p in G["p"])}<p>{G["help"]}</p>
     <a class="btn btn--wa" href="https://wa.me/{C["whatsapp"]}" target="_blank" rel="noopener">{brand("whatsapp")} WhatsApp</a></div>
 </div></section>

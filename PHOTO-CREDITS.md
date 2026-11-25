@@ -82,6 +82,12 @@ Checked 2026-11-24. Every image and video on the site is listed here with its so
 | `aisha-mosque` | Photo sent by the client in chat — confirm who took it and that it may be used commercially. If it came from a news site, a stock library or another company, replace it. |
 | `breadfruit` | Photo sent by the client in chat — confirm who took it and that it may be used commercially. If it came from a news site, a stock library or another company, replace it. |
 | `ferry` | Photo sent by the client in chat — confirm who took it and that it may be used commercially. If it came from a news site, a stock library or another company, replace it. |
+| `gh-comfort` | Thoddoo partner guesthouse (Rindhali Thoddoo) | from the guesthouse's own website photos | replaces stock `stay-room-classic`
+| `gh-clean` | Thoddoo partner guesthouse (Rindhali Thoddoo) | from the guesthouse's own website photos | replaces stock `stay-room-wood`
+| `gh-breakfast` | Thoddoo partner guesthouse (Rindhali Thoddoo) | from the guesthouse's own website photos | replaces stock `stay-breakfast`
+| `gh-garden` | Thoddoo partner guesthouse (Haisha Inn) | from the guesthouse's own website photos | replaces stock `stay-garden`
+| `gh-room-haisha` | Thoddoo partner guesthouse (Haisha Inn) | from the guesthouse's own website photos | replaces stock `stay-room-white`
+| `gh-balcony` | Thoddoo partner guesthouse (Rindhali Thoddoo) | from the guesthouse's own website photos | replaces stock `stay-garden-seat`
 | `guesthouse-1` | Partner guesthouse photo from the client brief — get written OK from each guesthouse owner. |
 | `guesthouse-2` | Partner guesthouse photo from the client brief — get written OK from each guesthouse owner. |
 | `guesthouse-3` | Partner guesthouse photo from the client brief — get written OK from each guesthouse owner. |
