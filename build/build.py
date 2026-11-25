@@ -69,6 +69,7 @@ T3 = {
                     ("tag", "Honest, clear prices", "All taxes included and every inclusion listed before you book.")],
         "trip": ["House reef", "Bikini beach", "Family guesthouses"],
         "pk_label": "Holiday packages", "pk_title": "Three ways to live <em>island life</em>",
+        "pk_facts": [("calendar", "8&nbsp;days · 7&nbsp;nights"), ("bed", "Twin or double sharing"), ("users", "Per person · 2&nbsp;adults"), ("check", "All taxes included")], "pk_season": "Prices by season",
         "pk_lead": "8 days · 7 nights · twin or double sharing. Per person, 2 adults sharing, all taxes included.",
         "view": "View package", "book_now": "Book",
         "xp_label": "Experiences", "xp_title": "Moments made <em>by the ocean</em>",
@@ -113,6 +114,7 @@ T3 = {
                     ("tag", "Честные, понятные цены", "Все налоги включены, а состав тура известен до бронирования.")],
         "trip": ["Домашний риф", "Бикини-пляж", "Семейные гестхаусы"],
         "pk_label": "Туры", "pk_title": "Три способа прожить <em>островную жизнь</em>",
+        "pk_facts": [("calendar", "8&nbsp;дней · 7&nbsp;ночей"), ("bed", "Twin или double"), ("users", "За человека · 2&nbsp;взрослых"), ("check", "Все налоги включены")], "pk_season": "Цены по сезонам",
         "pk_lead": "8 дней · 7 ночей · twin или double. Цена за человека при размещении 2 взрослых, все налоги включены.",
         "view": "Подробнее", "book_now": "Забронировать",
         "xp_label": "Впечатления", "xp_title": "Моменты, подаренные <em>океаном</em>",
@@ -732,7 +734,9 @@ def p_index(lang, r):
 
 <section class="sec sec--white" id="packages">
   <div class="wrap">
-    {head(T["pk_label"], T["pk_title"], T["pk_lead"], season_switch(lang), num="01")}
+    <div class="pkh rv"><div class="head head--c">{label(T["pk_label"], "01")}<h2>{T["pk_title"]}</h2></div>
+      <ul class="pkh__facts">{"".join(f'<li>{icon(ic)}<span>{t}</span></li>' for ic, t in T["pk_facts"])}</ul>
+      <div class="pkh__season"><small>{T["pk_season"]}</small>{season_switch(lang)}</div></div>
     <div class="pk-grid">{pk}</div>
   </div>
 </section>
