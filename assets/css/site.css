@@ -1511,3 +1511,6 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .phero--full .wrap > div:last-child{background:rgba(8,30,38,.62);backdrop-filter:blur(12px) saturate(130%);-webkit-backdrop-filter:blur(12px) saturate(130%);border-color:rgba(255,255,255,.16)}
   .phero--full .wrap > div:last-child .lead,.phero--full .hfacts li{color:#fff}
 }
+
+/* ===== Desktop page-top banner fills exactly one screen below the header ===== */
+@media (min-width:861px){.phero--full{height:max(420px,min(calc(100svh - 136px),56.25vw))}.phero--about > img{object-position:50% 85%}}
