@@ -185,7 +185,7 @@ PACKAGES = [
                      ("День 8", "Выезд и обратный трансфер")],
             "best": "Семьи, самостоятельные путешественники и те, кто впервые едет на Мальдивы и хочет спокойный, доступный отдых.",
             "note": "Хотите больше? Добавьте любое впечатление из нашего списка."}},
-    {"key": "ocean", "num": "02", "img": "lagoon-boat", "low": "$875", "high": "$990", "featured": True,
+    {"key": "ocean", "num": "02", "img": "ocean-jetski", "low": "$875", "high": "$990", "featured": True,
      "icons": ["house", "boat", "turtle", "manta", "fishing", "dolphin", "wave"],
      "en": {"name": "Ocean Explorer", "kicker": "Adventures on the water",
             "lead": "For travellers who want more than a beach holiday. Dive into Thoddoo’s marine world with underwater adventures, guided excursions and afternoons to unwind.",
