@@ -745,7 +745,8 @@ def p_index(lang, r):
 
 <section class="sec">
   <div class="wrap">
-    {head(T["xp_label"], T["xp_title"], T["xp_lead"], arrow_link(T["xp_all"], href(lang, "experiences", r)), num="02")}
+    <div class="pkh pkh--xp rv"><div class="head head--c">{label(T["xp_label"], "02")}<h2>{T["xp_title"]}</h2></div>
+      <p class="pkh__lead">{T["xp_lead"]}</p>{arrow_link(T["xp_all"], href(lang, "experiences", r))}</div>
     <div class="bento">{bento}</div>
   </div>
 </section>
