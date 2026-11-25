@@ -389,6 +389,8 @@ CAR_UI = {"en": ("Previous", "Next"), "ru": ("Назад", "Вперёд")}
 
 def carousel(lang, items, per=3, cls="", auto=False):
     p, n = CAR_UI[lang]
+    if "car--cards" in cls and "car--travel" not in cls:
+        cls += " car--stage"
     return (f'<div class="car {cls}" data-car{" data-auto" if auto else ""} style="--per:{per}">'
             f'<div class="car__track" tabindex="0">{items}</div>'
             f'<div class="car__nav"><button class="navb" data-cprev aria-label="{p}">{icon("arrowl")}</button>'
