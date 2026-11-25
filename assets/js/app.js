@@ -150,7 +150,7 @@
   };
   $$("[data-book]").forEach(function (f) {
     pair(f.elements.arrival, f.elements.departure);
-    var g = f.elements.adults, clamp = function (v) { v = parseInt(v, 10); return isNaN(v) ? 0 : Math.max(0, Math.min(50, v)); };
+    var g = f.elements.adults, clamp = function (v) { v = parseInt(v, 10); return isNaN(v) ? 1 : Math.max(1, Math.min(50, v)); };
     $$("[data-g]", f).forEach(function (b) { b.addEventListener("click", function () { g.value = clamp(+g.value + +b.dataset.g); }); });
     g.addEventListener("change", function () { g.value = clamp(g.value); });
     f.addEventListener("submit", function (e) {
