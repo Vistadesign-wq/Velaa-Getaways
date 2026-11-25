@@ -400,7 +400,7 @@ def carousel(lang, items, per=3, cls="", auto=False):
 def pcard(lang, image, ic, title, short, detail="", kicker="", extra=""):
     """Photo card: picture + round icon badge + title + short text; opens a detail modal when it has detail."""
     more = f'<span class="lm__more">{UI[lang]["discover"]} {icon("arrow")}</span>' if detail else ""
-    body = (f'<figure>{img(image, title, "(max-width:640px) 86vw, (max-width:1000px) 45vw, 30vw")}</figure>'
+    body = (f'<figure>{img(image, title, "(max-width:760px) 100vw, 820px")}</figure>'
             f'<span class="pc__ic">{icon(ic)}</span>'
             f'<span class="pc__b">{f"<small>{kicker}</small>" if kicker else ""}<h3>{title}</h3><p>{short}</p>{extra}{more}</span>')
     if detail:
