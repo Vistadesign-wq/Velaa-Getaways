@@ -1491,3 +1491,12 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .ftr__col ul{gap:2px}
   .ftr__col ul a{display:inline-block;padding:10px 0;min-height:40px}
 }
+
+/* ===== Page-top photo on desktop: shorter banner (client request) ===== */
+@media (min-width:861px){
+  .phero--full{aspect-ratio:auto;height:clamp(440px,38vw,580px);min-height:0}
+  .phero--full .wrap{padding-top:96px;padding-bottom:clamp(36px,4vw,56px)}
+}
+@media (min-width:861px){.phero--about > img{object-position:50% 78%}}
+@media (min-width:861px) and (max-width:1399px){.phero--about > img{object-position:50% 100%}.phero--about .wrap > div:last-child{max-width:380px;justify-self:end}}
+@media (min-width:861px) and (max-width:1399px){.phero--about .wrap{padding-bottom:22px}.phero--about .wrap > div:last-child{max-width:430px;padding:14px 18px}.phero--about .wrap > div:last-child .lead{font-size:.84rem;line-height:1.55;margin-top:8px!important}}
