@@ -1532,3 +1532,7 @@ img[loading=lazy]{color:transparent}
 @media (max-width:860px){.opt-grid > *{flex-basis:calc((100% - var(--g)) / 2)}}
 @media (max-width:480px){.opt-grid > *{flex-basis:100%}}
 .filters{justify-content:center}
+
+/* ===== Photo galleries: landscape cards that match the photos (nothing cut off) ===== */
+.car--gal .gcard{aspect-ratio:4/3}
+.gcard img[src*="watermelon-sm"]{object-position:35% 50%}
