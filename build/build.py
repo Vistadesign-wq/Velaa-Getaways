@@ -344,7 +344,7 @@ def cta(lang, r, image="sunset-sea"):
 def page_hero(lang, r, image, eyebrow, title, lead, page, full=False):
     U = UI[lang]
     alt = re.sub("<[^>]+>", "", title) + (" — Thoddoo, Maldives" if lang == "en" else " — Тодду, Мальдивы")
-    return f'''<section class="phero{" phero--full" if full else ""}">{img(image, alt, "100vw", eager=True)}<div class="hero__shade"></div>
+    return f'''<section class="phero phero--{page}{" phero--full" if full else ""}">{img(image, alt, "100vw", eager=True)}<div class="hero__shade"></div>
   <div class="wrap on-dark"><div><ol class="crumbs"><li><a href="{href(lang, "index", r)}">{U["breadcrumb_home"]}</a></li><li>{U["nav"][page]}</li></ol>
     <h1>{title}</h1></div><div>{label(eyebrow)}<p class="lead" style="margin-top:14px">{lead}</p></div></div>
 </section>'''
@@ -678,7 +678,7 @@ def p_index(lang, r):
     B = T["book"]
     popts = f'<option value="">{B["any"]}</option>' + "".join(f'<option value="{p["key"]}">{p[lang]["name"]}</option>' for p in PACKAGES)
     gopts = "".join(f"<option{' selected' if n == 2 else ''}>{n}</option>" for n in range(1, 11))
-    stmt = T["statement"].replace("{I1}", img("turtle", "Sea turtle on the reef" if lang == "en" else "Морская черепаха на рифе", "120px")).replace("{I2}", img("watermelon", "Thoddoo watermelon" if lang == "en" else "Арбуз с Тодду", "120px")).replace("{I3}", img("coconut", "Coconuts on a palm" if lang == "en" else "Кокосы на пальме", "120px"))
+    stmt = re.sub(r'\s*<span class="inline-img">\{I\d\}</span>', "", T["statement"])
     pillars = "".join(f'<div class="pillar rv d{i + 1}"><span class="pillar__i">{icon(ic)}</span><h3>{t}</h3><p>{d}</p></div>' for i, (ic, t, d) in enumerate(T["pillars"]))
     ifacts = "".join(f'<span>{icon(ic)}{t}</span>' for ic, t in INTRO_FACTS[lang])
     pk = ""
@@ -991,12 +991,12 @@ def p_contact(lang, r):
     <div class="sent"><span class="sent__ic">{icon("check")}</span><h3>{T["done_t"]}</h3><p>{T["done_p"]}</p><a class="btn btn--ink" href="{href(lang, "index", r)}">{T["done_b"]}</a></div>
   </form>
   <aside class="sum">
-    <div class="sum__card" aria-live="polite">
-      <div class="sum__img"><img data-sum-img src="{{R}}assets/img/hero-sandbank-sm.webp" alt="" width="900" height="600"><strong data-sum="pkg">{T["not_sure"][0]}</strong></div>
+    <div class="sum__card" aria-live="polite" hidden data-sum-card>
+      <div class="sum__img"><small class="sum__kick">{"Your booking summary" if lang == "en" else "Ваше бронирование"}</small><img data-sum-img src="{{R}}assets/img/hero-sandbank-sm.webp" alt="" width="900" height="600"><strong data-sum="pkg">{T["not_sure"][0]}</strong></div>
       <div class="sum__rows">
         <div><span>{icon("calendar")}{T["s_dates"]}</span><span data-sum="dates">{T["s_none"]}</span></div>
         <div><span>{icon("clock")}{T["s_nights"]}</span><span data-sum="nights">{T["s_none"]}</span></div>
-        <div><span>{icon("users")}{T["s_guests"]}</span><span data-sum="guests">2</span></div>
+        <div><span>{icon("users")}{T["s_guests"]}</span><span data-sum="guests">{T["s_none"]}</span></div>
         <div><span>{icon("sparkle")}{T["s_xp"]}</span><span data-sum="xp">{T["s_none"]}</span></div>
       </div>
       <div class="sum__total"><small>{T["s_total"]}</small><strong data-sum="total">{T["s_quote"]}</strong><span data-sum="note"></span></div>

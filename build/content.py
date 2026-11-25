@@ -273,7 +273,7 @@ PACKAGES = [
 
 PKG_PAGE = {
     "en": {"eyebrow": "Choose your island escape", "title": "Three ways to experience <em>genuine</em> island life",
-           "lead": "8 days / 7 nights · twin or double sharing. Per person, 2 adults sharing a double room. All taxes included.",
+           "lead": '<span class="ln">8 days / 7 nights · twin or double sharing.</span> <span class="ln">Per person, 2 adults sharing a double room.</span> <span class="ln">All taxes included.</span>',
            "single": "* A single-occupancy supplement is possible; the price depends on the season.",
            "compare_eyebrow": "At a glance", "compare_title": "Compare the <em>experiences</em>",
            "compare_cols": ["Included service", "Essential", "Ocean", "Signature"],
@@ -288,7 +288,7 @@ PKG_PAGE = {
                                                     "Single travellers, triple rooms, extra nights and optional extras on request.",
                                                     "All sea-based activities are subject to weather and provider availability."]},
     "ru": {"eyebrow": "Выберите свой островной отдых", "title": "Три способа прожить <em>настоящую</em> островную жизнь",
-           "lead": "8 дней / 7 ночей · размещение twin или double. Цена за человека при размещении 2 взрослых в номере. Все налоги включены.",
+           "lead": '<span class="ln">8 дней / 7 ночей · размещение twin или double.</span> <span class="ln">Цена за человека при размещении 2 взрослых в номере.</span> <span class="ln">Все налоги включены.</span>',
            "single": "* Возможно одноместное размещение с доплатой — стоимость зависит от сезона.",
            "compare_eyebrow": "Коротко", "compare_title": "Сравните <em>впечатления</em>",
            "compare_cols": ["Что включено", "Essential", "Ocean", "Signature"],

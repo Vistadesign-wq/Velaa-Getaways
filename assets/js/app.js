@@ -165,8 +165,12 @@
   var form = $("#enquiry-form");
   if (form) {
     var D = form.dataset, steps = $$(".step", form), tabs = $$(".steps button", form), s = 0;
+    var seen = { guests: false, xp: false };
     var go = function (n) {
       s = Math.max(0, Math.min(steps.length - 1, n));
+      if (s > 1) seen.guests = true;
+      if (s > 2) seen.xp = true;
+      if (typeof update === "function") update();
       steps.forEach(function (st, j) { st.classList.toggle("on", j === s); });
       tabs.forEach(function (t, j) { t.classList.toggle("on", j === s); t.classList.toggle("done", j < s); });
       var top = form.getBoundingClientRect().top + scrollY - 110; if (scrollY > top) scrollTo({ top: top, behavior: "smooth" });
@@ -178,7 +182,7 @@
     $$("[data-stepper]", form).forEach(function (st) {
       var name = st.dataset.stepper, out = $("output", st), inp = form.elements[name], min = name === "adults" ? 1 : 0;
       $$("button", st).forEach(function (b) {
-        b.addEventListener("click", function () { var v = Math.max(min, Math.min(name === "adults" ? 50 : 20, parseInt(inp.value, 10) + parseInt(b.dataset.d, 10))); inp.value = v; out.textContent = v; update(); });
+        b.addEventListener("click", function () { var v = Math.max(min, Math.min(name === "adults" ? 50 : 20, parseInt(inp.value, 10) + parseInt(b.dataset.d, 10))); inp.value = v; out.textContent = v; if (name === "adults") seen.guests = true; update(); });
       });
     });
     pair(form.elements.arrival, form.elements.departure);
@@ -204,6 +208,13 @@
         set("total", "$" + (per * adults).toLocaleString("en-US"));
         set("note", "$" + per.toLocaleString("en-US") + " " + D.note.replace("{season}", m ? (high ? D.seasonHigh : D.seasonLow) : D.seasonLow + " / " + D.seasonHigh) + (kids ? " · " + D.kids : ""));
       } else { set("total", D.quote); set("note", ""); }
+      /* summary appears only once dates, guests and experiences are chosen */
+      var card = $("[data-sum-card]");
+      if (card) {
+        var ready = a && d && nights > 0 && seen.guests && (seen.xp || xs.length > 0);
+        if (ready && card.hidden) { card.hidden = false; card.classList.add("sum__card--in"); }
+        else if (!ready && !card.hidden) card.hidden = true;
+      }
     };
     form.addEventListener("change", update);
 
@@ -211,7 +222,7 @@
     if (q.has("package")) { var r = $('input[name="package"][value="' + q.get("package") + '"]', form); if (r) r.checked = true; }
     if (q.get("exp")) { var c = $('input[name="extras"][value="' + q.get("exp") + '"]', form); if (c) c.checked = true; }
     ["arrival", "departure"].forEach(function (k) { if (q.get(k)) form.elements[k].value = q.get(k); });
-    if (q.get("adults")) { form.elements.adults.value = q.get("adults"); $('[data-stepper="adults"] output', form).textContent = q.get("adults"); }
+    if (q.get("adults")) { seen.guests = true; form.elements.adults.value = q.get("adults"); $('[data-stepper="adults"] output', form).textContent = q.get("adults"); }
     update();
 
     var cSel = form.elements.country, kSel = form.elements.code;
