@@ -1517,3 +1517,18 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 
 /* lazy photos: never print the alt text over the blurred preview */
 img[loading=lazy]{color:transparent}
+
+/* ===== Card rows: an unfinished last row is centred, never left with a gap ===== */
+.wcs{display:flex;flex-wrap:wrap;justify-content:center;--g:clamp(16px,2.4vw,34px);gap:40px var(--g)}
+.wcs > .wc{flex:0 0 calc((100% - 4 * var(--g)) / 5);height:auto}
+@media (max-width:1000px){.wcs > .wc{flex-basis:calc((100% - 2 * var(--g)) / 3)}}
+@media (max-width:560px){.wcs{--g:14px;row-gap:34px}.wcs > .wc{flex-basis:calc((100% - var(--g)) / 2)}}
+.xgrid{display:flex;flex-wrap:wrap;justify-content:center;--g:clamp(14px,1.6vw,22px);gap:var(--g)}
+.xgrid > .xp{flex:0 0 calc((100% - 2 * var(--g)) / 3);width:auto}
+@media (max-width:980px){.xgrid > .xp{flex-basis:calc((100% - var(--g)) / 2)}}
+@media (max-width:560px){.xgrid{--g:12px}}
+.opt-grid{display:flex;flex-wrap:wrap;justify-content:center;--g:12px;gap:var(--g)}
+.opt-grid > *{flex:0 0 calc((100% - 2 * var(--g)) / 3);min-width:0}
+@media (max-width:860px){.opt-grid > *{flex-basis:calc((100% - var(--g)) / 2)}}
+@media (max-width:480px){.opt-grid > *{flex-basis:100%}}
+.filters{justify-content:center}
