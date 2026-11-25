@@ -225,7 +225,7 @@ PACKAGES = [
                      ("День 7", "Свободный день и особый прощальный ужин"), ("День 8", "Отъезд")],
             "best": "Любители океана, пары и активные небольшие компании, которым нужен идеальный баланс впечатлений и отдыха.",
             "note": "Маршрут морского сафари и встречи с морскими обитателями зависят от состояния моря."}},
-    {"key": "signature", "num": "03", "img": "aerial-palms", "low": "$1,390", "high": "$1,550",
+    {"key": "signature", "num": "03", "img": "photoshoot", "low": "$1,390", "high": "$1,550",
      "icons": ["coffee", "boat", "turtle", "manta", "dolphin", "wave", "resort", "dinner"],
      "en": {"name": "Signature Maldives", "kicker": "A more complete island experience",
             "lead": "A carefully arranged week of unforgettable moments: more time on the water, meals taken care of, a resort escape and special memories to take home.",
