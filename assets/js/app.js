@@ -26,7 +26,16 @@
   $$("[data-close]").forEach(function (b) { b.addEventListener("click", function () { drawer.classList.remove("open"); document.body.classList.remove("lock"); }); });
 
   /* ---------- Hero video: respect reduced motion, keep playing ---------- */
-  $$(".hero video").forEach(function (v) { if (reduce) { v.removeAttribute("autoplay"); v.pause(); } else { var p = v.play(); if (p && p.catch) p.catch(function () {}); } });
+  /* plays on every phone: gentle slow clip, so it also runs with "Reduce Motion"; if the browser blocks
+     autoplay (e.g. iPhone Low Power Mode), it starts on the visitor's first touch, scroll or tab return */
+  $$(".hero video").forEach(function (v) {
+    v.muted = true; v.defaultMuted = true; v.playsInline = true; v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", "");
+    var tryPlay = function () { if (!v.paused) return; var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    tryPlay();
+    v.addEventListener("canplay", tryPlay);
+    ["touchstart", "pointerdown", "scroll", "keydown"].forEach(function (ev) { window.addEventListener(ev, tryPlay, { passive: true }); });
+    document.addEventListener("visibilitychange", function () { if (!document.hidden) tryPlay(); });
+  });
 
   /* ---------- Hero slideshow ---------- */
   var slides = $$(".hero__slides figure");

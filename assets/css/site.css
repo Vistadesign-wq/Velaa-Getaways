@@ -477,7 +477,6 @@ p{color:var(--mute)}
 /* ---------- Photo strip ---------- */
 .strip{overflow:hidden}
 .strip__track{display:flex;gap:16px;width:max-content;animation:marq 70s linear infinite}
-.strip:hover .strip__track{animation-play-state:paused}
 @keyframes marq{to{transform:translateX(-50%)}}
 .strip figure{flex:none;width:clamp(220px,22vw,320px);aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;position:relative}
 .strip figure:nth-child(even){aspect-ratio:4/4;align-self:end}
@@ -1143,7 +1142,6 @@ div.pc{cursor:default}
 /* ribbon: small round photos with labels */
 .ribbon{background:#fff;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .ribbon__t{padding:18px 0;animation-duration:90s}
-.ribbon:hover .ribbon__t{animation-play-state:paused}
 .ribbon__t span.rchip{gap:14px;padding:0 34px;font-size:.7rem;font-weight:700;letter-spacing:.26em;color:var(--ink-2)}
 .ribbon__t span.rchip::after{background:var(--gold);margin-left:52px}
 .rchip i{display:block;width:54px;height:54px;border-radius:50%;overflow:hidden;flex:none;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--gold-2),0 8px 18px -8px rgba(16,58,70,.45)}
@@ -1439,3 +1437,6 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 .pkh--xp{gap:18px}
 .pkh--xp .arrow-link{margin-top:2px}
 @media (max-width:760px){.pkh__lead{font-size:.94rem}}
+
+/* ===== Moving photo strips: pause on hover only with a mouse (touch screens keep them moving) ===== */
+@media (hover:hover) and (pointer:fine){.strip:hover .strip__track,.ribbon:hover .ribbon__t{animation-play-state:paused}}
