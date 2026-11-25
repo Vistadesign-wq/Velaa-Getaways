@@ -63,7 +63,7 @@ T3 = {
         "slides": ["Sandbank · North Ari Atoll", "Sandbar · Alif Alif", "Arrival by speedboat"],
         "book": {"arr": "Arrival", "dep": "Departure", "guests": "Guests", "pkg": "Package", "any": "Any package", "go": "Check availability"},
         "intro_label": "Welcome to Thoddoo",
-        "statement": 'A real Maldivian island where <span class="kw">turtles</span> glide past the reef, <span class="kw">watermelons</span> ripen in the fields, <span class="kw">coconuts</span> hang from the palms — and you are welcomed <em>like a friend.</em>',
+        "statement": 'A real Maldivian island where <span class="kw">turtles</span> glide past the reef, <span class="kw">watermelons</span> ripen in the fields, <span class="kw">coconuts</span> hang from the palms&nbsp;— and you are welcomed <em>like&nbsp;a&nbsp;friend.</em>',
         "pillars": [("heart", "Hosted by locals", "Dhaain was born on Thoddoo — you see the island through the people who call it home."),
                     ("turtle", "The reef at your doorstep", "Step off the beach into clear water where turtles and reef fish live."),
                     ("tag", "Honest, clear prices", "All taxes included and every inclusion listed before you book.")],
@@ -107,7 +107,7 @@ T3 = {
         "slides": ["Песчаная отмель · Северный Ари", "Песчаная коса · Алиф Алиф", "Прибытие на скоростном катере"],
         "book": {"arr": "Прилёт", "dep": "Вылет", "guests": "Гостей", "pkg": "Тур", "any": "Любой тур", "go": "Проверить даты"},
         "intro_label": "Добро пожаловать на Тодду",
-        "statement": 'Настоящий мальдивский остров, где у рифа неспешно проплывают <span class="kw">черепахи</span>, на полях зреют <span class="kw">арбузы</span>, на пальмах висят <span class="kw">кокосы</span>, а вас встречают <em>как друга.</em>',
+        "statement": 'Настоящий мальдивский остров, где у&nbsp;рифа неспешно проплывают <span class="kw">черепахи</span>, на полях зреют <span class="kw">арбузы</span>, на пальмах висят <span class="kw">кокосы</span>, а&nbsp;вас встречают <em>как&nbsp;друга.</em>',
         "pillars": [("heart", "Местные хозяева", "Дхаин родился на Тодду — вы увидите остров глазами тех, для кого он дом."),
                     ("turtle", "Риф у порога", "С пляжа — сразу в прозрачную воду, где живут черепахи и рифовые рыбы."),
                     ("tag", "Честные, понятные цены", "Все налоги включены, а состав тура известен до бронирования.")],
@@ -439,8 +439,8 @@ INTRO_CARDS = [
       "ru": ("Честные цены", "Все налоги включены — состав тура известен до бронирования.",
              "В наших турах указана полная цена за человека со всеми мальдивскими налогами. Вы точно знаете, что входит в вашу неделю, ещё до оплаты — без скрытых сборов и сюрпризов.")}),
 ]
-INTRO_FACTS = {"en": [("pin", "Location", "North Ari Atoll"), ("boat", "By speedboat", "60–90 min"), ("plane", "By seaplane", "20 min"), ("sun", "The sea", "28°C all year")],
-               "ru": [("pin", "Где", "Атолл Северный Ари"), ("boat", "На катере", "60–90 минут"), ("plane", "На гидросамолёте", "20 минут"), ("sun", "Море", "28 °C круглый год")]}
+INTRO_FACTS = {"en": [("pin", "fact-location", "Location", "North Ari Atoll"), ("boat", "fact-speedboat", "By speedboat", "60–90 min"), ("plane", "fact-seaplane", "By seaplane", "20 min"), ("sun", "fact-sea", "The sea", "28°C all year")],
+               "ru": [("pin", "fact-location", "Где", "Атолл Северный Ари"), ("boat", "fact-speedboat", "На катере", "60–90 минут"), ("plane", "fact-seaplane", "На гидросамолёте", "20 минут"), ("sun", "fact-sea", "Море", "28 °C круглый год")]}
 INTRO_LEAD = {"en": "Thoddoo is a small, green, real Maldivian island — farms and palm roads in the middle, white sand and coral reef all around. Here is what makes a week here special.",
               "ru": "Тодду — небольшой зелёный остров, настоящие Мальдивы: фермы и пальмовые аллеи в центре, белый песок и коралловый риф по краям. Вот что делает неделю здесь особенной."}
 
@@ -680,7 +680,7 @@ def p_index(lang, r):
     gopts = "".join(f"<option{' selected' if n == 2 else ''}>{n}</option>" for n in range(1, 11))
     stmt = T["statement"]
     pillars = "".join(f'<div class="pillar rv d{i + 1}"><span class="pillar__i">{icon(ic)}</span><h3>{t}</h3><p>{d}</p></div>' for i, (ic, t, d) in enumerate(T["pillars"]))
-    ifacts = "".join(f'<div class="ifact"><span class="ifact__i">{icon(ic)}</span><small>{l}</small><strong>{t}</strong></div>' for ic, l, t in INTRO_FACTS[lang])
+    ifacts = "".join(f'<div class="ifact"><span class="ifact__ph"><span class="ifact__img">{img(im, "", "120px")}</span><span class="ifact__i">{icon(ic)}</span></span><small>{l}</small><strong>{t}</strong></div>' for ic, im, l, t in INTRO_FACTS[lang])
     pk = ""
     for i, p in enumerate(PACKAGES):
         P = p[lang]
