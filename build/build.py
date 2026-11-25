@@ -63,7 +63,7 @@ T3 = {
         "slides": ["Sandbank · North Ari Atoll", "Sandbar · Alif Alif", "Arrival by speedboat"],
         "book": {"arr": "Arrival", "dep": "Departure", "guests": "Guests", "pkg": "Package", "any": "Any package", "go": "Check availability"},
         "intro_label": "Welcome to Thoddoo",
-        "statement": 'A real Maldivian island <span class="inline-img">{I1}</span> where turtles glide past the reef, watermelons ripen in the fields <span class="inline-img">{I2}</span>, coconuts hang from the palms <span class="inline-img">{I3}</span> and you are welcomed <em>like a friend.</em>',
+        "statement": 'A real Maldivian island where <span class="kw">turtles</span> glide past the reef, <span class="kw">watermelons</span> ripen in the fields, <span class="kw">coconuts</span> hang from the palms — and you are welcomed <em>like a friend.</em>',
         "pillars": [("heart", "Hosted by locals", "Dhaain was born on Thoddoo — you see the island through the people who call it home."),
                     ("turtle", "The reef at your doorstep", "Step off the beach into clear water where turtles and reef fish live."),
                     ("tag", "Honest, clear prices", "All taxes included and every inclusion listed before you book.")],
@@ -107,16 +107,16 @@ T3 = {
         "slides": ["Песчаная отмель · Северный Ари", "Песчаная коса · Алиф Алиф", "Прибытие на скоростном катере"],
         "book": {"arr": "Прилёт", "dep": "Вылет", "guests": "Гостей", "pkg": "Тур", "any": "Любой тур", "go": "Проверить даты"},
         "intro_label": "Добро пожаловать на Тодду",
-        "statement": 'Настоящий мальдивский остров <span class="inline-img">{I1}</span>, где черепахи скользят вдоль рифа, на полях зреют арбузы <span class="inline-img">{I2}</span>, на пальмах висят кокосы <span class="inline-img">{I3}</span>, а вас встречают <em>как друга.</em>',
+        "statement": 'Настоящий мальдивский остров, где у рифа неспешно проплывают <span class="kw">черепахи</span>, на полях зреют <span class="kw">арбузы</span>, на пальмах висят <span class="kw">кокосы</span>, а вас встречают <em>как друга.</em>',
         "pillars": [("heart", "Местные хозяева", "Дхаин родился на Тодду — вы увидите остров глазами тех, для кого он дом."),
                     ("turtle", "Риф у порога", "С пляжа — сразу в прозрачную воду, где живут черепахи и рифовые рыбы."),
                     ("tag", "Честные, понятные цены", "Все налоги включены, а состав тура известен до бронирования.")],
         "trip": ["Домашний риф", "Бикини-пляж", "Семейные гестхаусы"],
         "pk_label": "Туры", "pk_title": "Три способа прожить <em>островную жизнь</em>",
         "pk_lead": "8 дней · 7 ночей · twin или double. Цена за человека при размещении 2 взрослых, все налоги включены.",
-        "view": "Подробнее", "book_now": "Бронь",
+        "view": "Подробнее", "book_now": "Забронировать",
         "xp_label": "Впечатления", "xp_title": "Моменты, подаренные <em>океаном</em>",
-        "xp_lead": "Плавайте с черепахами, встречайте мант, следуйте за дельфинами на закате — нажмите на впечатление, чтобы узнать больше.",
+        "xp_lead": "Плавайте с черепахами, встречайте мант, наблюдайте за дельфинами на закате — нажмите на карточку, чтобы узнать больше.",
         "xp_all": "Все впечатления",
         "nums": [("7", "", "ночей в каждом туре"), ("10", "+", "морских впечатлений"), ("2", "", "бикини-пляжа"), ("28", "°C", "средняя температура воды")],
         "why_label": "Почему Velaa", "why_title": "Путешествуйте с теми, для кого <em>это дом</em>",
@@ -126,7 +126,7 @@ T3 = {
         "th_more": "Открыть Тодду",
         "f_label": "Наша история", "story": "Читать нашу историю",
         "t_label": "Истории гостей", "t_title": "Воспоминания <em>на пять звёзд</em>", "t_sub": "средняя оценка гостей",
-        "strip_label": "Островные дни", "strip_title": "Неделя, которая ощущается <em>как целая жизнь</em>",
+        "strip_label": "Островные дни", "strip_title": "Неделя, которая запомнится <em>на всю жизнь</em>",
         "cta_label": "Ваш остров ждёт",
         "f_news": "Готовы к <em>островному отдыху?</em>", "f_cols": ["Разделы", "Помощь", "Контакты"],
         "gal": "Галерея", "cat_all": "Все",
@@ -134,7 +134,7 @@ T3 = {
         "steps": ["Ваш отдых", "Даты и гости", "Впечатления", "Контакты"],
         "st_t": ["Какой отдых вам ближе?", "Когда вы приедете?", "Что добавить в поездку?", "Куда отправить ваш план?"],
         "st_p": ["Выберите тур — или мы подскажем.", "Подойдут примерные даты — мы подтвердим наличие.",
-                 "Отметьте впечатления, которые хотите включить или узнать цену.", "Мы отвечаем лично, обычно в течение нескольких часов."],
+                 "Отметьте впечатления, которые хотите добавить или узнать их стоимость.", "Мы отвечаем лично, обычно в течение нескольких часов."],
         "not_sure": ("Пока не знаю", "Посоветуйте"), "exc_only": ("Только экскурсии", "Без тура"),
         "adults": "Взрослые", "children": "Дети (2–12)",
         "reply": "Как ответить", "next": "Далее", "back": "Назад", "send": "Отправить заявку", "send_wa": "Отправить в WhatsApp",
@@ -142,7 +142,7 @@ T3 = {
         "s_dates": "Даты", "s_nights": "Ночей", "s_guests": "Гостей", "s_xp": "Впечатления",
         "s_total": "Ориентировочно", "s_note": "за человека × взрослые · {season}. Точную стоимость подтвердит наша команда.",
         "s_quote": "Индивидуальный расчёт", "s_none": "—", "s_kids": "дети — по запросу",
-        "done_t": "Спасибо — ваш островной план уже в пути", "done_p": "Мы получили вашу заявку и ответим лично по e-mail или в WhatsApp, обычно в течение нескольких часов.",
+        "done_t": "Спасибо! Мы уже начали планировать ваш отдых", "done_p": "Мы получили вашу заявку и ответим лично по e-mail или в WhatsApp, обычно в течение нескольких часов.",
         "done_b": "На главную", "season_low": "апрель–октябрь", "season_high": "ноябрь–март",
     },
 }
@@ -157,7 +157,7 @@ PKG_GAL_CAP = {"en": {"turtle": "Turtle snorkelling", "palm-road": "Palm Road dr
 STRIP = {"en": [("turtle", "Turtle mornings"), ("hero-sandbar", "Sandbank afternoons"), ("guesthouse-6", "Island homes"), ("sunset-fishing", "Sunset fishing"),
                 ("vaau-magu", "Vaau Magu"), ("whale-shark", "Gentle giants"), ("beach-dinner", "Candlelit dinners"), ("palm-road-aerial", "Palm roads"), ("thoddoo-aerial", "Thoddoo"), ("dolphin", "Dolphin seas"), ("papaya", "Island papaya")],
          "ru": [("turtle", "Утро с черепахами"), ("hero-sandbar", "Песчаные отмели"), ("guesthouse-6", "Островной дом"), ("sunset-fishing", "Закатная рыбалка"),
-                ("vaau-magu", "Ваау Магу"), ("whale-shark", "Добрые великаны"), ("beach-dinner", "Ужин при свечах"), ("palm-road-aerial", "Пальмовые аллеи"), ("thoddoo-aerial", "Тодду"), ("dolphin", "Море дельфинов"), ("papaya", "Островная папайя")]}
+                ("vaau-magu", "Ваау Магу"), ("whale-shark", "Добрые великаны"), ("beach-dinner", "Ужин при свечах"), ("palm-road-aerial", "Пальмовые аллеи"), ("thoddoo-aerial", "Тодду"), ("dolphin", "Встреча с дельфинами"), ("papaya", "Островная папайя")]}
 
 
 def socials(light=False):
@@ -262,7 +262,7 @@ def footer(lang, page, r):
   <div class="modal__bg" data-x></div>
   <div class="modal__p">
     <button class="modal__x" data-x aria-label="{U["close"]}">{icon("x")}</button>
-    <div class="modal__m"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div>
+    <div class="modal__m"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
     <div class="modal__b"><div class="modal__ic"></div><span class="label m-kick"></span><h3 id="m-title"></h3><div class="modal__t"></div>
       <a class="btn btn--ink m-cta" href="#">{U["add"]} {icon("arrow")}</a></div>
   </div>
@@ -439,10 +439,10 @@ INTRO_CARDS = [
       "ru": ("Честные цены", "Все налоги включены — состав тура известен до бронирования.",
              "В наших турах указана полная цена за человека со всеми мальдивскими налогами. Вы точно знаете, что входит в вашу неделю, ещё до оплаты — без скрытых сборов и сюрпризов.")}),
 ]
-INTRO_FACTS = {"en": [("pin", "North Ari Atoll"), ("boat", "60–90 min by speedboat"), ("plane", "20 min by seaplane"), ("sun", "28°C sea all year")],
-               "ru": [("pin", "Атолл Северный Ари"), ("boat", "60–90 мин на катере"), ("plane", "20 мин на гидросамолёте"), ("sun", "Вода 28°C круглый год")]}
+INTRO_FACTS = {"en": [("pin", "Location", "North Ari Atoll"), ("boat", "By speedboat", "60–90 min"), ("plane", "By seaplane", "20 min"), ("sun", "The sea", "28°C all year")],
+               "ru": [("pin", "Где", "Атолл Северный Ари"), ("boat", "На катере", "60–90 минут"), ("plane", "На гидросамолёте", "20 минут"), ("sun", "Море", "28 °C круглый год")]}
 INTRO_LEAD = {"en": "Thoddoo is a small, green, real Maldivian island — farms and palm roads in the middle, white sand and coral reef all around. Here is what makes a week here special.",
-              "ru": "Тодду — небольшой зелёный настоящий мальдивский остров: фермы и пальмовые аллеи в центре, белый песок и коралловый риф вокруг. Вот что делает неделю здесь особенной."}
+              "ru": "Тодду — небольшой зелёный остров, настоящие Мальдивы: фермы и пальмовые аллеи в центре, белый песок и коралловый риф по краям. Вот что делает неделю здесь особенной."}
 
 
 def intro_cards(lang):
@@ -605,7 +605,7 @@ SPECIAL = [
     ("th-field-palm", "bicycle", {"en": ("Green farm fields", "The green heart of the island, best by bicycle.", "The centre of Thoddoo is a patchwork of green fields and palm-lined sandy roads — rent a bicycle and explore the farms in the quiet morning light."),
                                  "ru": ("Зелёные поля", "Зелёное сердце острова — лучше на велосипеде.", "Центр Тодду — лоскутное одеяло зелёных полей и песчаных дорог с пальмами. Возьмите велосипед и исследуйте фермы в тихом утреннем свете.")}),
     ("food-curry-roti", "dinner", {"en": ("Island cooking", "Fresh tuna, curries and roshi, Maldivian-style.", "Fresh reef fish and tuna, mild curries, mas huni and roshi flatbread — home-style Maldivian cooking is a speciality of local islands like Thoddoo."),
-                                   "ru": ("Островная кухня", "Свежий тунец, карри и роши по-мальдивски.", "Свежая рифовая рыба и тунец, мягкие карри, мас хуни и лепёшки роши — домашняя мальдивская кухня — особенность локальных островов, таких как Тодду.")}),
+                                   "ru": ("Островная кухня", "Свежий тунец, карри и роши по-мальдивски.", "Свежая рифовая рыба и тунец, мягкие карри, мас хуни и лепёшки роши: домашняя мальдивская кухня — одна из радостей местных островов вроде Тодду.")}),
 ]
 BS_HEAD = {"en": (("Tourist beaches", "Thoddoo’s <em>beaches</em>", "White sand, palms and a reef just off the shore — each beach has its own mood."),
                   ("Island specialities", "What Thoddoo is <em>famous for</em>", "The farming island of the Maldives — fresh fruit, green fields and real island cooking.")),
@@ -678,9 +678,9 @@ def p_index(lang, r):
     B = T["book"]
     popts = f'<option value="">{B["any"]}</option>' + "".join(f'<option value="{p["key"]}">{p[lang]["name"]}</option>' for p in PACKAGES)
     gopts = "".join(f"<option{' selected' if n == 2 else ''}>{n}</option>" for n in range(1, 11))
-    stmt = re.sub(r'\s*<span class="inline-img">\{I\d\}</span>', "", T["statement"])
+    stmt = T["statement"]
     pillars = "".join(f'<div class="pillar rv d{i + 1}"><span class="pillar__i">{icon(ic)}</span><h3>{t}</h3><p>{d}</p></div>' for i, (ic, t, d) in enumerate(T["pillars"]))
-    ifacts = "".join(f'<span>{icon(ic)}{t}</span>' for ic, t in INTRO_FACTS[lang])
+    ifacts = "".join(f'<div class="ifact"><span class="ifact__i">{icon(ic)}</span><small>{l}</small><strong>{t}</strong></div>' for ic, l, t in INTRO_FACTS[lang])
     pk = ""
     for i, p in enumerate(PACKAGES):
         P = p[lang]
@@ -721,6 +721,7 @@ def p_index(lang, r):
   <div class="wrap">
     <div style="text-align:center;margin-bottom:34px">{label(T["intro_label"])}</div>
     <p class="statement rv">{stmt}</p>
+    <div class="orn rv" aria-hidden="true"><i></i><b></b><i></i></div>
     <p class="intro__lead rv">{INTRO_LEAD[lang]}</p>
     <div class="ifacts rv">{ifacts}</div>
     {carousel(lang, intro_cards(lang), 3, "car--cards car--intro")}
