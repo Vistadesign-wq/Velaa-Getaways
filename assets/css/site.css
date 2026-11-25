@@ -1446,3 +1446,9 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 .bento .xp h3{margin-top:0}
 .xgrid .xp__cat,.xgrid .xp__short{display:none}
 .xgrid .xp h3{margin-top:0}
+
+/* ===== Round photos: no coloured ring (Why Velaa + welcome facts) ===== */
+.wc__ring{background:none;padding:0}
+.wc__img{border:0}
+.ifacts .ifact .ifact__ph{background:none;padding:0}
+.ifacts .ifact .ifact__img{border:0}
