@@ -381,7 +381,7 @@ MOMENTS = [
             "Enjoy dinner by the sea in a beautifully decorated beach setting. Whether you’re celebrating a special occasion or simply want to make an evening together feel different, we’ll help create this memorable moment by the water."),
      "ru": ("Ужин на пляже", "Ужин при свечах у моря.",
             "Ужин на берегу моря с красивой сервировкой. Отмечаете особый повод или просто хотите провести особенный вечер вдвоём — мы создадим незабываемый момент у самой воды.")},
-    {"key": "watersports", "icon": "wave", "img": "jetski",
+    {"key": "watersports", "icon": "wave", "img": "watersports-jetski",
      "en": ("Water Sports", "Jetski, kayak, SUP & wakeboard.",
             "Add a little adventure to your island stay. Choose from activities such as jet skiing, canoeing, kayaking, SUP-boarding or wakeboarding. Whether you’d prefer a relaxed paddle or a faster ride across the water, we’ll help you find an experience to suit your mood."),
      "ru": ("Водные виды спорта", "Гидроцикл, каяк, SUP и вейкборд.",

@@ -36,6 +36,7 @@ Checked 2026-11-24. Every image and video on the site is listed here with its so
 | `island-hopping` | Unsplash | https://images.unsplash.com/photo-1578922746465-3a80a228f223 |
 | `jetski` | Unsplash | https://images.unsplash.com/photo-1787142948486-e8022174270e |
 | `manta-snorkel` | Unsplash | https://images.unsplash.com/photo-1544552866-fef1d68c69b5 |
+| `ocean-jetski` | Unsplash | (crop of `jetski`) | resort villas cropped out
 | `octopus` | Unsplash | https://images.unsplash.com/photo-1543823530-dbe8d7d04a9b |
 | `palm-road-aerial` | Unsplash | https://images.unsplash.com/photo-1721848090101-96fc7e63ece9 |
 | `papaya` | Unsplash | https://images.unsplash.com/photo-1793099819736-09016606a03f |
@@ -70,6 +71,7 @@ Checked 2026-11-24. Every image and video on the site is listed here with its so
 | `turtle` | Unsplash | https://images.unsplash.com/photo-1666845992003-adaa79a59bf8 |
 | `turtle-reef` | Unsplash | https://images.unsplash.com/photo-1721273262879-10b3e76b2e2e |
 | `vaau-magu` | Unsplash | https://images.unsplash.com/photo-1545034556-584a873d1b55 |
+| `watersports-jetski` | Unsplash (Haris Khan) | https://unsplash.com/photos/jet-ski-on-clear-turquoise-water-Kkw1WtI33wo | crop, Maldives drone shot
 | `watermelon` | Unsplash | https://images.unsplash.com/photo-1658482199477-5b441d4e2321 |
 | `watermelon-field` | Unsplash | https://images.unsplash.com/photo-1771684512624-8f4a162a2889 |
 | `whale-shark` | Unsplash | https://images.unsplash.com/photo-1544552866-49ce864ff896 |
