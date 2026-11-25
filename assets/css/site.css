@@ -1485,3 +1485,9 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 /* ===== Thoddoo gallery: photos only, no captions ===== */
 .gcard .gcap{display:none}
 .gcard:has(.gcap)::after{display:none}
+
+/* ===== Footer links: comfortable tap targets on phones ===== */
+@media (max-width:760px){
+  .ftr__col ul{gap:2px}
+  .ftr__col ul a{display:inline-block;padding:10px 0;min-height:40px}
+}

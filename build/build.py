@@ -380,8 +380,8 @@ def why_cards(lang):
 
 def strip(lang):
     T = T3[lang]
-    figs = "".join(f'<figure>{img(n, c, "320px")}</figure>' for n, c in STRIP[lang])
-    return (f'<section class="sec--s" aria-label="{T["strip_label"]}"><div class="wrap">{head(T["strip_label"], T["strip_title"])}</div>'
+    figs = re.sub(r' srcset="[^"]*"', '', "".join(f'<figure>{img(n, c, "320px")}</figure>' for n, c in STRIP[lang]))
+    return (f'<section class="sec--s" aria-label="{T["strip_label"]}"><div class="wrap">{head(T["strip_label"], T["strip_title"], center=True)}</div>'
             f'<div class="strip"><div class="strip__track">{figs}{figs.replace("<figure>", "<figure aria-hidden=\"true\">")}</div></div></section>')
 
 
@@ -670,7 +670,7 @@ def landmarks(lang, white=True):
         t, d = l[lang]
         short = d.split(". ")[0].split(" — ")[0].rstrip(".") + "."
         cards += pcard(lang, l["img"], l["icon"], t, short, d, h[0])
-    return (f'<section class="sec{" sec--white" if white else ""}" id="highlights"><div class="wrap">{head(h[0], h[1], h[2])}'
+    return (f'<section class="sec{" sec--white" if white else ""}" id="highlights"><div class="wrap">{head(h[0], h[1], h[2], center=True)}'
             f'{carousel(lang, cards, 3, "car--cards")}</div></section>')
 
 # ================================================================== pages

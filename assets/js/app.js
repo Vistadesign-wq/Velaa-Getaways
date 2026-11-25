@@ -26,6 +26,14 @@
   $$("[data-close]").forEach(function (b) { b.addEventListener("click", function () { drawer.classList.remove("open"); document.body.classList.remove("lock"); }); });
 
   /* ---------- Hero video: respect reduced motion, keep playing ---------- */
+  /* moving photo strips: load every photo just before the strip comes into view, so no blank tiles slide past */
+  $$(".strip, .ribbon").forEach(function (s) {
+    var load = function () { $$("img[loading=lazy]", s).forEach(function (i) { i.loading = "eager"; }); };
+    if (!("IntersectionObserver" in window)) return load();
+    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { load(); o.disconnect(); } }, { rootMargin: "900px 0px" });
+    o.observe(s);
+  });
+
   /* plays on every phone: gentle slow clip, so it also runs with "Reduce Motion"; if the browser blocks
      autoplay (e.g. iPhone Low Power Mode), it starts on the visitor's first touch, scroll or tab return */
   $$(".hero video").forEach(function (v) {
