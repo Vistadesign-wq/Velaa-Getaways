@@ -348,7 +348,7 @@ def page_hero(lang, r, image, eyebrow, title, lead, page, full=False):
     alt = re.sub("<[^>]+>", "", title) + (" — Thoddoo, Maldives" if lang == "en" else " — Тодду, Мальдивы")
     return f'''<section class="phero phero--{page}{" phero--full" if full else ""}">{img(image, alt, "100vw", eager=True)}<div class="hero__shade"></div>
   <div class="wrap on-dark"><div><ol class="crumbs"><li><a href="{href(lang, "index", r)}">{U["breadcrumb_home"]}</a></li><li>{U["nav"][page]}</li></ol>
-    <h1>{title}</h1></div><div>{label(eyebrow)}<p class="lead" style="margin-top:14px">{lead}</p></div></div>
+    <h1>{title}</h1></div><div>{label(eyebrow)}{lead if lead.startswith("<ul") else f'<p class="lead" style="margin-top:14px">{lead}</p>'}</div></div>
 </section>'''
 
 
@@ -836,7 +836,9 @@ def p_packages(lang, r):
     foot = "".join(f'<td{" class=\"col-feat\"" if i == 1 else ""}>{p["low"]} <small class="note">/ {p["high"]}</small></td>' for i, p in enumerate(PACKAGES))
     nots = "".join(f'<li class="x">{icon("x")}<span>{x}</span></li>' for x in P["not"])
     terms = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["terms"])
-    return f'''{page_hero(lang, r, "aerial-lagoon", P["eyebrow"], P["title"], P["lead"], "packages", full=True)}
+    facts = [("calendar", P["hf"][0]), ("bed", P["hf"][1]), ("users", P["hf"][2]), ("check", P["hf"][3])]
+    hfacts = '<ul class="hfacts">' + "".join(f'<li><span class="hfacts__i">{icon(ic)}</span><span>{t}</span></li>' for ic, t in facts) + '</ul>'
+    return f'''{page_hero(lang, r, "aerial-lagoon", P["eyebrow"], P["title"], hfacts, "packages", full=True)}
 <section class="sec"><div class="wrap">{blocks}<p class="note" style="text-align:center">{P["single"]}</p></div></section>
 <section class="sec sec--white"><div class="wrap">
   {head(P["compare_eyebrow"], P["compare_title"], center=True)}
