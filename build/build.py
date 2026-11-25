@@ -150,8 +150,8 @@ T3 = {
 }
 XP_CAT = {"turtle": "U", "reef": "U", "halfday": "U", "fullday": "U", "whaleshark": "U", "fishing": "W", "dolphin": "W",
           "hopping": "W", "octopus": "I", "resort": "I", "more": "I", "photoshoot": "M", "drone": "M", "dinner": "M", "watersports": "M"}
-PKG_GALLERY = {"essential": ["thoddoo-beach", "turtle", "palm-road-aerial"], "ocean": ["jetski", "manta-snorkel", "dolphin"],
-               "signature": ["resort", "beach-dinner", "sunset-fishing"]}
+PKG_GALLERY = {"essential": ["thoddoo-beach", "turtle", "palm-road-aerial"], "ocean": ["lagoon-boat", "manta-snorkel", "dolphin"],
+               "signature": ["aerial-palms", "beach-dinner", "sunset-fishing"]}
 PKG_GAL_CAP = {"en": {"turtle": "Turtle snorkelling", "palm-road": "Palm Road drone video", "dolphin": "Dolphin cruise", "jetski": "Jetski + drone video",
                       "resort": "Resort day visit", "sunset-fishing": "Sunset fishing"},
                "ru": {"turtle": "Снорклинг с черепахами", "palm-road": "Видео с дрона", "dolphin": "Дельфины", "jetski": "Гидроцикл + дрон",
