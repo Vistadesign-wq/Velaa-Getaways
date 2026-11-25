@@ -711,7 +711,7 @@ def p_index(lang, r):
 <div class="book"><div class="wrap"><form class="book__card" data-book action="{href(lang, "contact", r)}" method="get">
   <label class="book__f"><small>{icon("calendar")}{B["arr"]}</small><input type="date" name="arrival"></label>
   <label class="book__f"><small>{icon("calendar")}{B["dep"]}</small><input type="date" name="departure"></label>
-  <div class="book__f book__f--g"><small id="bk-gl">{icon("users")}{B["guests"]}</small><div class="gstep"><input id="bk-guests" aria-labelledby="bk-gl" type="number" name="adults" value="2" min="1" max="50" step="1" inputmode="numeric">
+  <div class="book__f book__f--g"><small id="bk-gl">{icon("users")}{B["guests"]}</small><div class="gstep"><input id="bk-guests" aria-labelledby="bk-gl" type="number" name="adults" value="0" min="0" max="50" step="1" inputmode="numeric">
     <span class="gstep__btns"><button type="button" data-g="1" aria-label="{"More guests" if lang == "en" else "Больше гостей"}">{icon("chevup")}</button><button type="button" data-g="-1" aria-label="{"Fewer guests" if lang == "en" else "Меньше гостей"}">{icon("chevdown")}</button></span></div></div>
   <label class="book__f"><small>{icon("island")}{B["pkg"]}</small><select name="package">{popts}</select></label>
   <button class="btn btn--gold" type="submit">{B["go"]} {icon("arrow")}</button>

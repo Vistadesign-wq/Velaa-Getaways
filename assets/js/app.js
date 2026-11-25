@@ -150,13 +150,13 @@
   };
   $$("[data-book]").forEach(function (f) {
     pair(f.elements.arrival, f.elements.departure);
-    var g = f.elements.adults, clamp = function (v) { v = parseInt(v, 10); return isNaN(v) ? 2 : Math.max(1, Math.min(50, v)); };
+    var g = f.elements.adults, clamp = function (v) { v = parseInt(v, 10); return isNaN(v) ? 0 : Math.max(0, Math.min(50, v)); };
     $$("[data-g]", f).forEach(function (b) { b.addEventListener("click", function () { g.value = clamp(+g.value + +b.dataset.g); }); });
     g.addEventListener("change", function () { g.value = clamp(g.value); });
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       var q = new URLSearchParams();
-      ["arrival", "departure", "adults", "package"].forEach(function (k) { if (f.elements[k].value) q.set(k, f.elements[k].value); });
+      ["arrival", "departure", "adults", "package"].forEach(function (k) { var v = f.elements[k].value; if (v && !(k === "adults" && +v < 1)) q.set(k, v); });
       location.href = f.getAttribute("action") + "?" + q.toString() + "#enquiry";
     });
   });
