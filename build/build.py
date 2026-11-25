@@ -982,7 +982,7 @@ def p_contact(lang, r):
     <div class="step" data-step="1"><h3>{T["st_t"][1]}</h3><p>{T["st_p"][1]}</p>
       <div class="frow"><div class="fld"><label for="f-arr">{F["arrival"]}</label><input id="f-arr" name="arrival" type="date"></div>
         <div class="fld"><label for="f-dep">{F["departure"]}</label><input id="f-dep" name="departure" type="date"></div></div>
-      <div class="frow">{stepper("adults", 2, T["adults"])}{stepper("children", 0, T["children"])}</div>
+      <div class="frow">{stepper("adults", 1, T["adults"])}{stepper("children", 0, T["children"])}</div>
       {nav(1)}</div>
     <div class="step" data-step="2"><h3>{T["st_t"][2]}</h3><p>{T["st_p"][2]}</p><div class="xopts">{xo}</div>{nav(2)}</div>
     <div class="step" data-step="3"><h3>{T["st_t"][3]}</h3><p>{T["st_p"][3]}</p>
