@@ -1416,3 +1416,14 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .car--stage .car__nav .navb{position:static;transform:none;width:40px;height:40px}
   .car--stage .car__dots{position:static}
 }
+
+/* ===== Page photos on phones: keep the subject in the portrait frame ===== */
+@media (max-width:760px){
+  .phero--about > img{object-position:72% 50%}
+  .phero--packages > img{object-position:72% 50%}
+  .phero--experiences > img{object-position:45% 50%}
+  .phero--thoddoo > img{object-position:6% 50%}
+  .phero--guesthouses > img{object-position:50% 50%}
+  .phero--faq > img{object-position:54% 50%}
+  .phero--contact > img{object-position:54% 50%}
+}
