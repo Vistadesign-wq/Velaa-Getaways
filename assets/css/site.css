@@ -1440,3 +1440,7 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
 
 /* ===== Moving photo strips: pause on hover only with a mouse (touch screens keep them moving) ===== */
 @media (hover:hover) and (pointer:fine){.strip:hover .strip__track,.ribbon:hover .ribbon__t{animation-play-state:paused}}
+
+/* ===== Home experiences: just the name on each card (details open on tap) ===== */
+.bento .xp__cat,.bento .xp__short{display:none}
+.bento .xp h3{margin-top:0}
