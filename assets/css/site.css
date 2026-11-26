@@ -1549,3 +1549,9 @@ img[loading=lazy]{color:transparent}
 @media (max-width:860px) and (min-width:601px){.opt-grid > :not(.opt--plain) .opt__b strong{font-size:1.1rem}.opt-grid > :not(.opt--plain) .opt__b{padding:12px 12px}}
 .opt-grid > .opt--plain{align-self:flex-start}
 @media (max-width:640px){.opt-grid > .opt--plain{flex-basis:100%}}
+
+/* enquiry step 3 experiences: centre an unfinished last row */
+.xopts{display:flex;flex-wrap:wrap;justify-content:center;--g:10px;gap:var(--g)}
+.xopts > .opt{flex:0 0 calc((100% - 3 * var(--g)) / 4);min-width:0}
+@media (max-width:860px){.xopts > .opt{flex-basis:calc((100% - 2 * var(--g)) / 3)}}
+@media (max-width:520px){.xopts > .opt{flex-basis:calc((100% - var(--g)) / 2)}}
