@@ -650,8 +650,8 @@ LANDMARKS = [
      "en": ("Aisha Mosque", "Masjidhul Aisha stands in the heart of Thoddoo on Valhu Magu. Opened in 2016, it is one of the largest mosques in Ari Atoll and a striking piece of island architecture. Visitors are welcome to admire it from outside — please dress modestly (shoulders and knees covered) and be mindful of prayer times."),
      "ru": ("Мечеть Аиша", "Мечеть Масджидул Аиша стоит в самом центре Тодду, на улице Валху Магу. Открытая в 2016 году, она — одна из крупнейших мечетей атолла Ари и яркий образец островной архитектуры. Гости могут полюбоваться ею снаружи — пожалуйста, одевайтесь скромно (плечи и колени закрыты) и уважайте время молитвы.")},
     {"key": "farms", "icon": "leaf", "img": "th-farm-road",
-     "en": ("Fruit farms", "Thoddoo is one of the Maldives’ farming islands: papaya, watermelon, bananas and passion fruit grow in neat fields beneath the palms. Among the fields lie the remains of an ancient Buddhist temple — a reminder of the island’s long history."),
-     "ru": ("Фруктовые фермы", "Тодду — один из сельскохозяйственных островов Мальдив: на аккуратных полях под пальмами растут папайя, арбузы, бананы и маракуйя. Среди полей сохранились руины древнего буддийского храма — напоминание о долгой истории острова.")},
+     "en": ("Fruit farms", "Thoddoo is one of the Maldives’ farming islands: papaya, watermelon, bananas and passion fruit grow in neat fields beneath the palms. Among the fields lie the remains of an ancient Buddhist temple — a reminder of the island’s long history.", "Papaya, watermelon, bananas and passion fruit beneath the palms."),
+     "ru": ("Фруктовые фермы", "Тодду — один из сельскохозяйственных островов Мальдив: на аккуратных полях под пальмами растут папайя, арбузы, бананы и маракуйя. Среди полей сохранились руины древнего буддийского храма — напоминание о долгой истории острова.", "Папайя, арбузы, бананы и маракуйя — прямо под пальмами.")},
     {"key": "beach", "icon": "beach", "img": "bikini-beach",
      "en": ("Bikini beaches", "Two designated bikini beaches with soft white sand, palms and clear turquoise water — and a coral reef close to shore for snorkelling."),
      "ru": ("Бикини-пляжи", "На острове есть два оборудованных для гостей бикини-пляжа с мягким белым песком, пальмами и прозрачной бирюзовой водой, а коралловый риф с морскими жителями — совсем рядом с берегом.")},
@@ -682,10 +682,10 @@ def landmarks(lang, white=True):
     h = LM_HEAD[lang]
     cards = ""
     for l in LANDMARKS:
-        t, d = l[lang]
+        t, d = l[lang][:2]
         first = d.split(". ")[0]
         cut = first.split(" — ")[0]
-        short = (cut if len(cut) >= 15 else first).rstrip(".") + "."
+        short = l[lang][2] if len(l[lang]) > 2 else (cut if len(cut) >= 15 else first).rstrip(".") + "."
         cards += pcard(lang, l["img"], l["icon"], t, short, d, h[0])
     return (f'<section class="sec{" sec--white" if white else ""}" id="highlights"><div class="wrap">{head(h[0], h[1], h[2], center=True)}'
             f'{carousel(lang, cards, 3, "car--cards")}</div></section>')
