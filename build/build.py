@@ -569,7 +569,7 @@ def getting_there(lang, r):
 </div></section>"""
 
 
-STAY_GAL = ["gh-room-haisha", "guesthouse-6", "gh-clean", "guesthouse-5", "gh-garden", "guesthouse-1",
+STAY_GAL = ["gh-room-twin-2", "gh-room-twin-1", "gh-room-haisha", "guesthouse-6", "gh-clean", "guesthouse-5", "gh-garden", "guesthouse-1",
             "gh-breakfast", "guesthouse-7", "gh-comfort", "guesthouse-4", "gh-room-garden"]
 STAY_CARDS = [
     ("gh-comfort", "bed", {"en": ("Comfort", "Calm rooms, good beds and air-conditioning.", "Every room we book has air-conditioning, a private bathroom with hot water, good beds and Wi-Fi — so you rest well between island days."),

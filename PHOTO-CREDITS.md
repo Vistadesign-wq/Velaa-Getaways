@@ -88,6 +88,8 @@ Checked 2026-11-24. Every image and video on the site is listed here with its so
 | `gh-garden` | Thoddoo partner guesthouse (Haisha Inn) | from the guesthouse's own website photos | replaces stock `stay-garden`
 | `gh-room-haisha` | Thoddoo partner guesthouse (Haisha Inn) | from the guesthouse's own website photos | replaces stock `stay-room-white`
 | `gh-room-garden` | Thoddoo partner guesthouse (Rindhali Thoddoo) | from the guesthouse's own website photos | replaces stock `stay-garden-seat`
+| `gh-room-twin-1` | Partner guesthouse room photo supplied by the client | | twin room with towel swan
+| `gh-room-twin-2` | Partner guesthouse room photo supplied by the client | | twin room, moon lamp
 | `guesthouse-1` | Partner guesthouse photo from the client brief — get written OK from each guesthouse owner. |
 | `guesthouse-2` | Partner guesthouse photo from the client brief — get written OK from each guesthouse owner. |
 | `guesthouse-3` | Partner guesthouse photo from the client brief — get written OK from each guesthouse owner. |
