@@ -644,8 +644,8 @@ def beaches_specials(lang):
 
 LANDMARKS = [
     {"key": "vaau", "icon": "palm", "img": "vaau-magu",
-     "en": ("Vaau Magu", "Thoddoo’s famous palm road — a sandy avenue lined with tall coconut palms running between the green farms. Walk or cycle it in the soft morning light; it is the island’s favourite spot for photos and our drone videos."),
-     "ru": ("Ваау Магу", "Знаменитая пальмовая аллея Тодду — песчаная дорога между зелёными фермами, обрамлённая высокими кокосовыми пальмами. Прогуляйтесь или проедьтесь на велосипеде в мягком утреннем свете — это любимое место для фото и наших видео с дрона.")},
+     "en": ("Vaau Magu", "Thoddoo’s iconic “Wow Road” — a sandy avenue lined with more than 170 tall coconut palms running between the green farms. The name comes from the island’s first visitors, who kept exclaiming “Wow!” as they walked it; locals paired the word with magu, Dhivehi for “road”, and Vaau Magu stuck. Walk or cycle it in the soft morning light — it is the island’s favourite spot for photos and our drone videos."),
+     "ru": ("Ваау Магу", "Знаменитая «Дорога Вау» Тодду — песчаная аллея между зелёными фермами, вдоль которой растут более 170 высоких кокосовых пальм. Название придумали сами гости: первые туристы, проходя по ней, не могли сдержать восторженного «Вау!». Местные жители добавили к этому слову «магу» — «улица» на дивехи, — так и появилось название Ваау Магу. Прогуляйтесь или проедьтесь на велосипеде в мягком утреннем свете — это любимое место для фото и наших видео с дрона.")},
     {"key": "mosque", "icon": "compass", "img": ("aisha-mosque" if os.path.exists(os.path.join(IMG, "aisha-mosque.webp")) else "mosque"),
      "en": ("Aisha Mosque", "Masjidhul Aisha stands in the heart of Thoddoo on Valhu Magu. Opened in 2016, it is one of the largest mosques in Ari Atoll and a striking piece of island architecture. Visitors are welcome to admire it from outside — please dress modestly (shoulders and knees covered) and be mindful of prayer times."),
      "ru": ("Мечеть Аиша", "Мечеть Масджидул Аиша стоит в самом центре Тодду, на улице Валху Магу. Открытая в 2016 году, она — одна из крупнейших мечетей атолла Ари и яркий образец островной архитектуры. Гости могут полюбоваться ею снаружи — пожалуйста, одевайтесь скромно (плечи и колени закрыты) и уважайте время молитвы.")},
@@ -685,7 +685,7 @@ def landmarks(lang, white=True):
         t, d = l[lang]
         first = d.split(". ")[0]
         cut = first.split(" — ")[0]
-        short = (cut if len(cut) >= 30 else first).rstrip(".") + "."
+        short = (cut if len(cut) >= 15 else first).rstrip(".") + "."
         cards += pcard(lang, l["img"], l["icon"], t, short, d, h[0])
     return (f'<section class="sec{" sec--white" if white else ""}" id="highlights"><div class="wrap">{head(h[0], h[1], h[2], center=True)}'
             f'{carousel(lang, cards, 3, "car--cards")}</div></section>')
