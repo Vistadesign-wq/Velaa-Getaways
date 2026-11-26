@@ -660,7 +660,7 @@ LANDMARKS = [
      "ru": ("Домашний риф и черепахи", "Домашний риф Тодду начинается в нескольких метрах от бикини-пляжа. По утрам здесь кормятся зелёные черепахи — берите маску и наслаждайтесь снорклингом на домашнем рифе.")},
     {"key": "swing", "icon": "sun", "img": "beach-swing",
      "en": ("Beach swings", "Palm-tree swings over the sand are Thoddoo’s favourite photo spot — come at golden hour for the softest light."),
-     "ru": ("Качели на пляже", "Качели на пальмах над песком — любимое фото-место Тодду. Приходите в золотой час, когда свет самый мягкий.")},
+     "ru": ("Качели на пляже", "Качели на пальмах над песком — любимое фото-место Тодду. Приходите в золотой час, когда свет самый мягкий.", "Любимое фото-место Тодду.")},
     {"key": "cycle", "icon": "bicycle", "img": "cycling",
      "en": ("Cycling the farm roads", "There are almost no cars on Thoddoo. Rent a bicycle and ride the quiet sandy roads between farms, palms and beaches — the whole island in an afternoon."),
      "ru": ("На велосипеде по острову", "Машин на Тодду почти нет. Возьмите велосипед и катайтесь по тихим песчаным дорогам между фермами, пальмами и пляжами. Весь остров можно объехать за полдня.")},
