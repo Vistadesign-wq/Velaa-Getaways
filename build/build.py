@@ -569,7 +569,7 @@ def getting_there(lang, r):
 </div></section>"""
 
 
-STAY_GAL = ["gh-room-twin-2", "gh-room-twin-1", "gh-room-haisha", "guesthouse-6", "gh-clean", "guesthouse-5", "gh-garden", "guesthouse-1",
+STAY_GAL = ["gh-room-twin-2", "gh-room-twin-1", "guesthouse-6", "gh-clean", "guesthouse-5",
             "gh-breakfast", "guesthouse-7", "gh-comfort", "guesthouse-4", "gh-room-garden"]
 STAY_CARDS = [
     ("gh-comfort", "bed", {"en": ("Comfort", "Calm rooms, good beds and air-conditioning.", "Every room we book has air-conditioning, a private bathroom with hot water, good beds and Wi-Fi — so you rest well between island days."),
@@ -578,7 +578,7 @@ STAY_CARDS = [
                                    "ru": ("Чистота", "Мы лично проверяем каждый гестхаус.", "Мы лично посещаем каждый гестхаус-партнёр и регулярно проверяем его: свежее бельё, чистые ванные и ежедневная уборка — обязательны.")}),
     ("gh-breakfast", "coffee", {"en": ("Breakfast included", "Island fruit, eggs, fresh bread and good coffee.", "Breakfast is included in all our packages — tropical fruit from Thoddoo’s farms, eggs your way, fresh bread, Maldivian mas huni on request and good coffee."),
                                   "ru": ("Завтрак включён", "Островные фрукты, яйца, свежий хлеб и кофе.", "Завтрак входит во все наши туры: тропические фрукты с ферм Тодду, яйца на ваш вкус, свежий хлеб, мальдивский мас хуни по желанию и хороший кофе.")}),
-    ("gh-garden", "palm", {"en": ("Gardens &amp; terraces", "Shady tropical gardens to relax in after the beach.", "Our partner guesthouses have shaded gardens, terraces and sandy courtyards — perfect for a slow afternoon with a fresh coconut."),
+    ("guesthouse-4", "palm", {"en": ("Gardens &amp; terraces", "Shady tropical gardens to relax in after the beach.", "Our partner guesthouses have shaded gardens, terraces and sandy courtyards — perfect for a slow afternoon with a fresh coconut."),
                              "ru": ("Сады и террасы", "Тенистые тропические сады для отдыха после пляжа.", "У наших гестхаусов-партнёров тенистые сады, террасы и песчаные дворики — идеально для неспешного дня со свежим кокосом.")}),
     ("guesthouse-6", "heart", {"en": ("Island hospitality", "Family-run hosts who treat you like a guest of the house.", "Thoddoo’s guesthouses are run by local families. Expect warm welcomes, local tips and help with anything you need during your stay."),
                                "ru": ("Гостеприимство", "Семейные хозяева, которые принимают вас как дорогих гостей.", "Гестхаусы Тодду ведут местные семьи. Вас ждут тёплый приём, советы от местных и помощь во всём, что нужно во время отдыха.")}),
