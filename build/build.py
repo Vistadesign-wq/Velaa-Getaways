@@ -172,9 +172,9 @@ PKG_GAL_CAP = {"en": {"turtle": "Turtle snorkelling", "palm-road": "Palm Road dr
                "ru": {"turtle": "Снорклинг с черепахами", "palm-road": "Видео с дрона", "dolphin": "Дельфины", "jetski": "Гидроцикл + дрон",
                       "resort": "День на курорте", "sunset-fishing": "Рыбалка на закате"}}
 STRIP = {"en": [("turtle", "Turtle mornings"), ("hero-sandbar", "Sandbank afternoons"), ("guesthouse-6", "Island homes"), ("sunset-fishing", "Sunset fishing"),
-                ("vaau-magu", "Ваау Магу"), ("whale-shark", "Gentle giants"), ("beach-dinner", "Candlelit dinners"), ("palm-road-aerial", "Palm roads"), ("thoddoo-aerial", "Thoddoo"), ("dolphin", "Dolphin seas"), ("papaya", "Island papaya")],
+                ("vaau-magu", "Вау Магу"), ("whale-shark", "Gentle giants"), ("beach-dinner", "Candlelit dinners"), ("palm-road-aerial", "Palm roads"), ("thoddoo-aerial", "Thoddoo"), ("dolphin", "Dolphin seas"), ("papaya", "Island papaya")],
          "ru": [("turtle", "Утро с черепахами"), ("hero-sandbar", "Песчаные отмели"), ("guesthouse-6", "Островной дом"), ("sunset-fishing", "Рыбалка на закате"),
-                ("vaau-magu", "Ваау Магу"), ("whale-shark", "Добрые великаны"), ("beach-dinner", "Ужин при свечах"), ("palm-road-aerial", "Пальмовые аллеи"), ("thoddoo-aerial", "Тодду"), ("dolphin", "Встреча с дельфинами"), ("papaya", "Островная папайя")]}
+                ("vaau-magu", "Вау Магу"), ("whale-shark", "Добрые великаны"), ("beach-dinner", "Ужин при свечах"), ("palm-road-aerial", "Пальмовые аллеи"), ("thoddoo-aerial", "Тодду"), ("dolphin", "Встреча с дельфинами"), ("papaya", "Островная папайя")]}
 
 
 def socials(light=False):
@@ -645,7 +645,7 @@ def beaches_specials(lang):
 LANDMARKS = [
     {"key": "vaau", "icon": "palm", "img": "vaau-magu",
      "en": ("Vaau Magu", "Thoddoo’s iconic “Wow Road” — a sandy avenue lined with more than 170 tall coconut palms running between the green farms. Vaau Magu literally translates as “Wow Road”: the island’s first visitors kept exclaiming “Wow!” as they walked it, and locals paired the word with magu, Dhivehi for “road”. Walk or cycle it in the soft morning light — it is the island’s favourite spot for photos and our drone videos."),
-     "ru": ("Ваау Магу", "Знаменитая «Дорога Вау» Тодду — песчаная аллея между зелёными фермами, вдоль которой растут более 170 высоких кокосовых пальм. Ваау Магу в переводе означает «Дорога Вау»: первые туристы, проходя по ней, не могли сдержать восторженного «Вау!», а местные жители добавили к этому слову «магу» — «дорога, улица» на дивехи. Прогуляйтесь или проедьтесь на велосипеде в мягком утреннем свете — это любимое место для фото и наших видео с дрона.")},
+     "ru": ("Вау Магу", "Знаменитая «Дорога Вау» Тодду — песчаная аллея между зелёными фермами, вдоль которой растут более 170 высоких кокосовых пальм. Название Вау Магу (Vaau Magu) означает «Дорога Вау»: первые туристы, проходя по ней, не могли сдержать восторженного «Вау!», а местные жители добавили к этому слову «магу» — «дорога, улица» на дивехи. Прогуляйтесь или проедьтесь на велосипеде в мягком утреннем свете — это любимое место для фото и наших видео с дрона.")},
     {"key": "mosque", "icon": "compass", "img": ("aisha-mosque" if os.path.exists(os.path.join(IMG, "aisha-mosque.webp")) else "mosque"),
      "en": ("Aisha Mosque", "Masjidhul Aisha stands in the heart of Thoddoo on Valhu Magu. Opened in 2016, it is one of the largest mosques in Ari Atoll and a striking piece of island architecture. Visitors are welcome to admire it from outside — please dress modestly (shoulders and knees covered) and be mindful of prayer times."),
      "ru": ("Мечеть Аиша", "Мечеть Масджидул Аиша стоит в самом центре Тодду, на улице Валху Магу. Открытая в 2016 году, она — одна из крупнейших мечетей атолла Ари и яркий образец островной архитектуры. Гости могут полюбоваться ею снаружи — пожалуйста, одевайтесь скромно (плечи и колени закрыты) и уважайте время молитвы.")},
