@@ -683,7 +683,9 @@ def landmarks(lang, white=True):
     cards = ""
     for l in LANDMARKS:
         t, d = l[lang]
-        short = d.split(". ")[0].split(" — ")[0].rstrip(".") + "."
+        first = d.split(". ")[0]
+        cut = first.split(" — ")[0]
+        short = (cut if len(cut) >= 30 else first).rstrip(".") + "."
         cards += pcard(lang, l["img"], l["icon"], t, short, d, h[0])
     return (f'<section class="sec{" sec--white" if white else ""}" id="highlights"><div class="wrap">{head(h[0], h[1], h[2], center=True)}'
             f'{carousel(lang, cards, 3, "car--cards")}</div></section>')
