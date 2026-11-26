@@ -456,7 +456,7 @@ INTRO_CARDS = [
      {"en": ("Honest, clear prices", "All taxes included — every inclusion listed before you book.",
              "Our packages show the full price per person with all Maldivian taxes included. You know exactly what is in your week before you pay — no hidden fees, no surprises on arrival."),
       "ru": ("Честные цены", "Все налоги включены — состав тура известен до бронирования.",
-             "В наших турах указана полная цена за человека, включая все туристические сборы и налоги страны. Вы точно знаете, что входит в ваш туристический пакет, — без скрытых сборов и неприятных сюрпризов.")}),
+             "В наших турах указана полная цена за человека, включая все туристические сборы и налоги страны. Вы точно знаете, что входит в ваш туристический пакет — без скрытых сборов и неприятных сюрпризов.")}),
 ]
 INTRO_FACTS = {"en": [("pin", "fact-location", "Location", "North Ari Atoll"), ("boat", "fact-speedboat", "By speedboat", "60–90 min"), ("plane", "fact-seaplane", "By seaplane", "20 min"), ("sun", "fact-sea", "The sea", "28°C all year")],
                "ru": [("pin", "fact-location", "Где", "Атолл Северный Ари"), ("boat", "fact-speedboat", "На катере", "60–90 минут"), ("plane", "fact-seaplane", "На гидросамолёте", "20 минут"), ("sun", "fact-sea", "Море", "28 °C круглый год")]}

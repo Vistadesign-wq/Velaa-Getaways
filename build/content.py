@@ -438,7 +438,7 @@ WHY = [
      "en": ("Nature all around", "Reef, palms & white sand",
             "On Thoddoo, nature is all around you and there’s no need to rush past it. Snorkel over the reef and look out for turtles, wander beneath the palms, or settle on the white sand and listen to the waves. The island’s gentle rhythm gives you space to breathe and be present."),
      "ru": ("Почувствуйте ритм природы", "Риф, пальмы и белый песок",
-            "На Тодду вас со всех сторон окружает природа, а каждый день будто приглашает сбавить темп. Плавайте над рифом и наблюдайте за черепахами, гуляйте среди пальм или отдыхайте на белоснежном песке, слушая волны. Островной ритм дарит пространство для отдыха, глубокого вдоха и настоящего присутствия в моменте.")},
+            "На Тодду вас со всех сторон окружает природа, а каждый день будто приглашает сбавить темп. Плавайте над рифом и наблюдайте за черепахами, гуляйте среди пальм или отдыхайте на белоснежном песке, слушая волны.")},
     {"icon": "heart",
      "en": ("Experiences that feel personal", "Planned around you",
             "Choose the kind of island days you want: time on the water, a nearby island visit, a beach dinner or a slower stay. We’ll help you explore the options and plan around what matters to you."),
