@@ -1536,3 +1536,16 @@ img[loading=lazy]{color:transparent}
 /* ===== Photo galleries: landscape cards that match the photos (nothing cut off) ===== */
 .car--gal .gcard{aspect-ratio:4/3}
 .gcard img[src*="watermelon-sm"]{object-position:35% 50%}
+
+/* ===== Enquiry: "Not sure yet" / "Excursions only" as a slim second row ===== */
+.opt-grid > .opt--plain{flex-basis:calc((100% - var(--g)) / 2);min-height:0;display:flex;align-items:center}
+.opt--plain .opt__b{display:grid;grid-template-columns:42px 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:1px;align-items:center;padding:16px 46px 16px 18px;width:100%}
+.opt--plain .ico{grid-row:1 / 3;margin:0;width:42px;height:42px}
+.opt--plain .opt__b strong{align-self:end;font-size:1.2rem}
+.opt--plain .opt__b > span:last-child{align-self:start}
+@media (max-width:480px){.opt-grid > .opt--plain{flex-basis:100%}}
+@media (max-width:860px){.opt-grid > :not(.opt--plain){flex-basis:calc((100% - 2 * var(--g)) / 3)}}
+@media (max-width:600px){.opt-grid > :not(.opt--plain){flex-basis:100%}}
+@media (max-width:860px) and (min-width:601px){.opt-grid > :not(.opt--plain) .opt__b strong{font-size:1.1rem}.opt-grid > :not(.opt--plain) .opt__b{padding:12px 12px}}
+.opt-grid > .opt--plain{align-self:flex-start}
+@media (max-width:640px){.opt-grid > .opt--plain{flex-basis:100%}}
