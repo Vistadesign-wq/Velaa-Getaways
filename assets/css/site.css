@@ -1565,5 +1565,7 @@ img[loading=lazy]{color:transparent}
 @media (max-width:760px){.qa summary{font-size:1.06rem;padding:16px 0;grid-template-columns:1fr 30px}.qa .why__t{width:30px;height:30px}}
 
 /* ===== About: founders photo (keep Dhaain & Julia clear of the turtle circle) ===== */
-.f-media--us .b{width:33%;right:-3%;bottom:-26px}
-@media (max-width:760px){.f-media--us .b{width:32%;right:0;bottom:-22px;border-width:6px}}
+.f-media--us .a{aspect-ratio:1283/1330}
+.f-media--us .a img{object-position:50% 50%}
+.f-media--us .b{width:30%;right:-4%;top:-18px;bottom:auto}
+@media (max-width:760px){.f-media--us .a{aspect-ratio:1283/1330}.f-media--us .b{width:28%;right:0;top:-10px;bottom:auto;border-width:6px}}

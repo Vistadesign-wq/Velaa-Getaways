@@ -1123,6 +1123,9 @@ def render(lang, page):
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}"><meta name="twitter:image" content="{SITE}/assets/img/og-image.jpg">
 <meta name="geo.region" content="MV"><meta name="geo.placename" content="Thoddoo">
 {verif}
+<link rel="icon" href="{{R}}favicon.ico" sizes="48x48">
+<link rel="icon" href="{{R}}assets/brand/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="icon" href="{{R}}assets/brand/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="icon" href="{{R}}assets/brand/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{{R}}assets/brand/apple-touch-icon.png">
 <link rel="manifest" href="{{R}}site.webmanifest">
