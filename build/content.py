@@ -14,7 +14,7 @@ CONFIG = {
     "tiktok": "",
     "tripadvisor": "",
     "hero_video": "",         # e.g. "assets/video/hero.mp4" — aerial footage; empty = photo slideshow
-    "yandex_verification": "",  # paste Yandex Webmaster code
+    "yandex_verification": "be53923647e04bdd",  # paste Yandex Webmaster code
     "google_verification": "",  # paste Google Search Console code
 }
 
