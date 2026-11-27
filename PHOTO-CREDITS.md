@@ -102,3 +102,5 @@ Logo files in `assets/brand/` are the client's own logo.
 ## 3. Removed for legal safety
 - **Review portraits** (`assets/img/guests/`, from randomuser.me): these are photos of real people intended for design mock-ups. Showing them next to sample reviews would suggest those people are real customers, so they were replaced with the guest's initials. To show a real guest's photo, save it as `assets/img/guests/<img>.webp` (only with that guest's consent) and rebuild; it replaces the initials automatically.
 
+
+- `founders-jetski.webp` — Dhaain & Julia on a jet ski, Thoddoo. Supplied by the client (own photo).

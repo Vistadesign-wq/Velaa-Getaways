@@ -801,7 +801,7 @@ def p_about(lang, r):
     return f'''{page_hero(lang, r, "about-hero", A["eyebrow"], A["title"], A["lead"], "about", full=True)}
 <section class="sec">
   <div class="wrap founders">
-    <div class="f-media rv"><div class="a img-rv">{img("beach-walk", "", "40vw")}</div><div class="b">{img("turtle", "", "20vw")}</div></div>
+    <div class="f-media f-media--us rv"><div class="a img-rv">{img("founders-jetski", "Dhaain and Julia on Thoddoo" if lang == "en" else "Дхаин и Юлия на Тодду", "40vw")}</div><div class="b">{img("turtle", "", "20vw")}</div></div>
     <div class="f-body rv d1">{label(T["f_label"])}<h2>{A["hello"]}</h2>
       <div class="duo"><div><small>{A["d_role"]}</small><h3>{A["d_title"]}</h3><p>{A["dhaain"]}</p></div><div><small>{A["j_role"]}</small><h3>{A["j_title"]}</h3><p>{A["julia"]}</p></div></div>
       <p>{A["together"]}</p><p class="quote">{A["quote"]}</p>
