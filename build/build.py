@@ -895,7 +895,7 @@ def p_thoddoo(lang, r):
                   f'<p>{g[lang][1]}</p><span class="more">{U["discover"]} {icon("arrow")}</span><span class="xp__detail"><p>{g[lang][1]}</p></span></button>' for g in GOOD_TO_KNOW)
     gal = "".join(f'<button class="gcard" data-lb="{{R}}assets/img/{n}.webp" aria-label="{E(en if lang == "en" else ru)}">{img(n, en if lang == "en" else ru, "(max-width:640px) 86vw, 25vw")}<span class="gcap">{en if lang == "en" else ru}</span><span class="zoom">{icon("zoom")}</span></button>' for n, en, ru in TH_GAL)
     sea = "sea ~28°C" if lang == "en" else "вода ~28°C"
-    return f'''{page_hero(lang, r, "thoddoo-hero", TH["eyebrow"], TH["title"], TH["lead"], "thoddoo", full=True)}
+    return f'''{page_hero(lang, r, "thoddoo-palms", TH["eyebrow"], TH["title"], TH["lead"], "thoddoo", full=True)}
 <section class="sec"><div class="wrap split">
   <div class="split__media rv"><div class="m1 img-rv">{img("papaya-lush", "Papaya growing on Thoddoo", "50vw")}</div><div class="m2">{img("turtle-reef", "", "25vw")}</div>
 </div>
