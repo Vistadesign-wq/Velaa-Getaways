@@ -1502,8 +1502,6 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .phero--full .wrap{padding-top:96px;padding-bottom:clamp(36px,4vw,56px)}
 }
 @media (min-width:861px){.phero--about > img{object-position:50% 22%}}
-@media (min-width:861px) and (max-width:1399px){.phero--about > img{object-position:50% 22%}.phero--about .wrap > div:last-child{max-width:380px;justify-self:end}}
-@media (min-width:861px) and (max-width:1399px){.phero--about .wrap{padding-bottom:22px}.phero--about .wrap > div:last-child{max-width:430px;padding:14px 18px}.phero--about .wrap > div:last-child .lead{font-size:.84rem;line-height:1.55;margin-top:8px!important}}
 @media (min-width:861px){.phero--full{height:max(360px,min(38vw,560px,calc(100svh - 220px)))}}
 
 /* ===== Desktop page-top banner: readable text over the photo ===== */
@@ -1516,8 +1514,10 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .phero--full .wrap > div:last-child .lead,.phero--full .hfacts li{color:#fff}
 }
 
-/* ===== Desktop page-top banner: about 3/4 of the screen height (client request) ===== */
-@media (min-width:861px){.phero--full{height:max(420px,min(75svh,56.25vw))}.phero--about > img{object-position:50% 22%}}
+/* ===== Desktop page-top banner (client request): the photo ends at 3/4 of the screen,
+   measured from the very top (the ~136px logo/menu bar included), so the page below peeks in.
+   Mobile is not affected. ===== */
+@media (min-width:861px){.phero--full{height:max(400px,min(calc(75svh - 136px),56.25vw))}.phero--about > img{object-position:50% 22%}}
 
 /* lazy photos: never print the alt text over the blurred preview */
 img[loading=lazy]{color:transparent}
@@ -1592,4 +1592,24 @@ img[loading=lazy]{color:transparent}
 @media (min-width:861px){
   .phero--experiences > img{object-position:50% 50%}
   .phero--experiences .hero__shade{background:linear-gradient(180deg,rgba(6,22,28,.1) 0%,rgba(6,22,28,0) 18%,rgba(6,22,28,0) 50%,rgba(6,22,28,.38) 74%,rgba(6,22,28,.72) 100%),linear-gradient(90deg,rgba(6,22,28,.32) 0%,rgba(6,22,28,.1) 45%,rgba(6,22,28,0) 65%)}
+}
+
+/* ===== Desktop page-top banners: framing so each photo keeps its best part in the shorter banner ===== */
+@media (min-width:861px){
+  .phero--about > img{object-position:50% 36%}          /* both umbrellas and the leaning palm */
+  .phero--guesthouses > img{object-position:50% 4%}     /* whole rattan lamp and the garden windows */
+  .phero--contact > img{object-position:50% 86%}        /* the couple walking on the sandbank */
+  .phero--guesthouses .hero__shade,.phero--contact .hero__shade{background:linear-gradient(180deg,rgba(6,22,28,.1) 0%,rgba(6,22,28,0) 22%,rgba(6,22,28,.1) 46%,rgba(6,22,28,.72) 100%),linear-gradient(90deg,rgba(6,22,28,.55) 0%,rgba(6,22,28,.25) 42%,rgba(6,22,28,0) 66%)}
+}
+
+/* ===== Desktop page-top banners: brighter, easier-to-read text on every photo (client request) ===== */
+@media (min-width:861px){
+  .phero--full .crumbs{color:#fff;font-weight:600;opacity:1;text-shadow:0 1px 3px rgba(6,22,28,.85),0 0 14px rgba(6,22,28,.65)}
+  .phero--full .crumbs a{color:#fff}
+  .phero--full .crumbs li+li::before{opacity:.85}
+  .phero--full h1{color:#fff;text-shadow:0 2px 4px rgba(6,22,28,.45),0 4px 26px rgba(6,22,28,.6)}
+  .phero--full h1 em{color:#f6dca8;text-shadow:0 2px 4px rgba(6,22,28,.55),0 4px 26px rgba(6,22,28,.65)}
+  .phero--full .wrap > div:last-child{background:rgba(8,30,38,.7)}
+  .phero--full .wrap > div:last-child .label{color:#f6dca8}
+  .phero--full .wrap > div:last-child .lead,.phero--full .hfacts li{color:#fff}
 }
