@@ -1516,8 +1516,8 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .phero--full .wrap > div:last-child .lead,.phero--full .hfacts li{color:#fff}
 }
 
-/* ===== Desktop page-top banner fills exactly one screen below the header ===== */
-@media (min-width:861px){.phero--full{height:max(420px,min(calc(100svh - 136px),56.25vw))}.phero--about > img{object-position:50% 85%}}
+/* ===== Desktop page-top banner: about 3/4 of the screen height (client request) ===== */
+@media (min-width:861px){.phero--full{height:max(420px,min(75svh,56.25vw))}.phero--about > img{object-position:50% 85%}}
 
 /* lazy photos: never print the alt text over the blurred preview */
 img[loading=lazy]{color:transparent}
