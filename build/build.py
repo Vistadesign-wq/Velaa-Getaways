@@ -705,7 +705,7 @@ def p_index(lang, r):
     pk = ""
     for i, p in enumerate(PACKAGES):
         P = p[lang]
-        hl = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["incl"][-4:])
+        hl = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["incl"][-5:-1])
         pk += f'''<article class="pk rv d{i + 1}{" pk--feat" if p.get("featured") else ""}">{img(p["img"], P["name"], "(max-width:1000px) 100vw, 33vw")}
   <div class="pk__top"><span class="pk__num">{p["num"]}</span><span class="pk__tag">{P["tag"]}</span></div>
   <div class="pk__body"><span class="pk__kick">{P["kicker"]}</span><h3>{P["name"]}</h3>
@@ -861,6 +861,7 @@ def p_packages(lang, r):
   {head(P["compare_eyebrow"], P["compare_title"], center=True)}
   <p class="swipe-hint">{"Swipe to compare" if lang == "en" else "Листайте, чтобы сравнить"} {icon("arrow")}</p><div class="tbl-wrap rv"><table class="tbl"><thead><tr><th>{P["compare_cols"][0]}</th>{th}</tr></thead><tbody>{rows}</tbody>
     <tfoot><tr><td><small class="note">{T["season_low"]} / {T["season_high"]}</small></td>{foot}</tr></tfoot></table></div>
+  <div class="tbl-notes"><p class="note">{P["compare_legend"]}</p>{"".join(f'<p class="note">{n}</p>' for n in P["compare_notes"])}</div>
   <div class="cards-2" style="margin-top:40px">
     <div class="icard rv"><h3><span>{icon("info")}</span>{P["not_title"]}</h3><ul>{nots}</ul></div>
     <div class="icard rv d1"><h3><span>{icon("calendar")}</span>{P["terms_title"]}</h3><ul>{terms}</ul></div>
@@ -1052,7 +1053,7 @@ def jsonld(lang, page):
            "description": SEO["index"][lang][1], "email": C["email"], "telephone": C["phone_tel"],
            "address": {"@type": "PostalAddress", "addressLocality": "Thoddoo", "addressRegion": "Alif Alif Atoll", "addressCountry": "MV"},
            "geo": {"@type": "GeoCoordinates", "latitude": 4.4381, "longitude": 72.9586},
-           "areaServed": ["Maldives", "Russia", "Europe"], "knowsLanguage": ["en", "ru"], "priceRange": "$600 – $1,550",
+           "areaServed": ["Maldives", "Russia", "Europe"], "knowsLanguage": ["en", "ru"], "priceRange": "$890 – $1,690",
            "contactPoint": {"@type": "ContactPoint", "telephone": C["phone_tel"], "email": C["email"], "contactType": "sales", "availableLanguage": ["English", "Russian"]}}
     if same:
         org["sameAs"] = same
