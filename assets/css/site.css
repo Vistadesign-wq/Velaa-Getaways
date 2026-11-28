@@ -1584,7 +1584,7 @@ img[loading=lazy]{color:transparent}
 /* ===== Thoddoo banner (desktop): client's palm-path photo. Path and cyclist framed in the upper half,
    clear of the title and the info box; a soft dark band at the bottom keeps the text calm and readable ===== */
 @media (min-width:861px){
-  .phero--thoddoo > img{object-position:50% 70%}
+  .phero--thoddoo > img{object-position:50% 50%}
   .phero--thoddoo .hero__shade{background:linear-gradient(180deg,rgba(6,22,28,.1) 0%,rgba(6,22,28,0) 18%,rgba(6,22,28,0) 48%,rgba(6,22,28,.42) 72%,rgba(6,22,28,.78) 100%),linear-gradient(90deg,rgba(6,22,28,.34) 0%,rgba(6,22,28,.1) 45%,rgba(6,22,28,0) 65%)}
 }
 
@@ -1597,7 +1597,7 @@ img[loading=lazy]{color:transparent}
 /* ===== Desktop page-top banners: framing so each photo keeps its best part in the shorter banner ===== */
 @media (min-width:861px){
   .phero--about > img{object-position:50% 36%}          /* both umbrellas and the leaning palm */
-  .phero--guesthouses > img{object-position:50% 4%}     /* whole rattan lamp and the garden windows */
+  .phero--guesthouses > img{object-position:50% 30%}    /* room photo widened slightly: lamp, windows and bed all in view */
   .phero--contact > img{object-position:50% 86%}        /* the couple walking on the sandbank */
   .phero--guesthouses .hero__shade,.phero--contact .hero__shade{background:linear-gradient(180deg,rgba(6,22,28,.1) 0%,rgba(6,22,28,0) 22%,rgba(6,22,28,.1) 46%,rgba(6,22,28,.72) 100%),linear-gradient(90deg,rgba(6,22,28,.55) 0%,rgba(6,22,28,.25) 42%,rgba(6,22,28,0) 66%)}
 }
