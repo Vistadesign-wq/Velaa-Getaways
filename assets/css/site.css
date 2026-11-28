@@ -1613,3 +1613,13 @@ img[loading=lazy]{color:transparent}
   .phero--full .wrap > div:last-child .label{color:#f6dca8}
   .phero--full .wrap > div:last-child .lead,.phero--full .hfacts li{color:#fff}
 }
+
+/* ===== Mobile page-top photos: placement only (sizes and layout unchanged). Each photo is trimmed a
+   little inside the same 16:9 frame so its subject sits nicely. The section's overflow:hidden clips
+   the top; Thoddoo also clips its bottom so the path stays centred. ===== */
+@media (max-width:860px){
+  .phero--full.phero--about > img{transform:scale(1.14);transform-origin:50% 100%}         /* drop the half-cut umbrella at the top */
+  .phero--full.phero--thoddoo > img{transform:scale(1.22);transform-origin:46% 58%;-webkit-clip-path:inset(0 0 7.6% 0);clip-path:inset(0 0 7.6% 0)} /* path and cyclist centred */
+  .phero--full.phero--experiences > img{transform:scale(1.3);transform-origin:50% 100%}   /* kayak larger, less empty water */
+  .phero--full.phero--contact > img{transform:scale(1.25);transform-origin:52% 100%}       /* less sky, the couple clearly visible */
+}
