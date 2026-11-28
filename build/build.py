@@ -877,7 +877,7 @@ def p_experiences(lang, r):
     items = "".join(xp_card(lang, r, e, "rv") for e in EXPERIENCES + MOMENTS)
     ficons = {"U": "fish", "W": "boat", "I": "palm", "M": "sparkle"}
     filters = f'<button class="on" data-f="*">{icon("grid")}{T["cat_all"]}</button>' + "".join(f'<button data-f="{k}">{icon(ficons[k])}{v}</button>' for k, v in T["cats"].items())
-    return f'''{page_hero(lang, r, "dolphin-hero", X["eyebrow"], X["title"], X["lead"], "experiences", full=True)}
+    return f'''{page_hero(lang, r, "experiences-kayak", X["eyebrow"], X["title"], X["lead"], "experiences", full=True)}
 <section class="sec"><div class="wrap">
   <div class="filters rv" role="group">{filters}</div>
   <div class="xgrid">{items}</div>
