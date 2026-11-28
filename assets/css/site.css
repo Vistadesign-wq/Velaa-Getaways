@@ -1514,10 +1514,10 @@ h2{font-size:clamp(1.75rem,3vw,2.75rem);line-height:1.12}
   .phero--full .wrap > div:last-child .lead,.phero--full .hfacts li{color:#fff}
 }
 
-/* ===== Desktop page-top banner (client request): the photo ends at 3/4 of the screen,
-   measured from the very top (the ~136px logo/menu bar included), so the page below peeks in.
-   Mobile is not affected. ===== */
-@media (min-width:861px){.phero--full{height:max(400px,min(calc(75svh - 136px),56.25vw))}.phero--about > img{object-position:50% 22%}}
+/* ===== Desktop page-top banner (client request): shorter than a full screen so the page below
+   peeks in, but tall enough that the 16:9 photos are not over-cropped (photo ends at ~85% of the
+   screen, the ~136px logo/menu bar included). Mobile is not affected. ===== */
+@media (min-width:861px){.phero--full{height:max(420px,min(calc(85svh - 136px),56.25vw))}.phero--about > img{object-position:50% 22%}}
 
 /* lazy photos: never print the alt text over the blurred preview */
 img[loading=lazy]{color:transparent}
