@@ -11,7 +11,7 @@ Checked 2026-11-24. Every image and video on the site is listed here with its so
 |---|---|---|
 | `about-hero` | Unsplash | https://images.unsplash.com/photo-1754110157062-80524abf3d30 | crop of `beach-relax`
 | `aerial-lagoon` | Unsplash | https://images.unsplash.com/photo-1724163421250-b772094b41b6 |
-| `packages-hero` | Supplied by client (Nov 2026) | aerial beach with thatched umbrellas, Packages page banner |
+| `about-beach` | Supplied by client (Nov 2026) | aerial beach with thatched umbrellas, About Us page banner |
 | `beach-dinner` | Unsplash | https://images.unsplash.com/photo-1746138394984-5691db44df00 |
 | `beach-swing` | Unsplash | https://images.unsplash.com/photo-1754378165530-1bae5049c3c8 |
 | `beach-walk` | Unsplash | https://images.unsplash.com/photo-1639994281271-fc676dd25c93 |

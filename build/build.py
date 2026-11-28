@@ -798,7 +798,7 @@ def p_index(lang, r):
 
 def p_about(lang, r):
     A = ABOUT[lang]; T = T3[lang]
-    return f'''{page_hero(lang, r, "about-hero", A["eyebrow"], A["title"], A["lead"], "about", full=True)}
+    return f'''{page_hero(lang, r, "about-beach", A["eyebrow"], A["title"], A["lead"], "about", full=True)}
 <section class="sec">
   <div class="wrap founders">
     <div class="f-media f-media--us rv"><div class="a img-rv">{img("founders-jetski", "Dhaain and Julia on Thoddoo" if lang == "en" else "Дхаин и Юлия на Тодду", "40vw")}</div><div class="b">{img("turtle", "", "20vw")}</div></div>
@@ -855,7 +855,7 @@ def p_packages(lang, r):
     terms = "".join(f'<li>{icon("check")}<span>{x}</span></li>' for x in P["terms"])
     facts = [("calendar", P["hf"][0]), ("bed", P["hf"][1]), ("users", P["hf"][2]), ("check", P["hf"][3])]
     hfacts = '<ul class="hfacts">' + "".join(f'<li><span class="hfacts__i">{icon(ic)}</span><span>{t}</span></li>' for ic, t in facts) + '</ul>'
-    return f'''{page_hero(lang, r, "packages-hero", P["eyebrow"], P["title"], hfacts, "packages", full=True)}
+    return f'''{page_hero(lang, r, "aerial-lagoon", P["eyebrow"], P["title"], hfacts, "packages", full=True)}
 <section class="sec"><div class="wrap">{blocks}<p class="note" style="text-align:center">{P["single"]}</p></div></section>
 <section class="sec sec--white"><div class="wrap">
   {head(P["compare_eyebrow"], P["compare_title"], center=True)}
